@@ -1,0 +1,200 @@
+/*
+*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.nav{
+    width: 100%;
+    height: 24px;
+    z-index: 99;
+}
+
+.rootnav{
+    font-size: 0.8em;
+    list-style: none;
+    
+}
+
+.rootnav li{
+    text-align: center;
+    position: relative;
+    float: left;
+}
+
+.rootnav li a{
+    display: block;
+    padding: 2px 5px;
+    border: 1px solid white;
+    color: black;
+    text-decoration: none;
+
+}
+
+.rootnav li a:hover{
+
+    border-color: grey;
+}
+
+.subnav{
+    z-index: 99;
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 130px;
+    background-color: white;
+    padding: none;
+    list-style: none;
+}
+
+
+.subnav-sub{
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 110px;
+    width: 130px;
+    background-color: white;
+    padding: none;
+    list-style: none;
+}
+
+.subnav li {
+    width: 130px;
+    text-align: left;
+    clear: both;
+}
+
+.subnav li a:hover{
+    border-color: blue;
+}
+
+.subnav-line{
+    margin: 2px 0px;
+    display: block;
+    width: 130px;
+     height:1px;
+     font-size:0;
+     background:#000000;
+
+}
+
+.header{
+    
+    width: 100%;
+    height: 73px;
+    color: aliceblue;
+    background-image: url(../images/top.gif);
+    background-repeat: repeat-x;
+    background-color: aquamarine;
+}
+
+.header h1{
+    padding: 15px 8px;
+    float: left;
+}
+
+.header .login-message{
+    float: right;
+    padding-top: 50px;
+    padding-right: 8px;
+    
+
+}
+
+
+/*******content******/
+.content{
+
+    
+
+}
+
+.side-left{
+    width: 20%;
+    float: left;
+}
+
+.rootnav-left{
+    font-size: 1em;
+    list-style: none;
+    
+}
+
+.rootnav-left li{
+    
+    text-align: left;
+    position: relative;
+    border: 1px solid;
+}
+.tg-li-left{
+    background-image: url(../images/pf_rightarrow_pf.bmp);
+    background-repeat: no-repeat;
+    background-position: 5px 10px;
+    padding-left: 8px; 
+}
+.tg-li-down{
+    background-image: url(../images/pf_downarrow_pf6.bmp);
+    background-repeat: no-repeat;
+    background-position: 0px 7px;
+    padding-left: 8px; 
+}
+
+
+.rootnav-left li a{
+    display: block;
+    
+    padding: 2px 5px;
+    color: black;
+    text-decoration: none;
+
+}
+
+.subnav-left{
+    display: none;
+    color: white;
+    background-color:darkblue;
+    padding: none;
+    list-style: none;
+}
+
+
+.subnav-sub-left{
+    display: none;
+    color: white;
+    font-size: 0.9em;
+    background-color:darkblue;
+    padding-left: 14px;
+    list-style: none;
+}
+
+
+
+.subnav-left li {
+    
+    border: none;
+    background-image:none;
+    
+    text-align: left;
+}
+
+
+.subnav-left li a{
+    padding-left: 14px;
+    color: white;
+}
+
+.subnav-left li a:hover{
+    border-color: blue;
+}
+
+
+
+
+.section{
+    width: 80%;
+    float: left;
+    background-color: antiquewhite;
+}
