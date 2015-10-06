@@ -1,0 +1,47 @@
+.side-bar{
+    width:136px;
+    margin: 5px;
+    border: 1px solid #C0B2B2;
+    background-color: #95EE88;
+}
+
+.side-bar .side-dropdown{
+    width: 136px;
+    background-image: url(../images/nav_title.jpg);
+    background-repeat: no-repeat;
+    line-height: 22px;
+    text-align: left;
+}
+
+.side-bar .side-dropdown > a{
+    margin-left: 20px;
+    color: black;
+    font-family: "黑体";
+    font-size: 1em;
+}
+
+.side-bar .side-dropdown.active{
+    background-image: url(../images/nav_title_2.jpg);
+}
+
+.side-bar .side-dropdown.active > a{
+    color: #A41422;
+}
+
+.side-dropdown-menu{
+    display: none;
+    background-color: #375A9F;
+
+}
+
+.side-dropdown-menu li{
+
+    line-height: 22px;
+    text-align: center;
+}
+
+.side-dropdown-menu li a{
+
+    color: #DDE1EA;
+    font-size: 0.8em;
+}

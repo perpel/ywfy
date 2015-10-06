@@ -9,7 +9,6 @@ $(function(){
                     $("#pop-input .content").html(data);
                     $("#pop-input").show();
                    
-
                 }
             );
     });

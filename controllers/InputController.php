@@ -11,6 +11,8 @@ use app\models\ContactForm;
 
 class InputController extends Controller{
 
+    public $layout = "input";
+
     public function actionIndex(){
         
         return $this->render("index");

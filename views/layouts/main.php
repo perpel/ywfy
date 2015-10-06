@@ -134,56 +134,56 @@ AppAsset::register($this);
     <!--begin .side-bar -->
     <div class="side-bar">
         <ul>
-            <li class="side-dropdown">
+            <li class="side-dropdown active">
                 <a class="a-up" href="#">数据录入</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=input/assess">评估录入</a></li>
-                    <li><a href="index.php?r=input/identify">鉴定录入</a></li>
-                    <li><a href="index.php?r=input/auction">拍卖录入</a></li>
-                    <li><a href="index.php?r=input/project-cost">工程造价</a></li>
-                    <li><a href="index.php?r=input/bust">破产录入</a></li>
+                    <li><a target="container" href="index.php?r=input/assess">评估录入</a></li>
+                    <li><a target="container" href="index.php?r=input/identify">鉴定录入</a></li>
+                    <li><a target="container" href="index.php?r=input/auction">拍卖录入</a></li>
+                    <li><a target="container" href="index.php?r=input/project-cost">工程造价</a></li>
+                    <li><a target="container" href="index.php?r=input/bust">破产录入</a></li>
                 </ul>
             </li>
             <li class="side-dropdown">
                 <a class="a-up" href="#">查询考核</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=examine/complex">综合查询</a></li>
-                    <li><a href="index.php?r=examine/assess">评估机构考核</a></li>
-                    <li><a href="index.php?r=examine/identify">鉴定机构考核</a></li>
-                    <li><a href="index.php?r=examine/auction">拍卖机构考核</a></li>
-                    <li><a href="index.php?r=examine/translation">翻译机构考核</a></li>
-                    <li><a href="index.php?r=examine/project-cost">破产机构考核</a></li>
+                    <li><a target="container" href="index.php?r=examine/complex">综合查询</a></li>
+                    <li><a target="container" href="index.php?r=examine/assess">评估机构考核</a></li>
+                    <li><a target="container" href="index.php?r=examine/identify">鉴定机构考核</a></li>
+                    <li><a target="container" href="index.php?r=examine/auction">拍卖机构考核</a></li>
+                    <li><a target="container" href="index.php?r=examine/translation">翻译机构考核</a></li>
+                    <li><a target="container" href="index.php?r=examine/project-cost">破产机构考核</a></li>
                 </ul>
             
             </li>
             <li class="side-dropdown">
                 <a class="a-up" href="#">基础数据</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=definiation/case">案由定义</a></li>
-                    <li><a href="index.php?r=definiation/assess">评估机构定义</a></li>
-                    <li><a href="index.php?r=definiation/identify">鉴定机构定义</a></li>
-                    <li><a href="index.php?r=definiation/auction">拍卖机构定义</a></li>
-                    <li><a href="index.php?r=definiation/project-cost">工程造价机构定义</a></li>
-                    <li><a href="index.php?r=definiation/bust">破产机构定义</a></li>
-                    <li><a href="index.php?r=definiation/print-template">打印模板设置</a></li>
+                    <li><a target="container" href="index.php?r=definiation/case">案由定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/assess">评估机构定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/identify">鉴定机构定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/auction">拍卖机构定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/project-cost">工程造价机构定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/bust">破产机构定义</a></li>
+                    <li><a target="container" href="index.php?r=definiation/print-template">打印模板设置</a></li>
                 </ul>
             </li>
 
             <li class="side-dropdown">
                 <a class="a-up" href="#">系统管理</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=sys/user">用户管理</a></li>
-                    <li><a href="index.php?r=sys/premission">权限管理</a></li>
-                    <li><a href="index.php?r=sys/password">修改密码</a></li>
-                    <li><a href="index.php?r=sys/log">系统日志</a></li>
-                    <li><a href="index.php?r=sys/unit">单位信息</a></li>
+                    <li><a target="container" href="index.php?r=sys/user">用户管理</a></li>
+                    <li><a target="container" href="index.php?r=sys/premission">权限管理</a></li>
+                    <li><a target="container" href="index.php?r=sys/password">修改密码</a></li>
+                    <li><a target="container" href="index.php?r=sys/log">系统日志</a></li>
+                    <li><a target="container" href="index.php?r=sys/unit">单位信息</a></li>
                     <li class="side-dropdown">
                        <a href="#"><span>+</span> 数据管理</a>
                         <ul class="side-dropdown-menu">
-                            <li><a href="index.php?r=sys/dbs/backup">数据备份</a></li>
-                            <li><a href="index.php?r=sys/dbs/recovery">数据恢复</a></li>
-                            <li><a href="index.php?r=sys/dbs/collection">数据采集</a></li>
-               
+                            <li><a target="container" href="index.php?r=sys/dbs/backup">数据备份</a></li>
+                            <li><a target="container" href="index.php?r=sys/dbs/recovery">数据恢复</a></li>
+                            <li><a target="container" href="index.php?r=sys/dbs/collection">数据采集</a></li>
+                        </ul>
                     </li>
                 </ul>
              </li>
@@ -191,20 +191,20 @@ AppAsset::register($this);
              <li class="side-dropdown">
                 <a class="a-up" href="#">报表中心</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=report-form/show">报表预览</a></li>
-                    <li><a href="index.php?r=report-form/design">报表设计</a></li>
-                    <li><a href="index.php?r=report-form/export-all">引出所有报表</a></li>
-                    <li><a href="index.php?r=report-form/import-all">引入所有报表</a></li>
+                    <li><a target="container" href="index.php?r=report-form/show">报表预览</a></li>
+                    <li><a target="container" href="index.php?r=report-form/design">报表设计</a></li>
+                    <li><a target="container" href="index.php?r=report-form/export-all">引出所有报表</a></li>
+                    <li><a target="container" href="index.php?r=report-form/import-all">引入所有报表</a></li>
                 </ul>
              </li>
 
             <li class="side-dropdown">
                 <a class="a-up" href="#">帮助</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=help/password">修改密码</a></li>
-                    <li><a href="index.php?r=help/lock-sys">锁定系统</a></li>
-                    <li><a href="index.php?r=help/about">关于</a></li>
-             
+                    <li><a target="container" href="index.php?r=help/password">修改密码</a></li>
+                    <li><a target="container" href="index.php?r=help/lock-sys">锁定系统</a></li>
+                    <li><a target="container" href="index.php?r=help/about">关于</a></li>
+                </ul>
              </li>
 
         </ul>
@@ -217,7 +217,9 @@ AppAsset::register($this);
  <!--begin section-->    
      <div class="section">
          
+         <iframe name="container" marginwidth=0 marginheight=0 >
          <?= $content ?>
+         </iframe>
         
      </div>
  <!--end section-->

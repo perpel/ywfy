@@ -13,25 +13,20 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class AppAsset extends AssetBundle
+class InputAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/main.css',
-        'css/nav.css',
-        'css/side-bar.css',
-        //'css\input.css',    //input module style
+        'css/style.css',
     ];
     public $js = [
-        'js/extension.js',
-        'js/nav.js',
-        'js/side-bar.js',
-        'js/main.js',
-        //'js\input.js' 
+       'js/public.js',
     ];
+
     public $depends = [
         'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
+
 }
