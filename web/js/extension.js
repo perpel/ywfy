@@ -38,39 +38,8 @@ $(function(){
         var dateObj = new Date(parseInt($(".clock").text()) * 1000);
         $(".clock").text("今天是：" + dateObj.pattern("yyyy年MM月dd日 EEE"));
 
-        $(".close.drag").click(function(){
-            $(this).parent().hide();
-        });
+       
 
-        var dragMove = function(oDrag, distX, distY){
-            $(document).bind("mousemove", function(event){
-                   var posX = event.pageX - distX;
-                   var posY = event.pageY - distY;
-                   if( posX < 0 ){
-                        posX = 0;
-                   }
-                   if( posY < 0 ){
-                        posY = 0;
-                   }
-                    oDrag.css({
-                        'left':  posX + 'px',
-                        'top':  posY + 'px'
-                    });
-                });
-            };
-
-
-            $(".drag").mousedown(function(event){
-
-                var oDrag = $(this).parent();
-                var pos = oDrag.offset();
-                var distX = event.pageX - pos.left;
-                var distY = event.pageY - pos.top;
-                dragMove(oDrag, distX, distY);
-
-            }).mouseup(function(){
-
-                $(document).unbind("mousemove");
-            });
+       
 
 });    

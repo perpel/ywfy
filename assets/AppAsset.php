@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'css/main.css',
         'css/nav.css',
         'css/side-bar.css',
+        //'js/etc/pop.css'
         //'css\input.css',    //input module style
     ];
     public $js = [

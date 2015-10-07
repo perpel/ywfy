@@ -2,7 +2,6 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -24,7 +23,8 @@ InputAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<?php $actionId=1;  ?>
+<?php $actionId=Yii::$app->controller->action->id;  ?>
+
 <div id="section-bar">
     <ul>
         <li>
@@ -38,30 +38,21 @@ InputAsset::register($this);
         </li>
     
         <li class="fnt ico-refesh"><a href="index.php?r=input/<?= $actionId  ?>">刷新</a></li>
-        <li class="fnt ico-import"><span data-action="import">导入</span></li>
-        <li class="fnt ico-add"><span data-action="add-<?= $actionId  ?>">增加</a></li>
-        <li class="fnt ico-edit"><span data-action="edit-<?= $actionId  ?>">编辑</a></li>
+        <li class="fnt ico-import" data-pop="pop"><span data-action="import">导入</span></li>
+        <li class="fnt ico-add" data-pop="pop"><span data-action="add-<?= $actionId  ?>">增加</a></li>
+        <li class="fnt ico-edit" data-pop="pop"><span data-action="edit-<?= $actionId  ?>">编辑</a></li>
         <li class="fnt ico-del"><span data-action="del">删除</span></li>
         <li class="fnt ico-save-as"><span data-action="save-as">另存为</span></li>
-        <li class="fnt ico-print"><span data-action="print">打印</span></li>
-        <li class="fnt ico-search"><span data-action="search">条件查询</span></li>
+        <li class="fnt ico-print" data-pop="pop"><span data-action="print">打印</span></li>
+        <li class="fnt ico-search" data-pop="pop"><span data-action="search">条件查询</span></li>
     </ul>
     <li class="fnt ico-exit"><span data-action="exit">exit</span></li>
 </div>
 
-
-
-
-
-<div id="pop-input" >
-            <div class="close drag" id="a" style="width:100px; height:30px; background-color:red;">
-                <span>Close</span>
-            </div>
-            <div class="title drag"></div>
-            <div class="content"></div>
-</div>
+<?= $content; ?>
 
 <?php $this->endBody() ?>
+<div id="pop"></div>
  </body>
 
 </html>

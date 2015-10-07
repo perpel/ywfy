@@ -19,9 +19,14 @@ class InputAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/style.css',
+        'js/etc/pop.css',
+        'js/etc/table.css',
     ];
     public $js = [
-       'js/public.js',
+        'js/etc/pop.js',
+        //'js/etc/jquery.dataTables.js',
+        'js/public.js',
+        'js/etc/table.js',
     ];
 
     public $depends = [

@@ -4,7 +4,7 @@ $(function(){
         var win = $(window).width();
         var winHeight = $(window).height();
         var sectionWidth = win - $(".side").width();
-       $(".section").width(sectionWidth);
+       $(".section").width(sectionWidth-1);
        $(".section").height(winHeight - 120);
     });
 

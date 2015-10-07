@@ -1,15 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
 #section-bar {
     width: 100%;
     height: 25px;
+    position: fixed;
+    padding: 5px;
     background-color: #E7E5E1;
 }
-
-#section-bar ul {
-     margin: 0;
-     padding: 3px 0px 0px 0px;
-
-}
-
 #section-bar ul li {   
     float: left;
 }
@@ -77,3 +77,39 @@
 }
 
 
+#myTable{
+
+    padding-top: 30px;
+    *+margin-top: 30px;
+}
+
+#myTable  tr  th{
+    white-space: nowrap;
+    background-color: #C0C0C0;
+    color: black;
+    border-right: 1px white solid;
+    padding: 8px;
+}
+
+
+#import{
+
+    width: 100%;
+    background-color: white;
+}
+
+
+#import table{
+
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+    
+}
+
+#import table tr th{
+    
+    white-space: nowrap;
+}
