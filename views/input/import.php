@@ -1,9 +1,11 @@
 <script>
+
+
     var parent = $("#import").parent().parent(".pop");
-    parent.children(".pop-title").append("当前位置：导入");
+    parent.children(".pop-title").append("当前位置：导入");/*
     parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">');
     parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">');
-    
+   */ 
     $("iframe").load(function(){
         var v = $("iframe").contents().find("body").html();
         if(v != "error"){

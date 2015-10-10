@@ -12,7 +12,7 @@
         // 根据所提供的扩展我们能的options
         var opts = $.extend(defaults, options);
 
-            var eles = "<div class='pop'><div class='pop-close'>X</div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
+            var eles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
             var obj = $(eles).appendTo(opts.parent);
 
             //init popObj
