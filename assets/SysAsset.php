@@ -27,6 +27,7 @@ class SysAsset extends AssetBundle
         //'js/etc/jquery.dataTables.js',
         'js/public.js',
         'js/etc/table.js',
+        'js/sys.js',
     ];
 
     public $depends = [

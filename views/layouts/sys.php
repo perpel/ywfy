@@ -20,7 +20,7 @@ SysAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<input name="ctrl" type="hidden" value="<?=Yii::$app->controller->id; ?>">
 
 
 <?= $content; ?>

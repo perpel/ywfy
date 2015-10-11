@@ -16,9 +16,11 @@ $(function(){
         $(this).pop();
 
         var action = $(this).children("span").attr("data-action");
-
+        var tpl = $(this).children("span").attr("data-tpl");
+        var ctrl = $("input[name='ctrl']:hidden").val();
+    
         $.get(
-                "./index.php?r=input/" + action,
+                "./index.php?r=" + ctrl + "/" + action + "&tpl=" + tpl,
                 function(data){
                     
                     $(".pop-content").html(data);

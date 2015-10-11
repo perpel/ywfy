@@ -5,45 +5,24 @@ use app\models\Detail;
 <table id="myTable">
     <tr>
     <?php
-        foreach( Detail::tableTh() as $v ){
+        foreach( Detail::tableTh(Yii::$app->controller->action->id) as $v ){
             echo '<th>' . $v . '</th>';
         }
     ?>
     </tr>
 
-<tr>
+<?php
+    
+    foreach ($assess_info as $key => $value) {
+        echo "<tr>";
+        foreach ($value as $k => $v) {
+            echo "<td>";
+            echo $v;
+            echo "</td>";
+        }
+        echo "</tr>";
+    }
 
-    <tr>
+?>
 
 </table>
-
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-
-sadfadsfsadfdsa<br><br>
-
-sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>
-
-sadfadsfsadfdsa<br><br>
-
-sadfadsfsadfdsa<br><br>
-
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>
-sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>sadfadsfsadfdsa<br><br>

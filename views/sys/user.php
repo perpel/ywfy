@@ -1,3 +1,7 @@
+<?php
+use app\models\Personnel;
+?>
+
 <?php $actionId=Yii::$app->controller->action->id;  ?>
 
 <div id="section-bar">
@@ -14,7 +18,7 @@
         <li class="fnt ico-add" data-pop="pop"><span data-action="add-<?= $actionId  ?>">增加</a></li>
         <li class="fnt ico-del"><span data-action="del">删除</span></li>
         <li class="fnt ico-save-as"><span data-action="save-as">另存为</span></li>
-        <li class="fnt ico-print" data-pop="pop"><span data-action="print">打印</span></li>
+        <li class="fnt ico-print"><span data-action="print">打印</span></li>
 
        
 
@@ -26,7 +30,7 @@
 <div style="padding-top:35px;"></div>
 
         
-        <table>
+        <table id="user-info">
             <caption>义乌市人民法院</caption>
             <thead>
             <tr>
@@ -45,26 +49,29 @@
             </tr>
             <thead>
                 <tbody>
-            <tr>
-                <td>1</td>
-                <td>zhangsan</td>
-                <td>123</td>
-                <td><input type="text" name="Name" value="zhangsan"></td>
-                <td>
-                    
-                    <select name="Sex" id="">
-                        <option value="">man</option>
-                        <option value="">woman</option>
-                    </select>
+                
+            <?php
+                $users = Personnel::find()->asArray()->all();
+                foreach($users as $k => $v){
 
-                </td>
-                <td>xxx</td>
-                <td>xxxx</td>
-                <td>xxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxxx</td>
-                <td>xxxxxxx</td>
-            </tr>
+                        echo "<tr>";
+                        echo "<td>" . $v["ID"] . "</td>";
+                        echo "<td>" . $v["Number"] . "</td>";
+                        echo "<td>" . $v["Password"] . "</td>";
+                        echo "<td>" . $v["Name"] . "</td>";
+                        echo "<td>" . $v["Sex"] . "</td>";
+                        echo "<td>" . $v["Education"] . "</td>";
+                        echo "<td>" . $v["IDNumber"] . "</td>";
+                        echo "<td>" . $v["DepartmentNumber"] . "</td>";
+                        echo "<td></td>";
+                        echo "<td>" . $v["TelNumber"] . "</td>";
+                        echo "<td>" . $v["CellNumber"] . "</td>";
+                        echo "<td>" . $v["Remarks"] . "</td>";
+                        echo "</tr>";
+
+                }
+            ?>
+            
             </tbody>
+
         </table>

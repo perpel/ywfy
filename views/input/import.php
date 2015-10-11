@@ -1,9 +1,17 @@
+<?php
+use app\models\Import;
+?>
+
 <script>
     var parent = $("#import").parent().parent(".pop");
     parent.children(".pop-title").append("当前位置：导入");
     parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">');
     parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">');
     
+
+$("input[name='file']:file").change(function(){
+
+    $("form").submit();
     $("iframe").load(function(){
         var v = $("iframe").contents().find("body").html();
         if(v != "error"){
@@ -20,10 +28,74 @@
                 });
                 //$(".drag-table").append("</tr>");
             });
-          
-
+        
         }
     });
+
+});
+
+$(":button[name='import']").click(function(){
+
+    var dia = confirm("确定导入?");
+
+    if(dia){
+
+        var ths = new Array();
+        $(".drag-table").children("thead").children("tr:first").find("th").each(function(i, v){
+          
+            ths[i] = $(this).attr("data-tpl");
+            //alert($(this).text());
+
+        });
+
+       var tr_data = $(".drag-table").children("tbody").children("tr");
+
+       tr_data.each(function(){
+
+            var tr_obj = $(this);
+            var data_obj = new Object();
+            data_obj['ID'] = 54;
+            data_obj['DepartID'] = 2221;
+            data_obj['Type'] = 'test';
+            data_obj['Year'] = "2015-10-10";
+
+            $(this).find("td").each(function(i, v){
+
+                if( ths[i] != 0 && ths[i] != undefined){
+
+                    data_obj[ths[i]] = $(this).text();
+
+                }
+
+            });
+
+            console.log(data_obj);
+
+            $.post(
+                "index.php?r=input/import",
+                data_obj,
+                function(data){
+                    
+                    if(data == "defail"){
+                        tr_obj.css("background-color", "red");
+                    }
+                    if(data == "success"){
+                        tr_obj.remove();
+                    }
+                }
+
+
+            );
+
+            data_tr = null;
+
+       });
+        
+    }
+
+});
+
+    
 
     $("#set-template").click(function(){
 
@@ -47,50 +119,23 @@
             <option value="1">默认模板</option>
         </select>
         <input type="button" value=" 模板设置 " id="set-template">
-        <input type="submit" value="确定">
+        <input type="button" value="导入" name="import">
     </form>
 
 
     <table class="drag-table">
         <thead>
         <tr>
-        <th class="table-zero"></th>
-        <th>NO</th>
-        <th>评估周期</th>
-        <th>进度</th>
-        <th>委托案号</th>
-        <th>委托部门</th>
-        <th>原审案号</th>
-        <th>案由</th>
-        <th>当事人1</th>
-        <th>当事人2</th>
-        <th>标的物</th>
-        <th>选定方式</th>
-        <th>选定日期</th>
-        <th>评估机构</th>
-        <th>收案日期</th>
-        <th>立案日期</th>
-        <th>立案周期</th>
-        <th>移交材料</th>
-        <th>委托日期</th>
-        <th>委托周期</th>
-        <th>勘验日期</th>
-        <th>撤回日期</th>
-        <th>暂缓日期</th>
-        <th>送达业务庭日期</th>
-        <th>缴费日期</th>
-        <th>结案日期</th>
-        <th>结案周期</th>
-        <th>评估价（万元）</th>
-        <th>跟踪评查情况</th>
-        <th>业务庭承办人</th>
-        <th>督办人</th>
-        <th>评估费用</th>
-        <th>评估师</th>
-        <th>评估师电话</th>
-        <th>承办人电话</th>
-        <th>督办人电话</th>
-        <th>备注</th>    
+        <th data-tpl="0" class="table-zero">dfas</th>
+        <?php
+           
+            $ths = Import::tpl(Yii::$app->request->get('tpl'));
+           
+            foreach ( $ths as $key => $value) {
+                echo '<th data-tpl="' . $key . '">' . $value . '</th>';
+            }
+
+        ?>
         </tr>
     </thead>
     <tbody>
