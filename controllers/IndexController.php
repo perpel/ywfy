@@ -33,6 +33,7 @@ class IndexController extends Controller{
         ];
     }
 
+
     public function actionIndex(){
 
         return $this->render("index");
@@ -53,6 +54,7 @@ class IndexController extends Controller{
         Yii::$app->user->logout();
 
         return $this->redirect("index.php?r=index/login");
+
     }
 
 }
