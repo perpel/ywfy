@@ -97,8 +97,10 @@
     width: 100%;
     background-color: white;
 }
+#import input{ margin:10px 8px 10px 8px;}
+#import input[type=submit]{ background:url(../images/script_btn.png) no-repeat; width:40px; height:20px; border:none; cursor:pointer;}
 
-
+#import select{ margin:10px 0 10px 0px;}
 #import table{
 
     -moz-user-select: none; /*火狐*/
@@ -110,6 +112,5 @@
 }
 
 #import table tr th{
-    
     white-space: nowrap;
 }

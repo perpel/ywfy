@@ -53,7 +53,7 @@
     </form>
 
 
-    <table class="drag-table">
+    <table class="drag-table" cellspacing="0">
         <thead>
         <tr>
         <th class="table-zero"></th>
