@@ -36,9 +36,9 @@ InputAsset::register($this);
                 <option value="">2004</option>
             </select>
         </li>
-    
+        <input name="ctrl" type="hidden" value="<?=Yii::$app->controller->id; ?>">
         <li class="fnt ico-refesh"><a href="index.php?r=input/<?= $actionId  ?>">刷新</a></li>
-        <li class="fnt ico-import" data-pop="pop"><span data-action="import">导入</span></li>
+        <li class="fnt ico-import" data-pop="pop"><span data-action="import" data-tpl="<?= $actionId  ?>">导入</span></li>
         <li class="fnt ico-add" data-pop="pop"><span data-action="add-<?= $actionId  ?>">增加</a></li>
         <li class="fnt ico-edit" data-pop="pop"><span data-action="edit-<?= $actionId  ?>">编辑</a></li>
         <li class="fnt ico-del"><span data-action="del">删除</span></li>

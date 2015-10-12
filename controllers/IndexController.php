@@ -11,7 +11,28 @@ use app\models\ContactForm;
 
 class IndexController extends Controller{
 
-	public $enableCsrfValidation = false;
+    public $enableCsrfValidation = false;
+
+    public function behaviors(){
+
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'logout'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'logout'],
+                        'roles' => ['@'],
+                    ]
+                ],
+                'denyCallback' => function () {
+                        return $this->redirect("index.php?r=index/login");
+                }
+            ],
+        ];
+    }
+
 
     public function actionIndex(){
 
@@ -20,15 +41,20 @@ class IndexController extends Controller{
 
     public function actionLogin(){
 
-    	$models = new LoginForm();
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            //var_dump(Yii::$app->user);
+            return $this->goBack();
+        }
+        return $this->renderPartial('login');
+    }
 
-    	if( $models->load( Yii::$app->request->post()) && $models->login() ){
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
 
-    		var_dump($models);
+        return $this->redirect("index.php?r=index/login");
 
-    	}
-
-    	return $this->renderPartial("login");
     }
 
 }

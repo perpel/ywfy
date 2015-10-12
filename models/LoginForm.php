@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
+use app\models\Personnel;
 
 /**
  * LoginForm is the model behind the login form.
@@ -12,7 +13,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
-    public $rememberMe = true;
+    public $rememberMe = false;
 
     private $_user = false;
 
@@ -39,40 +40,42 @@ class LoginForm extends Model
      * @param string $attribute the attribute currently being validated
      * @param array $params the additional name-value pairs given in the rule
      */
-    public function validatePassword($attribute, $params)
-    {
-        if (!$this->hasErrors()) {
-            $user = $this->getUser();
 
-            if (!$user || !$user->validatePassword($this->password)) {
-                $this->addError($attribute, 'Incorrect username or password.');
-            }
-        }
-    }
+ //登陆  
+    public function login()  
+    {  
+        if ($this->validate())  
+            return Yii::$app->user->login($this->getUser(), 3600*24*30);  
+        else  
+            return false;  
+    }  
 
-    /**
-     * Logs in a user using the provided username and password.
-     * @return boolean whether the user is logged in successfully
-     */
-    public function login()
-    {
-        if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
-        }
-        return false;
-    }
 
-    /**
-     * Finds user by [[username]]
-     *
-     * @return User|null
-     */
-    public function getUser()
-    {
-        if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
-        }
+//判断账号密码是否正确  
+    public function validatePassword($attribute, $params)  
+    {  
+        if (!$this->hasErrors())   
+        {  
+            $user = $this->getUser();  
+              
+            if (!$user)  
+            {  
+                $this->addError($attribute, '账号或密码不正确');  
+            }  
+              
+        }  
+    }  
 
-        return $this->_user;
-    }
+
+
+//根据邮箱和密码查询数据库  
+    public function getUser()  
+    {  
+        if ($this->_user === false)  
+        {  
+            $this->_user = Personnel::find()->where(['Number'=>$this->username,'Password'=>$this->password])->one();  
+        }  
+        return $this->_user;  
+    }  
+      
 }

@@ -15,8 +15,10 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        
         'user' => [
-            'identityClass' => 'app\models\User',
+            //'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\Personnel',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
