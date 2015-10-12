@@ -1,0 +1,575 @@
+2015-10-12 12:47:48 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=192....', 'root', '123456', NULL)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#12 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#13 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#18 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#19 [internal function]: app\controllers\IndexController->actionLogin()
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#26 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#11 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#12 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#16 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#17 [internal function]: app\controllers\IndexController->actionLogin()
+#18 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#19 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#24 {main}
+Additional Information:
+
+2015-10-12 12:46:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/login'
+]
+
+$_POST = [
+    'LoginForm' => [
+        'username' => 'test'
+        'password' => 'test'
+        'rememberMe' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => 'c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[5,null,2592000]\";}'
+    'PHPSESSID' => '48nrc1ij5ked5e4g2mros5p556'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuPmH8AAQEAAAtvXdkAAAAB'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '85'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=index/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_identity=c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B5%2Cnull%2C2592000%5D%22%3B%7D; PHPSESSID=48nrc1ij5ked5e4g2mros5p556'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48002'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=index/login'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=index/login'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444646808.562
+    'REQUEST_TIME' => 1444646808
+]
+2015-10-12 12:48:06 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=192....', 'root', '123456', NULL)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#12 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#13 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#18 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#19 [internal function]: app\controllers\IndexController->actionLogin()
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#26 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#11 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#12 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#16 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#17 [internal function]: app\controllers\IndexController->actionLogin()
+#18 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#19 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#24 {main}
+Additional Information:
+
+2015-10-12 12:47:05 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/login'
+]
+
+$_POST = [
+    'LoginForm' => [
+        'username' => 'test'
+        'password' => 'test'
+        'rememberMe' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => 'c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[5,null,2592000]\";}'
+    'PHPSESSID' => '48nrc1ij5ked5e4g2mros5p556'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuPqX8AAQEAAAtwlFMAAAAC'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '85'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=index/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_identity=c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B5%2Cnull%2C2592000%5D%22%3B%7D; PHPSESSID=48nrc1ij5ked5e4g2mros5p556'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48004'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=index/login'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=index/login'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444646825.955
+    'REQUEST_TIME' => 1444646825
+]
+2015-10-12 12:48:29 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=192....', 'root', '123456', NULL)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#12 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#13 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#18 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#19 [internal function]: app\controllers\IndexController->actionLogin()
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#26 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#11 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#12 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#16 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#17 [internal function]: app\controllers\IndexController->actionLogin()
+#18 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#19 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#24 {main}
+Additional Information:
+
+2015-10-12 12:47:29 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/login'
+]
+
+$_POST = [
+    'LoginForm' => [
+        'username' => '007'
+        'password' => '007'
+        'rememberMe' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => 'c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[5,null,2592000]\";}'
+    'PHPSESSID' => '48nrc1ij5ked5e4g2mros5p556'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuPwX8AAQEAAAtx2LwAAAAD'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '83'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=index/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_identity=c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B5%2Cnull%2C2592000%5D%22%3B%7D; PHPSESSID=48nrc1ij5ked5e4g2mros5p556'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48012'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=index/login'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=index/login'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444646849.534
+    'REQUEST_TIME' => 1444646849
+]
+2015-10-12 12:48:46 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:579
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(579): PDO->__construct('mysql:host=192....', 'root', '123456', NULL)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#11 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#12 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#13 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#18 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#19 [internal function]: app\controllers\IndexController->actionLogin()
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#23 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#24 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#25 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#26 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] 连接超时' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php:534
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(836): yii\db\Connection->open()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php(477): yii\db\Connection->getSlavePdo()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Connection.php(732): yii\db\Schema->quoteValue('<span class="st...')
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(172): yii\db\Connection->quoteValue('<span class="st...')
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(806): yii\db\Command->getRawSql()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#9 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#11 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#12 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#16 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#17 [internal function]: app\controllers\IndexController->actionLogin()
+#18 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#19 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#20 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#21 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#22 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#24 {main}
+Additional Information:
+
+2015-10-12 12:47:46 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/login'
+]
+
+$_POST = [
+    'LoginForm' => [
+        'username' => '007'
+        'password' => '007'
+        'rememberMe' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => 'c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[5,null,2592000]\";}'
+    'PHPSESSID' => '48nrc1ij5ked5e4g2mros5p556'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuP0n8AAQEAAAwdncgAAAAF'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '83'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=index/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_identity=c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B5%2Cnull%2C2592000%5D%22%3B%7D; PHPSESSID=48nrc1ij5ked5e4g2mros5p556'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48015'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=index/login'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=index/login'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444646866.368
+    'REQUEST_TIME' => 1444646866
+]
+2015-10-12 12:50:00 [127.0.0.1][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.apersonnel' doesn't exist' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php:837
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(837): PDOStatement->execute()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#5 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#6 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#11 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#12 [internal function]: app\controllers\IndexController->actionLogin()
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.apersonnel' doesn't exist
+The SQL being executed was: SELECT * FROM `apersonnel` WHERE (`Number`='007') AND (`Password`='007')' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(373): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(243): yii\db\Command->queryOne()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(300): yii\db\Query->one('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/models/LoginForm.php(76): yii\db\ActiveQuery->one()
+#5 /opt/lampp/htdocs/ywfy/models/LoginForm.php(59): app\models\LoginForm->getUser()
+#6 [internal function]: app\models\LoginForm->validatePassword('<span class="st...', '<span class="ke...')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/InlineValidator.php(69): call_user_func('[<span class="t...', '<span class="st...', '<span class="ke...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/validators/Validator.php(240): yii\validators\InlineValidator->validateAttribute(Object(app\models\LoginForm), '<span class="st...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Model.php(352): yii\validators\Validator->validateAttributes(Object(app\models\LoginForm), '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/models/LoginForm.php(47): yii\base\Model->validate()
+#11 /opt/lampp/htdocs/ywfy/controllers/IndexController.php(45): app\models\LoginForm->login()
+#12 [internal function]: app\controllers\IndexController->actionLogin()
+#13 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#14 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#15 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#16 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#17 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'archives.apersonnel' doesn't exist
+)
+
+2015-10-12 12:50:00 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'index/login'
+]
+
+$_POST = [
+    'LoginForm' => [
+        'username' => '007'
+        'password' => '007'
+        'rememberMe' => '0'
+    ]
+]
+
+$_COOKIE = [
+    '_identity' => 'c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[5,null,2592000]\";}'
+    'PHPSESSID' => '48nrc1ij5ked5e4g2mros5p556'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuQWH8AAQEAAAylS4gAAAAG'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '83'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=index/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_identity=c34cf1ab8618b3545e08c89e1d8ed483cbfd7f53fd277449a88c40be3e982155a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B5%2Cnull%2C2592000%5D%22%3B%7D; PHPSESSID=48nrc1ij5ked5e4g2mros5p556'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48026'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=index/login'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=index/login'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444647000.395
+    'REQUEST_TIME' => 1444647000
+]

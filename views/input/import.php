@@ -3,15 +3,21 @@ use app\models\Import;
 ?>
 
 <script>
+
+
     var parent = $("#import").parent().parent(".pop");
-    parent.children(".pop-title").append("当前位置：导入");
+    parent.children(".pop-title").append("当前位置：导入");/*
     parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">');
     parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">');
+<<<<<<< HEAD
     
 
 $("input[name='file']:file").change(function(){
 
     $("form").submit();
+=======
+   */ 
+>>>>>>> b2175215012520954ebabd236c5d3c3a06c7339b
     $("iframe").load(function(){
         var v = $("iframe").contents().find("body").html();
         if(v != "error"){
@@ -123,7 +129,7 @@ $(":button[name='import']").click(function(){
     </form>
 
 
-    <table class="drag-table">
+    <table class="drag-table" cellspacing="0">
         <thead>
         <tr>
         <th data-tpl="0" class="table-zero">dfas</th>

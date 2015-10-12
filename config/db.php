@@ -3,11 +3,11 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=192.168.17.50;dbname=archives',
+    'dsn' => 'mysql:host=localhost;dbname=archives',
     'username' => 'root',
-    'password' => '123456',
+    'password' => '', 
     'charset' => 'utf8',
-    'tablePrefix'=>'a',
+    'tablePrefix'=>'a_',
 ];
 
 
