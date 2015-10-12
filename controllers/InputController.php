@@ -145,7 +145,6 @@ class InputController extends Controller{
                 $path = '../uploads/' . $model->file->baseName . '.' . $model->file->extension;
                 $model->file->saveAs($path);
                 
-
                 error_reporting(E_ALL);
                 date_default_timezone_set('Asia/shanghai');
                 $objPHPExcel = new \PHPExcel();
