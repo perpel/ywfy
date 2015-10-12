@@ -7,7 +7,7 @@ return [
     'username' => 'root',
     'password' => '123456',
     'charset' => 'utf8',
-    'tablePrefix'=>'a',
+    'tablePrefix'=>'a_',
 ];
 
 
