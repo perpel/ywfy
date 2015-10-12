@@ -8,6 +8,7 @@ require(__DIR__ . '/../vendor/autoload.php');
 require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
 require(__DIR__ . '/../vendor/phpexcel/PHPExcel.php');
+require(__DIR__ . '/../vendor/tcpdf/tcpdf.php');
 
 $config = require(__DIR__ . '/../config/web.php');
 

@@ -118,8 +118,8 @@ AppAsset::register($this);
 <div class="header bg-img">
     <h1>义乌市人民法院委托案件电子管理系统</h1>
     <div class="login-message">
-        <span class="login-number">2003</span>
-        <span class="login-name">将小平</span>
+        <span class="login-number">(<?= Yii::$app->user->identity->Number ?>)</span>
+        <span class="login-name"><?= Yii::$app->user->identity->Name ?></span>
         <span class="welcom-msg">欢迎您登录本系统</span>
         <span class="clock"><?= time();?></span>
     </div>

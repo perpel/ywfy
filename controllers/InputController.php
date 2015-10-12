@@ -17,6 +17,31 @@ class InputController extends Controller{
     public $layout = "input";
     public $enableCsrfValidation = false;
 
+    public function behaviors(){
+
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['index', 'assess', 'identify', 'auction', 'project-cost', 'bust'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'assess', 'identify', 'auction', 'project-cost', 'bust'],
+                        'roles' => ['@'],
+                    ]
+                ],
+                'denyCallback' => function () {
+                        
+                        echo "<script>window.parent.location.assign('index.php?r=index/login');</script>";
+
+                }
+            ],
+        ];
+    }
+
+
+
+
     public function actionIndex(){
         
         return $this->render("index");
@@ -27,18 +52,26 @@ class InputController extends Controller{
  
     public function actionAssess(){
 
-        $assess_model = new Detail;
-        echo "<pre>";
-        var_dump($assess_model->attributeLabels());
-        echo "<pre>";
-        exit;
-        $assess_info = array();
+        $assess_info = Detail::find()->asArray()->all();
         return $this->render("index", ["assess_info"=>$assess_info]);
     }
 
     public function actionAddAssess(){
 
-        echo $this->renderPartial("edit/assess");
+        $model = new Detail();
+        $request = Yii::$app->request;
+        if($request->isPost){
+
+            if( $model->load($request->post()) && $model->save() ){
+
+                return $this->redirect("index.php?r=input/assess");
+                exit;
+            }
+
+            
+        }
+
+        echo $this->renderPartial("edit/assess", ["model"=>$model]);
     }
 
     public function actionEditAssess(){
@@ -127,13 +160,27 @@ class InputController extends Controller{
 
         if (Yii::$app->request->isPost) {
 
+            $model = new Detail();
+            $post_data = Yii::$app->request->post();
             
+            foreach ( $post_data as $key => $value) {
+
+                $model->$key = $value;
+            }
+
+            if( $model->validate() && $model->save() ){
+                    echo "success";
+            }else{
+                    echo "defail";
+            }
+            exit;
         }
         
        echo $this->renderPartial("import");
 
     }
 
+    //importList**********
     public function actionImportList(){
 
         $model = new UploadForm();
@@ -142,10 +189,10 @@ class InputController extends Controller{
             
             $model->file = UploadedFile::getInstanceByName('file');
             if ($model->validate()) { 
+
                 $path = '../uploads/' . $model->file->baseName . '.' . $model->file->extension;
                 $model->file->saveAs($path);
                 
-
                 error_reporting(E_ALL);
                 date_default_timezone_set('Asia/shanghai');
                 $objPHPExcel = new \PHPExcel();

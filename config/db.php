@@ -1,5 +1,17 @@
 <?php
 
+
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=192.168.17.50;dbname=archives',
+    'username' => 'root',
+    'password' => '123456',
+    'charset' => 'utf8',
+    'tablePrefix'=>'a_',
+];
+
+
+/*
 return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=archives',
@@ -8,3 +20,4 @@ return [
     'charset' => 'utf8',
     'tablePrefix'=>'a_',
 ];
+*/
