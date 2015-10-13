@@ -6,11 +6,32 @@ use yii\helpers\Html;
 ?>
 
 
-<h1>Edit-Assess</h1>
-
 <?php $form = ActiveForm::begin(); ?>
-
-<table>
+<table class="tablelist" cellspacing="0">
+	<tr>
+       <td><div class=""><label>年度  </label><select><option>2013</option><option>2014</option><option>2015</option></select></div></td>
+    	<td><div class=""><label>委托案号 </label><input type="tel" /></div></td>
+        <td><div class=""><label>督办人</label><input type="tel" /></div></td>
+       
+    </tr>
+    <tr>
+       <td><div class=""><label>督办人电话  </label><input type="tel" /></div></td>
+        <td><div class=""><label>原审案号</label><input type="tel" /></div></td>
+        <td><div class=""><label>案由  </label><input type="tel" /></div></td>
+    </tr>
+    <tr>
+       <td><div class=""><label>结案周期 </label><input type="tel" /></div></td>
+    	<td><div class=""><label>通知缴费日期 </label><input type="tel" /></div></td>
+        <td><div class=""><label>评估费用</label><input type="tel" /></div></td>
+       
+    </tr>
+    <tr>
+       <td><div class=""><label>送达业务庭日期</label><input type="tel" /></div></td>
+        <td><div class=""><label>跟踪评查情况</label><input type="tel" /></div></td>
+        <td><div class=""><label>案由</label><input type="tel" /></div></td>
+    </tr>
+</table>
+<!--<table class="tablelist">
     
     <tr>
 
@@ -209,7 +230,7 @@ use yii\helpers\Html;
         <td colspan="7"><textarea name="" id="" cols="30" rows="10"></textarea></td>
     </tr>
 
-</table>
+</table>-->
 
 <?=Html::submitButton('提交')?>
 
