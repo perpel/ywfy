@@ -573,3 +573,832 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1444647000.395
     'REQUEST_TIME' => 1444647000
 ]
+2015-10-12 13:09:43 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/premission' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('premission', Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sys/premission', Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-12 13:09:43 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/premission'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    '_identity' => 'de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuU938AAQEAAAzAtgYAAAAL'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=v2v5o7i4fp19h513upodcspq67; _csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; _identity=de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48476'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/premission'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/premission'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444648183.667
+    'REQUEST_TIME' => 1444648183
+]
+2015-10-12 13:09:47 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/password' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('password', Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sys/password', Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-12 13:09:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/password'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    '_identity' => 'de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuU@38AAQEAAAym3J0AAAAH'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=v2v5o7i4fp19h513upodcspq67; _csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; _identity=de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48477'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/password'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/password'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444648187.159
+    'REQUEST_TIME' => 1444648187
+]
+2015-10-12 13:09:49 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/log' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('log', Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sys/log', Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-12 13:09:48 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/log'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    '_identity' => 'de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuU-H8AAQEAAAty9WIAAAAE'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=v2v5o7i4fp19h513upodcspq67; _csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; _identity=de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48478'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/log'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/log'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444648188.947
+    'REQUEST_TIME' => 1444648188
+]
+2015-10-12 13:09:49 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/unit' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('unit', Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('sys/unit', Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-12 13:09:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/unit'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    '_identity' => 'de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuU-X8AAQEAAA59-rYAAAAI'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=v2v5o7i4fp19h513upodcspq67; _csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; _identity=de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48479'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/unit'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/unit'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444648189.883
+    'REQUEST_TIME' => 1444648189
+]
+2015-10-12 13:10:01 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "definiation/case".' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('definiation/cas...', Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-12 13:10:01 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'definiation/case'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    '_identity' => 'de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[2,null,2592000]\";}'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VhuVCX8AAQEAAAwdndoAAAAF'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=v2v5o7i4fp19h513upodcspq67; _csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; _identity=de2c9affcb8e4b965924c88b480ca4ab4767299f203bcaf7e14e30b4479e4779a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B2%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '48480'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=definiation/case'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=definiation/case'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444648201.191
+    'REQUEST_TIME' => 1444648201
+]
+2015-10-12 15:44:59 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php:837
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(837): PDOStatement->execute()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist
+The SQL being executed was: SELECT * FROM `a_detail`' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'archives.a_detail' doesn't exist
+)
+
+2015-10-12 15:44:59 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/assess'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5W38AAQEAAA@VfBUAAAAB'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49267'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/assess'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/assess'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657499.491
+    'REQUEST_TIME' => 1444657499
+]
+2015-10-12 15:45:05 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in /opt/lampp/htdocs/ywfy/views/input/index.php:8
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/views/input/index.php(8): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', '/opt/lampp/htdo...', 8, Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(325): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\InputController))
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('index', Array, Object(app\controllers\InputController))
+#5 /opt/lampp/htdocs/ywfy/controllers/InputController.php(86): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\InputController->actionIdentify()
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('identify', Array)
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('input/identify', Array)
+#11 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-12 15:45:05 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/identify'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5YX8AAQEAAAtwlIYAAAAC'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/identify'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/identify'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657505.317
+    'REQUEST_TIME' => 1444657505
+]
+2015-10-12 15:45:05 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php(58): serialize(Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/log/Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/log/Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2015-10-12 15:45:05 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/identify'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5YX8AAQEAAAtwlIYAAAAC'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49270'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/identify'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/identify'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657505.317
+    'REQUEST_TIME' => 1444657505
+]
+2015-10-12 15:45:06 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php:837
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(837): PDOStatement->execute()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist
+The SQL being executed was: SELECT * FROM `a_detail`' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'archives.a_detail' doesn't exist
+)
+
+2015-10-12 15:45:06 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/assess'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5Yn8AAQEAABEiOC0AAAAJ'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49271'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/assess'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/assess'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657506.731
+    'REQUEST_TIME' => 1444657506
+]
+2015-10-12 15:45:07 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Invalid argument supplied for foreach()' in /opt/lampp/htdocs/ywfy/views/input/index.php:8
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/views/input/index.php(8): yii\base\ErrorHandler->handleError(2, 'Invalid argumen...', '/opt/lampp/htdo...', 8, Array)
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(325): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/opt/lampp/htdo...', Array)
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/opt/lampp/htdo...', Array, Object(app\controllers\InputController))
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('index', Array, Object(app\controllers\InputController))
+#5 /opt/lampp/htdocs/ywfy/controllers/InputController.php(86): yii\base\Controller->render('index', Array)
+#6 [internal function]: app\controllers\InputController->actionIdentify()
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('identify', Array)
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('input/identify', Array)
+#11 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-12 15:45:07 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/identify'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5Y38AAQEAAA3LHCUAAAAG'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49272'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/identify'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/identify'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657507.444
+    'REQUEST_TIME' => 1444657507
+]
+2015-10-12 15:45:07 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'PDOException' with message 'You cannot serialize or unserialize PDO instances' 
+
+in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php:58
+
+Stack trace:
+#0 [internal function]: PDO->__sleep()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php(58): serialize(Array)
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2-debug/LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/log/Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#4 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/log/Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#5 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\log\Logger->flush(true)
+#6 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#7 {main}
+2015-10-12 15:45:07 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/identify'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5Y38AAQEAAA3LHCUAAAAG'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49272'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/identify'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/identify'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657507.444
+    'REQUEST_TIME' => 1444657507
+]
+2015-10-12 15:45:10 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php:837
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(837): PDOStatement->execute()
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'archives.a_detail' doesn't exist
+The SQL being executed was: SELECT * FROM `a_detail`' in /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Schema.php:628
+Stack trace:
+#0 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(852): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Command.php(359): yii\db\Command->queryInternal('<span class="st...', '<span class="ke...')
+#2 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/db/ActiveQuery.php(132): yii\db\Query->all('<span class="ke...')
+#4 /opt/lampp/htdocs/ywfy/controllers/InputController.php(55): yii\db\ActiveQuery->all()
+#5 [internal function]: app\controllers\InputController->actionAssess()
+#6 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array('[<span class="t...', '[]')
+#7 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams('[<span class="s...')
+#8 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('<span class="st...', '[<span class="s...')
+#9 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('<span class="st...', '[<span class="s...')
+#10 /opt/lampp/htdocs/ywfy/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /opt/lampp/htdocs/ywfy/web/index.php(15): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'archives.a_detail' doesn't exist
+)
+
+2015-10-12 15:45:10 [127.0.0.1][6][v2v5o7i4fp19h513upodcspq67][info][application] $_GET = [
+    'r' => 'input/assess'
+]
+
+$_COOKIE = [
+    '_csrf' => '9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9\";}'
+    'PHPSESSID' => 'v2v5o7i4fp19h513upodcspq67'
+    '_identity' => '5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a:2:{i:0;s:9:\"_identity\";i:1;s:16:\"[6,null,2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 6
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'Vhu5Zn8AAQEAAAwdnesAAAAF'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/45.0.2454.85 Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => '_csrf=9008ea9d48aaf2c8545f2d29010b9398f0fe878313b48b33feae7013547d7cc9a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22j1p8vqcA9Iw-zzW204Gjg_5RFOHUnVq9%22%3B%7D; PHPSESSID=v2v5o7i4fp19h513upodcspq67; _identity=5bf114718b93f13e3cdea3ae08d70e3ee51fc958d9d32d2897aab025cd29fd24a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A16%3A%22%5B6%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.16 (Unix) OpenSSL/1.0.1p PHP/5.6.12 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/opt/lampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/opt/lampp/htdocs'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/opt/lampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '49273'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/assess'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/assess'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444657510.453
+    'REQUEST_TIME' => 1444657510
+]
