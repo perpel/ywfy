@@ -31,6 +31,8 @@ class InputAsset extends AssetBundle
 
     public $depends = [
         'yii\web\YiiAsset',
+        'yii\validators\ValidationAsset',
+        'yii\widgets\ActiveFormAsset'
         //'yii\bootstrap\BootstrapAsset',
     ];
 

@@ -114,3 +114,9 @@
 #import table tr th{
     white-space: nowrap;
 }
+/*增加弹窗*/
+.tablelist{ width:100%; border:1px solid #cacaca; border-bottom:none;}
+.tablelist td{ border:1px solid #cacaca; line-height:28px; border-right:none; border-top:none;}
+.tablelist td select{ width:85%; border:none; height:22px; float:left; text-indent:1em;}
+.tablelist td label{ font-size:14px; float:left; padding:0 5px 0 5px; background:#ddecfb;}
+.tablelist td input{  height:26px; float:left; border:none;text-indent:1em;}

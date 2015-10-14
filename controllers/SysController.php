@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\Detail;
+use app\models\Conclusion;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
 use app\models\Personnel;
@@ -20,8 +20,9 @@ class SysController extends Controller{
 
     public function actionUser(){
 
+ $model = new Conclusion();
 
-        return $this->render("user");
+        return $this->render("user", ["model"=>$model]);
     }
 
     public function actionAddUser(){

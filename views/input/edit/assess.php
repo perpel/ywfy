@@ -6,17 +6,23 @@ use yii\helpers\Html;
 ?>
 
 
-<h1>Edit-Assess</h1>
+<?php $form = ActiveForm::begin(
 
-<?php $form = ActiveForm::begin(); ?>
+array(
+            'enableAjaxValidation' => true,
+            
+        )
 
-<table>
+); ?>
+<table class="tablelist" cellspacing="0">
+	
+<!--<table class="tablelist">-->
+
     
     <tr>
 
-        <input type="text" name="Detail[ID]" value=12>
-        <input type="text" name="Detail[DepartID]" value=2014>
-        <input type="text" name="Detail[Type]" value="TEST">
+        <input type="hidden" name="Conclusion[DepartID]" value="<?=Yii::$app->user->identity->DepartmentNumber ?>">
+        <input type="hidden" name="Conclusion[Type]" value="<?=$type?>">
 
         <td>
             <?php $d = ["2011"=>"2011","2012"=>"2012","2013"=>"2013","2014"=>"2014","2015"=>"2015"]; ?>
@@ -26,7 +32,7 @@ use yii\helpers\Html;
         
         <td>
             
-            <?= $form->field($model, 'FlowNumber')->textInput() ?>
+            <?= $form->field($model, 'FlowNumber',['enableAjaxValidation'=>true])->textInput() ?>
             
         </td>
         <td>
@@ -166,12 +172,12 @@ use yii\helpers\Html;
         <?= $form->field($model, 'GetbackDate')->textInput() ?> 
         </td>
         
-        <td>结案周期</td>
-        <td><input type="text"></td>
+        <!-- <td>结案周期</td>
+        <td><input type="text"></td> -->
         
     </tr>
     
-    <tr>
+   <!--  <tr>
         
         <td>进度</td>
         <td><input type="text"></td>
@@ -207,7 +213,7 @@ use yii\helpers\Html;
         
         <td>备注</td>
         <td colspan="7"><textarea name="" id="" cols="30" rows="10"></textarea></td>
-    </tr>
+    </tr> -->
 
 </table>
 

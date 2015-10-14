@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\Detail;
+use app\models\Conclusion;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
 
@@ -39,9 +39,6 @@ class InputController extends Controller{
         ];
     }
 
-
-
-
     public function actionIndex(){
         
         return $this->render("index");
@@ -52,17 +49,17 @@ class InputController extends Controller{
  
     public function actionAssess(){
 
-        $assess_info = Detail::find()->asArray()->all();
+        $assess_info = Conclusion::find()->asArray()->all();
         return $this->render("index", ["assess_info"=>$assess_info]);
     }
 
     public function actionAddAssess(){
 
-        $model = new Detail();
+        $model = new Conclusion();
         $request = Yii::$app->request;
         if($request->isPost){
 
-            if( $model->load($request->post()) && $model->save() ){
+            if( $model->load($request->post()) && $model->validate() ){
 
                 return $this->redirect("index.php?r=input/assess");
                 exit;
@@ -71,7 +68,7 @@ class InputController extends Controller{
             
         }
 
-        echo $this->renderPartial("edit/assess", ["model"=>$model]);
+        echo $this->renderPartial("edit/assess", ["model"=>$model, "type"=>"评估"]);
     }
 
     public function actionEditAssess(){
@@ -160,7 +157,7 @@ class InputController extends Controller{
 
         if (Yii::$app->request->isPost) {
 
-            $model = new Detail();
+            $model = new Conclusion();
             $post_data = Yii::$app->request->post();
             
             foreach ( $post_data as $key => $value) {
@@ -252,7 +249,10 @@ class InputController extends Controller{
     //Print PDF Document to Windows
     public function actionPrint(){
 
-        echo $this->renderPartial("print");
+        $model = new Conclusion();
+        //return $this->render("index");
+
+        return $this->renderPartial("print", ["model"=>$model]);
         
     }
 

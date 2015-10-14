@@ -2,6 +2,13 @@
 use app\models\Personnel;
 ?>
 
+<?php
+
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+
+?>
+
 <?php $actionId=Yii::$app->controller->action->id;  ?>
 
 <div id="section-bar">
@@ -75,3 +82,10 @@ use app\models\Personnel;
             </tbody>
 
         </table>
+
+<?php $form = ActiveForm::begin(); ?>
+
+        <?= $form->field($model, 'CaseNumber')->textInput() ?>  
+
+
+<?php ActiveForm::end(); ?>

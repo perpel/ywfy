@@ -4,88 +4,6 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "{{%conclusion}}".
- *
- * @property integer $ID
- * @property string $DepartID
- * @property string $Type
- * @property string $Year
- * @property string $FlowNumber
- * @property string $CaseNumber
- * @property string $Case
- * @property string $SubjectMatter
- * @property string $LitigantOne
- * @property string $LitigantTwo
- * @property string $TransferMaterial
- * @property string $Supervise
- * @property string $Chambers
- * @property string $Agency
- * @property string $JudgmentExecuteReceives
- * @property string $TropschOffice
- * @property integer $SendCycle
- * @property string $SendDate
- * @property integer $EntrustCycle
- * @property string $MaterialsCompletionDate
- * @property string $GetbackDate
- * @property integer $Cycle
- * @property string $Result
- * @property string $Price
- * @property integer $UnitID
- * @property string $InputMan
- * @property string $InputDate
- * @property string $EditMan
- * @property string $EditDate
- * @property string $Remark
- * @property string $EntrustDeparment
- * @property string $ChoiceWay
- * @property string $Money
- * @property integer $IsAdoption
- * @property string $FllowResult
- * @property string $Time1
- * @property string $Status1
- * @property string $Price1
- * @property string $Time2
- * @property string $Status2
- * @property string $Price2
- * @property string $Time3
- * @property string $Status3
- * @property string $Price3
- * @property string $Time4
- * @property string $BeginDate
- * @property string $IdentifiedType
- * @property string $IdentifiedCondition
- * @property string $ChoicedDate
- * @property string $FirstDraftDate
- * @property string $AnnouncementDate1
- * @property string $StartAuctionPrice1
- * @property string $AnnouncementDate2
- * @property string $StartAuctionPrice2
- * @property string $AnnouncementDate3
- * @property string $StartAuctionPrice3
- * @property string $NotifyPaymentDate
- * @property string $ChargesDate
- * @property string $SiteSurveyDate
- * @property string $IdentifiedResult
- * @property string $Unadoption
- * @property string $SourceIdentifiedDepartment
- * @property string $SourceIdentifiedResult
- * @property string $UndertakerTel
- * @property string $SuperviseTel
- * @property string $TotalDate
- * @property string $AuctionStatus
- * @property string $AuctionPrice
- * @property string $AuctionDate
- * @property string $SuspendedDate
- * @property string $Assessor
- * @property string $AssessorTel
- * @property string $DeliveryCourtDate
- * @property string $SaleDate
- * @property string $SalePrice
- * @property string $SaleStatus
- * @property string $RetractDate
- * @property string $TranVersion
- */
 class Conclusion extends \yii\db\ActiveRecord
 {
     /**
@@ -102,7 +20,10 @@ class Conclusion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['DepartID', 'Type', 'Year', 'FlowNumber', 'CaseNumber', 'Case'], 'required'],
+            [['DepartID', 'Type', 'Year'], 'required'],
+            [['FlowNumber'], 'required', 'message'=>'委托案号必填'],
+            [['CaseNumber'], 'required', 'message'=>'原审案号必填'],
+            [['Case'], 'required', 'message'=>'案由必填'],
             [['DepartID', 'Price', 'Money', 'Price1', 'Price2', 'Price3', 'StartAuctionPrice1', 'StartAuctionPrice2', 'StartAuctionPrice3', 'AuctionPrice', 'SalePrice'], 'number'],
             [['SubjectMatter', 'IdentifiedCondition', 'IdentifiedResult'], 'string'],
             [['JudgmentExecuteReceives', 'TropschOffice', 'SendDate', 'MaterialsCompletionDate', 'GetbackDate', 'InputDate', 'EditDate', 'Time1', 'Time2', 'Time3', 'Time4', 'BeginDate', 'ChoicedDate', 'FirstDraftDate', 'AnnouncementDate1', 'AnnouncementDate2', 'AnnouncementDate3', 'NotifyPaymentDate', 'ChargesDate', 'SiteSurveyDate', 'TotalDate', 'AuctionDate', 'SuspendedDate', 'DeliveryCourtDate', 'SaleDate', 'RetractDate'], 'safe'],
