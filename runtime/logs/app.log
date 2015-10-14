@@ -1000,3 +1000,1955 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1444631218.278
     'REQUEST_TIME' => 1444631218
 ]
+2015-10-13 10:45:48 [127.0.0.1][-][-][error][PHPExcel_Reader_Exception] exception 'PHPExcel_Reader_Exception' with message 'Could not open ../uploads/pg.xls for reading! File does not exist.' in D:\xampp\htdocs\ywfy\vendor\phpexcel\PHPExcel\Reader\Excel5.php:443
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\phpexcel\PHPExcel\IOFactory.php(268): PHPExcel_Reader_Excel5->canRead('../uploads/pg.x...')
+#1 D:\xampp\htdocs\ywfy\controllers\InputController.php(199): PHPExcel_IOFactory::createReaderForFile('../uploads/pg.x...')
+#2 [internal function]: app\controllers\InputController->actionImportList()
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('import-list', Array)
+#6 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/import-li...', Array)
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#9 {main}
+2015-10-13 10:45:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/import-list'
+]
+
+$_POST = [
+    'template' => '1'
+]
+
+$_FILES = [
+    'file' => [
+        'name' => '092232wcjjyl8cfrk17psj.jpg'
+        'type' => 'image/jpeg'
+        'tmp_name' => 'D:\\xampp\\tmp\\php470F.tmp'
+        'error' => 0
+        'size' => 37761
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '38057'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryGcD71pMsW0AAf8kZ'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '51936'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=input/import-list'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/import-list'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704347.946
+    'REQUEST_TIME' => 1444704347
+]
+2015-10-13 10:45:48 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(PHPExcel_Reader_Exception))
+#6 {main}
+2015-10-13 10:45:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/import-list'
+]
+
+$_POST = [
+    'template' => '1'
+]
+
+$_FILES = [
+    'file' => [
+        'name' => '092232wcjjyl8cfrk17psj.jpg'
+        'type' => 'image/jpeg'
+        'tmp_name' => 'D:\\xampp\\tmp\\php470F.tmp'
+        'error' => 0
+        'size' => 37761
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '38057'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryGcD71pMsW0AAf8kZ'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '51936'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=input/import-list'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/import-list'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704347.946
+    'REQUEST_TIME' => 1444704347
+]
+2015-10-13 10:46:32 [127.0.0.1][-][-][error][PHPExcel_Reader_Exception] exception 'PHPExcel_Reader_Exception' with message 'Could not open ../uploads/pg.xls for reading! File does not exist.' in D:\xampp\htdocs\ywfy\vendor\phpexcel\PHPExcel\Reader\Excel5.php:443
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\phpexcel\PHPExcel\IOFactory.php(268): PHPExcel_Reader_Excel5->canRead('../uploads/pg.x...')
+#1 D:\xampp\htdocs\ywfy\controllers\InputController.php(199): PHPExcel_IOFactory::createReaderForFile('../uploads/pg.x...')
+#2 [internal function]: app\controllers\InputController->actionImportList()
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('import-list', Array)
+#6 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/import-li...', Array)
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#9 {main}
+2015-10-13 10:46:32 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/import-list'
+]
+
+$_POST = [
+    'template' => '1'
+]
+
+$_FILES = [
+    'file' => [
+        'name' => '6229467_211557442362_2[1].jpg'
+        'type' => 'image/jpeg'
+        'tmp_name' => 'D:\\xampp\\tmp\\phpF385.tmp'
+        'error' => 0
+        'size' => 127430
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '127729'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary0H3zNGtjsUitFRjP'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '51959'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=input/import-list'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/import-list'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704392.123
+    'REQUEST_TIME' => 1444704392
+]
+2015-10-13 10:46:32 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(PHPExcel_Reader_Exception))
+#6 {main}
+2015-10-13 10:46:32 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/import-list'
+]
+
+$_POST = [
+    'template' => '1'
+]
+
+$_FILES = [
+    'file' => [
+        'name' => '6229467_211557442362_2[1].jpg'
+        'type' => 'image/jpeg'
+        'tmp_name' => 'D:\\xampp\\tmp\\phpF385.tmp'
+        'error' => 0
+        'size' => 127430
+    ]
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '127729'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://127.0.0.1'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary0H3zNGtjsUitFRjP'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '51959'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=input/import-list'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/import-list'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704392.123
+    'REQUEST_TIME' => 1444704392
+]
+2015-10-13 04:53:50 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:5
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(5): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 5, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:53:50 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Nl95UG5yaDdsCyZ9PAAPdUc.KzoCHwwCbDwvJyskMWhTLxg5AwA7Dw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52071'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704830.449
+    'REQUEST_TIME' => 1444704830
+]
+2015-10-13 04:53:50 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:53:50 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Nl95UG5yaDdsCyZ9PAAPdUc.KzoCHwwCbDwvJyskMWhTLxg5AwA7Dw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52071'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704830.449
+    'REQUEST_TIME' => 1444704830
+]
+2015-10-13 04:53:58 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:5
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(5): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 5, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:53:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Q084aGRCcUkZG2dFNjAWCzIuagIILxV8GSxuHyEUKBYmP1kBCTAicQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52079'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704838.026
+    'REQUEST_TIME' => 1444704838
+]
+2015-10-13 04:53:58 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:53:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Q084aGRCcUkZG2dFNjAWCzIuagIILxV8GSxuHyEUKBYmP1kBCTAicQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52079'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704838.026
+    'REQUEST_TIME' => 1444704838
+]
+2015-10-13 04:54:12 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:54:12 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Nmx2NUxlclZsOCkYHhcVFEcNJF8gCBZjbA8gQgkzKwlTHBdcIRchbg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52084'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704852.229
+    'REQUEST_TIME' => 1444704852
+]
+2015-10-13 04:54:12 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:54:12 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Nmx2NUxlclZsOCkYHhcVFEcNJF8gCBZjbA8gQgkzKwlTHBdcIRchbg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52084'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704852.229
+    'REQUEST_TIME' => 1444704852
+]
+2015-10-13 04:54:21 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:54:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Z2VTWlRrU1U9MQx3Bhk0FxYEATA4BjdgPQYFLRE9CgoCFTIzORkAbQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52098'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704861.176
+    'REQUEST_TIME' => 1444704861
+]
+2015-10-13 04:54:21 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:54:21 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '78qdhmecfip432qoapmm0flga1'
+    '_csrf' => '741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Z2VTWlRrU1U9MQx3Bhk0FxYEATA4BjdgPQYFLRE9CgoCFTIzORkAbQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=78qdhmecfip432qoapmm0flga1; _csrf=741dcc17d87945269ddd36e38e438596c82d130955bed64082a6c7bd46011427a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ZT_-RrgBqaRjlmd5ZcVwEVY_epaimrS8%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52098'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704861.176
+    'REQUEST_TIME' => 1444704861
+]
+2015-10-13 04:54:45 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:54:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'c1RSQ1U4LmY.ZhRuM1JcJz44DQEUXWVfJGYmERcBVhA6IxgxCnJ.EQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52115'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704884.953
+    'REQUEST_TIME' => 1444704884
+]
+2015-10-13 04:54:45 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:54:44 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'c1RSQ1U4LmY.ZhRuM1JcJz44DQEUXWVfJGYmERcBVhA6IxgxCnJ.EQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52115'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704884.953
+    'REQUEST_TIME' => 1444704884
+]
+2015-10-13 04:55:18 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:55:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'dzgub3hKeEQ6CmhCHiAKBTpUcS05LzN9IApaPTpzADI.T2QdJwAoMw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52144'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704918.197
+    'REQUEST_TIME' => 1444704918
+]
+2015-10-13 04:55:18 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:55:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'dzgub3hKeEQ6CmhCHiAKBTpUcS05LzN9IApaPTpzADI.T2QdJwAoMw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52144'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704918.197
+    'REQUEST_TIME' => 1444704918
+]
+2015-10-13 04:55:41 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:55:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Rmc4T1NoQmoLVX5iNQIwKwsLZw0SDQlTEVVMHRFROhwPEHI9DCISHQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52157'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704941.365
+    'REQUEST_TIME' => 1444704941
+]
+2015-10-13 04:55:41 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:55:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qbmcgujf4irkonfg8r316r56m5'
+    '_csrf' => '89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'Rmc4T1NoQmoLVX5iNQIwKwsLZw0SDQlTEVVMHRFROhwPEHI9DCISHQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qbmcgujf4irkonfg8r316r56m5; _csrf=89c8c827475a5f9f3c1467938a3155efcd15ffe6e151fece48956062cfc50c78a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22M2F-fjrAMl_BAeK9W2tRB9xvIwJr_JPw%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52157'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704941.365
+    'REQUEST_TIME' => 1444704941
+]
+2015-10-13 04:56:05 [127.0.0.1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: actionId' in D:\xampp\htdocs\ywfy\views\input\print.php:15
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\views\input\print.php(15): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\xampp\htdocs...', 15, Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(325): require('D:\xampp\htdocs...')
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\xampp\htdocs...', Array)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\xampp\htdocs...', Array, Object(app\controllers\InputController))
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(402): yii\base\View->render('print', Array, Object(app\controllers\InputController))
+#5 D:\xampp\htdocs\ywfy\controllers\InputController.php(255): yii\base\Controller->renderPartial('print')
+#6 [internal function]: app\controllers\InputController->actionPrint()
+#7 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('print', Array)
+#10 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('input/print', Array)
+#11 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2015-10-13 04:56:05 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'b2JtOFpJRV9eJxxQPQMuFF42XFkbJXZtLRYiCRA.cRA2LR8PDHgiCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52188'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704965.231
+    'REQUEST_TIME' => 1444704965
+]
+2015-10-13 04:56:05 [127.0.0.1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: Exception 'Exception' with message 'Serialization of 'Closure' is not allowed' 
+
+in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php:58
+
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(58): serialize(Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2-debug\LogTarget.php(112): yii\debug\LogTarget->export(Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Dispatcher.php(183): yii\debug\LogTarget->collect(Array, true)
+#3 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\log\Logger.php(173): yii\log\Dispatcher->dispatch(Array, true)
+#4 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\ErrorHandler.php(111): yii\log\Logger->flush(true)
+#5 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#6 {main}
+2015-10-13 04:56:05 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'input/print'
+    'tpl' => 'undefined'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_X_CSRF_TOKEN' => 'b2JtOFpJRV9eJxxQPQMuFF42XFkbJXZtLRYiCRA.cRA2LR8PDHgiCg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php?r=input/assess'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '52188'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=input/print&tpl=undefined'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=input/print&tpl=undefined'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444704965.231
+    'REQUEST_TIME' => 1444704965
+]
+2015-10-13 07:09:12 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/premission' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('premission', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/premission', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:12 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/premission'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53899'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/premission'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/premission'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712952.88
+    'REQUEST_TIME' => 1444712952
+]
+2015-10-13 07:09:14 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/password' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('password', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/password', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:14 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/password'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53902'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/password'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/password'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712954.758
+    'REQUEST_TIME' => 1444712954
+]
+2015-10-13 07:09:15 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/premission' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('premission', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/premission', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:15 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/premission'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53900'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/premission'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/premission'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712955.477
+    'REQUEST_TIME' => 1444712955
+]
+2015-10-13 07:09:16 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/log' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('log', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/log', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:16 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/log'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53904'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/log'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/log'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712956.821
+    'REQUEST_TIME' => 1444712956
+]
+2015-10-13 07:09:17 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/unit' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('unit', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/unit', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/unit'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53905'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/unit'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/unit'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712957.543
+    'REQUEST_TIME' => 1444712957
+]
+2015-10-13 07:09:18 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/password' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('password', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/password', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/password'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53906'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/password'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/password'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712958.508
+    'REQUEST_TIME' => 1444712958
+]
+2015-10-13 07:09:18 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: sys/premission' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('premission', Array)
+#1 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('sys/premission', Array)
+#2 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\xampp\htdocs\ywfy\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\ywfy\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2015-10-13 07:09:18 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'sys/premission'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'qif6c8u3svg2vjamgqg71jkfq3'
+    '_csrf' => '3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU\";}'
+    '_identity' => 'ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da:2:{i:0;s:9:\"_identity\";i:1;s:18:\"[\"6\",null,2592000]\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => '127.0.0.1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.85 Safari/537.36'
+    'HTTP_REFERER' => 'http://127.0.0.1/ywfy/web/index.php'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=qif6c8u3svg2vjamgqg71jkfq3; _csrf=3ce9d865144545d0f88de9aabfa730bc96b4ce612051cb493352cdcae6c89bd1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221EqhgJkK1T1aAl32BtO1Jw4OYOr7V1gU%22%3B%7D; _identity=ec170b5ad339303479c9dcb3477fef2ee159b9087eb7be99767be34b7886e48da%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A18%3A%22%5B%226%22%2Cnull%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\SSH Communications Security\\SSH Secure Shell'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1 Server at 127.0.0.1 Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.4 (Win32) OpenSSL/1.0.1e PHP/5.5.1'
+    'SERVER_NAME' => '127.0.0.1'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/ywfy/web/index.php'
+    'REMOTE_PORT' => '53907'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=sys/premission'
+    'REQUEST_URI' => '/ywfy/web/index.php?r=sys/premission'
+    'SCRIPT_NAME' => '/ywfy/web/index.php'
+    'PHP_SELF' => '/ywfy/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444712958.842
+    'REQUEST_TIME' => 1444712958
+]

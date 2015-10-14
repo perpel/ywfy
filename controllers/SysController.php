@@ -143,10 +143,11 @@ $html=<<<EOF
 }
 
             div{
-                width: 100%;
-                background-color:lightgreen;
+                width: 100%; text-align:center;
+                background-color:#f5f7fa;
             }
-    
+     #printtable th{line-height:35px; font-size:14px;}
+	#printtable td{ height:30px;}
             </style>
 </head>
 
@@ -155,7 +156,7 @@ $html=<<<EOF
 
   <div>
      <h1>义乌市人民法院</h1>
-            <table>
+            <table id="printtable">
              
                 <thead>
                 <tr>

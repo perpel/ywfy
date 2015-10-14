@@ -2,7 +2,7 @@
 use app\models\Detail;
 ?>
 
-<table id="myTable">
+<table id="myTable" cellspacing="0">
     <tr>
     <?php
         foreach( Detail::tableTh(Yii::$app->controller->action->id) as $v ){
