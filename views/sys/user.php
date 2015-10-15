@@ -83,9 +83,109 @@ use yii\helpers\Html;
 
         </table>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php $form = ActiveForm::begin(); ?>
+<table class="tablelist" cellspacing="0">
+    
+<!--<table class="tablelist">-->
 
-        <?= $form->field($model, 'CaseNumber')->textInput() ?>  
+    
+    <tr>
 
+        <input type="hidden" name="Conclusion[DepartID]" value="<?=Yii::$app->user->identity->DepartmentNumber ?>">
+        <input type="hidden" name="Conclusion[Type]" value="4566">
+
+        <td>
+            <?php $d = ["2011"=>"2011","2012"=>"2012","2013"=>"2013","2014"=>"2014","2015"=>"2015"]; ?>
+            <?= $form->field($model, 'Year')->dropDownList($d) ?>
+            
+        </td>
+        
+        <td>
+            
+            <?= $form->field($model, 'FlowNumber',['enableAjaxValidation'=>true])->textInput() ?>
+            
+        </td>
+        <td>
+        
+            <?= $form->field($model, 'Supervise')->textInput() ?>  
+           
+        </td>
+        <td>
+        
+             <?= $form->field($model, 'SuperviseTel')->textInput() ?>  
+        </td>
+        
+
+    </tr>
+    <tr>
+        
+        <td colspan="2">
+            <?= $form->field($model, 'CaseNumber')->textInput() ?>  
+        </td>
+        
+        <td colspan="2">
+            <?= $form->field($model, 'Case')->textInput() ?> 
+        </td>
+        
+    </tr>
+    <tr>
+        
+        <td colspan="2">
+            <?= $form->field($model, 'LitigantOne')->textInput() ?>  
+        </td>
+        
+        <td colspan="2">
+            <?= $form->field($model, 'LitigantTwo')->textInput() ?> 
+        </td>
+        
+    </tr>
+    
+    <tr>
+        
+        <td>
+            <?= $form->field($model, 'EntrustDeparment')->textInput() ?> 
+        </td>
+        <td>
+       
+             <?= $form->field($model, 'Chambers')->textInput() ?>  
+        </td>
+        <td>
+            <?= $form->field($model, 'UndertakerTel')->textInput() ?> 
+        </td>
+        <td></td>
+        
+    </tr>
+    
+    <tr>
+        
+        <td colspan="4">
+            <?= $form->field($model, 'TransferMaterial')->textInput() ?> 
+        </td>
+        
+    </tr>
+    
+    <tr>
+        <td colspan="4">
+            <?= $form->field($model, 'SubjectMatter')->textarea() ?> 
+        </td>
+    </tr>
+    
+    
+</table>
+
+<?=Html::submitButton('提交')?>
 
 <?php ActiveForm::end(); ?>

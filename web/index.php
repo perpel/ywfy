@@ -9,6 +9,7 @@ require(__DIR__ . '/../vendor/yiisoft/yii2/Yii.php');
 
 require(__DIR__ . '/../vendor/phpexcel/PHPExcel.php');
 require(__DIR__ . '/../vendor/tcpdf/tcpdf.php');
+require(__DIR__ . '/../vendor/custom/word/word.php');
 
 $config = require(__DIR__ . '/../config/web.php');
 

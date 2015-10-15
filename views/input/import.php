@@ -11,20 +11,13 @@ use app\models\Import;
     parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">');
     parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">');
 
-<<<<<<< HEAD
-=======
-   */ 
 
->>>>>>> origin/zr
     
 
 $("input[name='file']:file").change(function(){
 
     $("form").submit();
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/zr
     $("iframe").load(function(){
         var v = $("iframe").contents().find("body").html();alert(123);
         if(v != "error"){

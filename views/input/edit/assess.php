@@ -2,18 +2,16 @@
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-
+use yii\helpers\Json;
+use yii\helpers\Url;
 ?>
+<script>
+    
+    $(".pop-title").html("<h3>评估录入-<?=$title?><span>(当前操作:<?= Yii::$app->user->identity->Name?>)</span></h3>");
 
+</script>
 
-<?php $form = ActiveForm::begin(
-
-array(
-            'enableAjaxValidation' => true,
-            
-        )
-
-); ?>
+<?php $form = ActiveForm::begin(); ?>
 <table class="tablelist" cellspacing="0">
 	
 <!--<table class="tablelist">-->
@@ -172,18 +170,25 @@ array(
         <?= $form->field($model, 'GetbackDate')->textInput() ?> 
         </td>
         
-        <!-- <td>结案周期</td>
-        <td><input type="text"></td> -->
+        <td>
+        <?= $form->field($model, 'GetbackDate')->textInput() ?> 
+        </td>
         
     </tr>
     
-   <!--  <tr>
+   <tr>
         
-        <td>进度</td>
-        <td><input type="text"></td>
+           
+<td>
+    <?php $jd = ["2011"=>"委托","2012"=>"暂缓","2013"=>"撤回","2014"=>"完成","2015"=>"2015"]; ?>
+        <?= $form->field($model, 'AuctionStatus')->dropDownList($jd) ?>
         
-        <td>评估价</td>
-        <td><input type="text"></td>
+</td>
+        
+        
+        <td>
+        <?= $form->field($model, 'Price')->textInput() ?> 
+        </td>
         
         <td>评估报告</td>
         <td><input type="text"></td>
@@ -191,32 +196,37 @@ array(
     
     <tr>
         
-        <td>通知缴费日期</td>
-        <td><input type="text"></td>
+        <td>
+        <?= $form->field($model,  'NotifyPaymentDate')?> 
+
+        </td>
         
         <td>评估费用</td>
         <td><input type="text"></td>
         
-        <td>送达业务庭日期</td>
-        <td><input type="text"></td>
+        <td>
+        <?= $form->field($model, 'DeliveryCourtDate')->textInput([ "class"=>"Wdate", "onClick"=>"WdatePicker()"]) ?> 
+        </td>
     </tr>
-    
+
+    <tr>
+        
+        <td>
+        <?= $form->field($model, 'FllowResult')->textInput() ?> 
+        </td>
+        
+    </tr>
     
     <tr>
         
-        <td>跟踪评查情况</td>
-        <td><input type="text"></td>
+        <td>
+        <?= $form->field($model, 'Remark')->textArea() ?> 
+        </td>
         
-    </tr>
-    
-    <tr>
-        
-        <td>备注</td>
-        <td colspan="7"><textarea name="" id="" cols="30" rows="10"></textarea></td>
-    </tr> -->
+    </tr> 
 
 </table>
 
 <?=Html::submitButton('提交')?>
 
-<?php ActiveForm::end(); ?>
+<?php ActiveForm::end(); ?>    

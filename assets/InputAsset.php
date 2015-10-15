@@ -27,12 +27,14 @@ class InputAsset extends AssetBundle
         //'js/etc/jquery.dataTables.js',
         'js/public.js',
         'js/etc/table.js',
+        'js/input.js',
+        'js/etc/My97DatePicker/WdatePicker.js',
     ];
 
     public $depends = [
         'yii\web\YiiAsset',
         'yii\validators\ValidationAsset',
-        'yii\widgets\ActiveFormAsset'
+        'yii\widgets\ActiveFormAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
 

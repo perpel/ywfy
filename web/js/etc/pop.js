@@ -3,32 +3,54 @@
         "pop": function(options){
             //do something
 
+        //param
         var defaults = {
-            parent: $('#pop'),
-            win: $(window),
-            doc: $(document)
+            _parent: $('#pop'),
+            _win: $(window),
+            _doc: $(document),
+            _width: "auto",
+            _height: "auto",
+            _size: "normal"
         };  
 
-        // 根据所提供的扩展我们能的options
-        var opts = $.extend(defaults, options);
+      // 根据所提供的扩展我们能的options
+      var opts = $.extend(defaults, options);
 
-            var eles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
-            var obj = $(eles).appendTo(opts.parent);
+      var eles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
+      var obj = $(eles).appendTo(opts._parent);
 
-            //init popObj
-            obj.width( opts.win.width() * 0.8);
-            obj.height( opts.win.height() * 0.9);
-            obj.children(".pop-content").height( opts.win.height() * 0.7);
+      //init popObj
+      //init size()
+      switch( opts._size ){
 
-            //close
-            obj.children(".pop-close").click(function(){
-                obj.remove();
-            });
+        case "normal":
+          opts._width = opts._win.width() * 0.8;
+          opts._height = opts._win.height() * 0.9;
+          break;
+
+        case "small":
+          opts._width = opts._win.width() * 0.5;
+          opts._height = opts._win.height() * 0.6;
+          break;
+
+        case "custom":
+          break;
+
+      }
+      
+      obj.width(opts._width);
+      obj.height(opts._height);
+
+      //close
+      obj.children(".pop-close").click(function(){
+          obj.remove();
+      });
+
 
             //drag
             var dragObj = obj.children(".pop-title");
-             var dragMove = function(oDrag, distX, distY){
-            opts.doc.bind("mousemove", function(event){
+            var dragMove = function(oDrag, distX, distY){
+            opts._doc.bind("mousemove", function(event){
                    var posX = event.pageX - distX;
                    var posY = event.pageY - distY;
                    if( posX < 0 ){
@@ -57,8 +79,11 @@
             }).mouseup(function(){
 
                 $(this).css("cursor", "default");
-                opts.doc.unbind("mousemove");
+                opts._doc.unbind("mousemove");
             });
+
+
+            return obj;
 
         }
     });

@@ -59,21 +59,31 @@ class InputController extends Controller{
         $request = Yii::$app->request;
         if($request->isPost){
 
-            if( $model->load($request->post()) && $model->validate() ){
+            if( $model->load($request->post()) && $model->save() ){
 
                 return $this->redirect("index.php?r=input/assess");
                 exit;
             }
 
-            
         }
-
-        echo $this->renderPartial("edit/assess", ["model"=>$model, "type"=>"评估"]);
+        $this->layout=false;
+        return $this->render("edit/assess", ["model"=>$model, "type"=>"评估", "title"=>"新增"]);
     }
 
     public function actionEditAssess(){
 
-        echo $this->renderPartial("edit/assess");
+        $request = Yii::$app->request;
+         $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
+       
+        if($request->isPost){
+            if( $model->load($request->post()) && $model->save() ){
+                return $this->redirect("index.php?r=input/assess");
+                exit;
+            } 
+        }
+
+        echo $this->renderPartial("edit/assess", ["model"=>$model, "type"=>"评估",  "title"=>$request->get("id") . "修改"]);
+
     }
 
     //identify
@@ -147,8 +157,18 @@ class InputController extends Controller{
     }
 
     //delete from id : assess, auction, bust, identify, project-cost
-    public function actionDel($id){
+    public function actionDel(){
+        $request = Yii::$app->request;
+       if($request->isGet){
 
+            $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
+            if($model->delete()){
+                echo "success";
+            }else{
+                echo "defail";
+            }
+
+       }
     }
 
 

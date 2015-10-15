@@ -11,10 +11,10 @@ use app\models\Conclusion;
 ?>
 </tr>
 
-<?php
+<?php 
     
     foreach ($assess_info as $key => $value) {
-        echo "<tr>";
+        echo "<tr data-id=" . $value["ID"] . ">";
         foreach ($value as $k => $v) {
             echo "<td>";
             echo $v;
