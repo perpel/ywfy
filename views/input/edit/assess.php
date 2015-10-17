@@ -7,30 +7,109 @@ use yii\helpers\Html;
 
 
 <?php $form = ActiveForm::begin(); ?>
-<table class="tablelist" cellspacing="0">
-	<tr>
-       <td><div class=""><label>年度  </label><select><option>2013</option><option>2014</option><option>2015</option></select></div></td>
-    	<td><div class=""><label>委托案号 </label><input type="tel" /></div></td>
-        <td><div class=""><label>督办人</label><input type="tel" /></div></td>
-       
-    </tr>
+<table width="100%" border="0" class="tablelist" cellspacing="0">
+  <tr>
+    <td><label>年度 </label></td>
+    <td><select><option>2013</option><option>2014</option><option>2015</option></select></td>
+    <td><label>委托案号 </label></td>
+    <td><input type="text" /></td>
+     <td><label>督办人  </label></td>
+    <td><input type="text" /></td>
+    <td><label>电话</label></td>
+    <td><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>原审案号</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>案由</label></td>
+    <td colspan="3"><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>当事人1</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>当事人2</label></td>
+    <td colspan="3"><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>委托部门</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>承办人</label></td>
+    <td><input type="text" /></td>
+    <td><label>电话</label></td>
+    <td><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>移交材料</label></td>
+    <td colspan="7"><input type="text" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#ddecfb"><label>标的物</label></td>
+    <td colspan="7"><textarea></textarea></td>
+  </tr>
+  <tr>
+    <td><label>评估机构</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>评估师</label></td>
+    <td><input type="text" /></td>
+    <td><label>电话</label></td>
+    <td><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>选定方式</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>选定日期</label></td>
+    <td colspan="3"><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>收案日期</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>立案日期 </label></td>
+    <td><input type="text" /></td>
+    <td><label>暂款日期</label></td>
+    <td><input type="text" /></td>
+  </tr>
     <tr>
-       <td><div class=""><label>督办人电话  </label><input type="tel" /></div></td>
-        <td><div class=""><label>原审案号</label><input type="tel" /></div></td>
-        <td><div class=""><label>案由  </label><input type="tel" /></div></td>
-    </tr>
+    <td><label>委托日期</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>补充材料日期 </label></td>
+    <td><input type="text" /></td>
+    <td><label>撤回日期</label></td>
+    <td><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>勘验日期</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>结案日期 </label></td>
+    <td><input type="text" /></td>
+    <td><label>结案周期</label></td>
+    <td><input type="text" /></td>
+  </tr>
+   <tr>
+    <td><label>进度</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>评估价</label></td>
+    <td><input type="text" /></td>
+    <td><label>评估报告</label></td>
+    <td><input type="text" /></td>
+  </tr>
+  <tr>
+    <td><label>通知缴费日期</label></td>
+    <td colspan="3"><input type="text" /></td>
+    <td><label>评估费用</label></td>
+    <td><input type="text" /></td>
+    <td><label>送达业务庭日期</label></td>
+    <td><input type="text" /></td>
     <tr>
-       <td><div class=""><label>结案周期 </label><input type="tel" /></div></td>
-    	<td><div class=""><label>通知缴费日期 </label><input type="tel" /></div></td>
-        <td><div class=""><label>评估费用</label><input type="tel" /></div></td>
-       
-    </tr>
-    <tr>
-       <td><div class=""><label>送达业务庭日期</label><input type="tel" /></div></td>
-        <td><div class=""><label>跟踪评查情况</label><input type="tel" /></div></td>
-        <td><div class=""><label>案由</label><input type="tel" /></div></td>
-    </tr>
+    <td><label>跟踪评查情况</label></td>
+    <td colspan="7"><input type="text" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#ddecfb"><label>备注</label></td>
+    <td colspan="7"><textarea></textarea></td>
+  </tr>
 </table>
+
+
 <!--<table class="tablelist">
     
     <tr>
