@@ -40,6 +40,7 @@
       
       obj.width(opts._width);
       obj.height(opts._height);
+      obj.children(".pop-content").height( opts._height * 0.8);
 
       //close
       obj.children(".pop-close").click(function(){

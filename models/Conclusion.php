@@ -14,6 +14,11 @@ class Conclusion extends \yii\db\ActiveRecord
         return '{{%conclusion}}';
     }
 
+    public static function years(){
+
+        return [ "2001", "2002", "2003", "2004"];
+    }
+
     /**
      * @inheritdoc
      */

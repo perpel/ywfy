@@ -26,14 +26,11 @@ InputAsset::register($this);
 <?php $actionId=Yii::$app->controller->action->id;  ?>
 
 <div id="section-bar">
-    <ul>
+    <ul class="fnt-ul">
         <li>
             <span>年度</span>
-            <select name="" id="">
-                <option value="">2001</option>
-                <option value="">2002</option>
-                <option value="">2003</option>
-                <option value="">2004</option>
+            <select name="year" id="year" data-action="<?= $actionId?>">
+                <?=$this->blocks["year"]; ?>
             </select>
         </li>
         <input name="ctrl" type="hidden" value="<?=Yii::$app->controller->id; ?>">
@@ -45,8 +42,9 @@ InputAsset::register($this);
         <li class="fnt ico-save-as"><span data-action="save-as">另存为</span></li>
         <li class="fnt ico-print" data-pop="pop"><span data-action="print">打印</span></li>
         <li class="fnt ico-search" data-pop="pop"><span data-action="search">条件查询</span></li>
-    </ul>
     <li class="fnt ico-exit"><span data-action="exit">exit</span></li>
+    </ul>
+    
 </div>
 
 <?= $content; ?>

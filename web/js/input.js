@@ -25,7 +25,7 @@ $(function(){
     //print
     $("#section-bar").find(".fnt.ico-print").click(function(){
         var pop = $(this).pop({_size: "small"});
-        $.get("./index.php?r=input/print",function(data){$(".pop-content", pop).html(data);});
+        $.post("./index.php?r=input/print",{},function(data){$(".pop-content", pop).html(data);});
     });
 
 

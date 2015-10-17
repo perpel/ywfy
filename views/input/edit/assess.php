@@ -4,6 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\helpers\Url;
+use app\models\Conclusion;
 ?>
 <script>
     
@@ -16,173 +17,77 @@ use yii\helpers\Url;
 	
 <!--<table class="tablelist">-->
 
+<input type="hidden" name="Conclusion[DepartID]" value="<?=Yii::$app->user->identity->DepartmentNumber ?>">
+<input type="hidden" name="Conclusion[Type]" value="<?=$type?>">
     
     <tr>
+        <td><?= $form->field($model, 'Year')->dropDownList(Conclusion::years())?></td>
+        <td><?= $form->field($model, 'FlowNumber')->textInput() ?></td>
+        <td><?= $form->field($model, 'Supervise')->textInput() ?></td>
+        <td><?= $form->field($model, 'SuperviseTel')->textInput() ?></td>
+   </tr>
 
-        <input type="hidden" name="Conclusion[DepartID]" value="<?=Yii::$app->user->identity->DepartmentNumber ?>">
-        <input type="hidden" name="Conclusion[Type]" value="<?=$type?>">
+    <tr>
+        <td colspan="2"><?= $form->field($model, 'CaseNumber')->textInput() ?></td>
+        <td colspan="2"><?= $form->field($model, 'Case')->textInput() ?></td>
+    </tr>
 
-        <td>
-            <?php $d = ["2011"=>"2011","2012"=>"2012","2013"=>"2013","2014"=>"2014","2015"=>"2015"]; ?>
-            <?= $form->field($model, 'Year')->dropDownList($d) ?>
-            
-        </td>
-        
-        <td>
-            
-            <?= $form->field($model, 'FlowNumber',['enableAjaxValidation'=>true])->textInput() ?>
-            
-        </td>
-        <td>
-        
-            <?= $form->field($model, 'Supervise')->textInput() ?>  
-           
-        </td>
-        <td>
-        
-             <?= $form->field($model, 'SuperviseTel')->textInput() ?>  
-        </td>
-        
+    <tr>
+        <td colspan="2"><?= $form->field($model, 'LitigantOne')->textInput() ?></td>
+        <td colspan="2"><?= $form->field($model, 'LitigantTwo')->textInput() ?></td>
+    </tr>
 
-    </tr>
     <tr>
-        
-        <td colspan="2">
-            <?= $form->field($model, 'CaseNumber')->textInput() ?>  
-        </td>
-        
-        <td colspan="2">
-            <?= $form->field($model, 'Case')->textInput() ?> 
-        </td>
-        
-    </tr>
-    <tr>
-        
-        <td colspan="2">
-            <?= $form->field($model, 'LitigantOne')->textInput() ?>  
-        </td>
-        
-        <td colspan="2">
-            <?= $form->field($model, 'LitigantTwo')->textInput() ?> 
-        </td>
-        
+        <td><?= $form->field($model, 'EntrustDeparment')->textInput() ?></td>
+        <td><?= $form->field($model, 'Chambers')->textInput() ?></td>
+        <td><?= $form->field($model, 'UndertakerTel')->textInput() ?></td>
+        <td></td>     
     </tr>
     
     <tr>
-        
-        <td>
-            <?= $form->field($model, 'EntrustDeparment')->textInput() ?> 
-        </td>
-        <td>
-       
-             <?= $form->field($model, 'Chambers')->textInput() ?>  
-        </td>
-        <td>
-            <?= $form->field($model, 'UndertakerTel')->textInput() ?> 
-        </td>
-        <td></td>
-        
+        <td colspan="4"><?= $form->field($model, 'TransferMaterial')->textInput() ?></td>
     </tr>
     
     <tr>
-        
-        <td colspan="4">
-            <?= $form->field($model, 'TransferMaterial')->textInput() ?> 
-        </td>
-        
+        <td colspan="4"><?= $form->field($model, 'SubjectMatter')->textarea() ?></td>
     </tr>
-    
-    <tr>
-        <td colspan="4">
-            <?= $form->field($model, 'SubjectMatter')->textarea() ?> 
-        </td>
-    </tr>
-    
     
      <tr>
-        <td>
-            <?= $form->field($model, 'Agency')->textInput() ?>  
-        </td>
-        <td>
-             <?= $form->field($model, 'Assessor')->textInput() ?>
-         </td>
-        <td>
-             <?= $form->field($model, 'AssessorTel')->textInput() ?>
-         </td>
+        <td><?= $form->field($model, 'Agency')->textInput() ?></td>
+        <td><?= $form->field($model, 'Assessor')->textInput() ?></td>
+        <td><?= $form->field($model, 'AssessorTel')->textInput() ?></td>
         <td></td>
     </tr>
-    
-    
+
      <tr>
-       
-        <td colspan="2">
-         <?= $form->field($model, 'ChoiceWay')->textInput() ?>
-         </td>
-        <td colspan="2">
-         <?= $form->field($model, 'ChoicedDate')->textInput() ?>
-         </td>
-        
+       <td colspan="2"><?= $form->field($model, 'ChoiceWay')->textInput() ?></td>
+        <td colspan="2"><?= $form->field($model, 'ChoicedDate')->textInput() ?></td>   
     </tr>
     
-    
     <tr>
-        <td>
-        <?= $form->field($model, 'GetbackDate')->textInput() ?>
-        </td>
-        
-        <td>
-         <?= $form->field($model, 'MaterialsCompletionDate')->textInput() ?>
-        </td>
-        
-        <td>
-        <?= $form->field($model, 'SuspendedDate')->textInput() ?>
-        </td>
+        <td><?= $form->field($model, 'GetbackDate')->textInput() ?></td>
+        <td><?= $form->field($model, 'MaterialsCompletionDate')->textInput() ?></td>    
+        <td><?= $form->field($model, 'SuspendedDate')->textInput() ?></td>
         <td></td>
     </tr>
     
     
     <tr>
-        
-        <td>
-        <?= $form->field($model, 'SendDate')->textInput() ?>
-        </td>
-        
-        <td>
-            
-          <?= $form->field($model, 'TransferMaterial')->textInput() ?>  
-        </td>
-        
-        <td>
-            <?= $form->field($model, 'RetractDate')->textInput() ?> 
-        </td>
-        <td></td>
-        
+        <td><?= $form->field($model, 'SendDate')->textInput() ?></td>
+        <td><?= $form->field($model, 'TransferMaterial')->textInput() ?></td>
+        <td><?= $form->field($model, 'RetractDate')->textInput() ?></td>
+        <td></td>   
     </tr>
     
-    
     <tr>
-        
-        <td>
-        <?= $form->field($model, 'SiteSurveyDate')->textInput() ?> 
-        </td>
-        
-        <td>
-        <?= $form->field($model, 'GetbackDate')->textInput() ?> 
-        </td>
-        
-        <td>
-        <?= $form->field($model, 'GetbackDate')->textInput() ?> 
-        </td>
-        
+        <td><?= $form->field($model, 'SiteSurveyDate')->textInput() ?></td>
+        <td><?= $form->field($model, 'GetbackDate')->textInput() ?></td>
+        <td><?= $form->field($model, 'GetbackDate')->textInput() ?></td>
     </tr>
     
    <tr>
-        
-           
-<td>
-    <?php $jd = ["2011"=>"委托","2012"=>"暂缓","2013"=>"撤回","2014"=>"完成","2015"=>"2015"]; ?>
-        <?= $form->field($model, 'AuctionStatus')->dropDownList($jd) ?>
-        
+        <td><?php $jd = ["2011"=>"委托","2012"=>"暂缓","2013"=>"撤回","2014"=>"完成","2015"=>"2015"]; ?>
+        <?= $form->field($model, 'AuctionStatus')->dropDownList($jd) ?>        
 </td>
         
         

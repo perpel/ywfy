@@ -50,7 +50,8 @@ class InputController extends Controller{
     public function actionAssess(){
 
         $assess_info = Conclusion::find()->asArray()->all();
-        return $this->render("index", ["assess_info"=>$assess_info]);
+        $years = Conclusion::years();
+        return $this->render("index", ["assess_info"=>$assess_info, "years"=>$years]);
     }
 
     public function actionAddAssess(){
@@ -271,9 +272,62 @@ class InputController extends Controller{
 
         $model = new Conclusion();
         //return $this->render("index");
+        $request = Yii::$app->request;
+        if($request->isGet){
 
-        return $this->renderPartial("print", ["model"=>$model]);
+            $page_size = $request->get("page");
+            $title = $request->get("title", "");
+            $sub_title = $request->get("subtitle", "");
+            $html = $this->renderPartial("tpl/test");
+
+            $pdf = new \TCPDF('P', 'mm', $page_size, true, 'UTF-8', false); 
+            // 设置页眉和页脚字体 
+            $pdf->setHeaderFont(Array('stsongstdlight', '', '10')); 
+            $pdf->setFooterFont(Array('helvetica', '', '8')); 
+
+            // set default header data
+            $pdf->SetHeaderData("", "", $title, $sub_title);
+
+            // set default monospaced font
+            $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+            // set image scale factor
+            $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+            // set some language-dependent strings (optional)
+            if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
+                require_once(dirname(__FILE__).'/lang/eng.php');
+                $pdf->setLanguageArray($l);
+            }
+            // set font
+            $pdf->SetFont('stsongstdlight', '', 10);
+            // add a page
+            $pdf->AddPage($page_size);
+            // output the HTML content
+            $pdf->writeHTML($html, true, false, true, false, '');
+            // reset pointer to the last page
+            $pdf->lastPage();
+            //Close and output PDF document
+            $pdf->Output('index.php/example_061.pdf', 'I');
+
+        }else{
+
+          return $this->renderPartial("print", ["model"=>$model]);  
+        }
         
+        
+    }
+
+    public function actionStartPrint(){
+
+        $request = Yii::$app->request;
+        if($request->isGet){
+
+            echo $this->renderPartial("tpl/start-print", ["id"=>$request->get("id"), "title"=>$request->get("id")]);
+        }
+
+        if($request->isPost){
+            return true;
+        }
+
     }
 
     //Defining Advanced Search

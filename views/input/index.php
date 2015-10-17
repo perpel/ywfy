@@ -1,7 +1,13 @@
 <?php
 use app\models\Conclusion;
 ?>
-
+<?php $this->beginBlock('year'); ?>
+<?php
+foreach ($years as $year) {
+    echo "<option name='" . $year . "'>" . $year . "</option>";
+}
+?>
+<?php $this->endBlock(); ?>
 <table id="myTable">
 <tr>
 <?php
