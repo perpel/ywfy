@@ -24,6 +24,7 @@ class InputAsset extends AssetBundle
     ];
     public $js = [
         'js/etc/pop.js',
+        'js/nav.js',
         //'js/etc/jquery.dataTables.js',
         'js/public.js',
         'js/etc/table.js',

@@ -1,5 +1,7 @@
 <?php
 use app\models\Conclusion;
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
 ?>
 <?php $this->beginBlock('year'); ?>
 <?php
@@ -18,15 +20,22 @@ foreach ($years as $year) {
 </tr>
 
 <?php 
-    
-    foreach ($assess_info as $key => $value) {
+    $i = 1;
+    foreach ($cu_info as $key => $value) {
         echo "<tr data-id=" . $value["ID"] . ">";
-        foreach ($value as $k => $v) {
+         foreach( Conclusion::tableTh(Yii::$app->controller->action->id) as $k=>$v ){
             echo "<td>";
-            echo $v;
+            if($k == "ID"){
+                echo $i;
+            }elseif($k == "UCycle"){
+                echo "0";
+            }else{
+                echo $value[$k];
+            }  
             echo "</td>";
         }
         echo "</tr>";
+        $i++;
     }
 
 ?>

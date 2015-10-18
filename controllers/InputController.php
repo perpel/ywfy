@@ -49,9 +49,9 @@ class InputController extends Controller{
  
     public function actionAssess(){
 
-        $assess_info = Conclusion::find()->asArray()->all();
+        $assess_info = Conclusion::find()->where(["Type"=>"评估"])->asArray()->all();
         $years = Conclusion::years();
-        return $this->render("index", ["assess_info"=>$assess_info, "years"=>$years]);
+        return $this->render("index", ["cu_info"=>$assess_info, "years"=>$years]);
     }
 
     public function actionAddAssess(){
@@ -90,23 +90,50 @@ class InputController extends Controller{
     //identify
     public function actionIdentify(){
 
-        $identify_info = array();
-        return $this->render("index", ["identify_info"=>$identify_info]);
+        $identify_info = Conclusion::find()->where(["Type"=>"鉴定"])->asArray()->all();
+        $years = Conclusion::years();
+        return $this->render("index", ["cu_info"=>$identify_info, "years"=>$years]);
     }
 
     public function actionAddIdentify(){
 
-        echo $this->renderPartial("edit/identify");
+        $model = new Conclusion();
+        $request = Yii::$app->request;
+        if($request->isPost){
+
+            if( $model->load($request->post()) && $model->save() ){
+
+                return $this->redirect("index.php?r=input/identify");
+                exit;
+            }
+
+        }
+       
+        echo  $this->renderPartial("edit/identify", ["model"=>$model, "type"=>"鉴定", "title"=>"新增"]);
+
     }
 
     public function actionEditIdentify(){
 
-        echo $this->renderPartial("edit/identify");
+        $request = Yii::$app->request;
+         $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
+       
+        if($request->isPost){
+            if( $model->load($request->post()) && $model->save() ){
+                return $this->redirect("index.php?r=input/identify");
+                exit;
+            } 
+        }
+
+        echo $this->renderPartial("edit/identify", ["model"=>$model, "type"=>"鉴定",  "title"=>$request->get("id") . "修改"]);
+
     }
 
 
     //auction
     public function actionAuction(){
+
+
 
         $auction_info = array();
         return $this->render("index", ["auction_info"=>$auction_info]);
@@ -162,7 +189,7 @@ class InputController extends Controller{
         $request = Yii::$app->request;
        if($request->isGet){
 
-            $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
+            $model = Conclusion::find()->where("ID=:id", [":id"=>$request->get("id")])->one();
             if($model->delete()){
                 echo "success";
             }else{
@@ -279,6 +306,7 @@ class InputController extends Controller{
             $title = $request->get("title", "");
             $sub_title = $request->get("subtitle", "");
             $html = $this->renderPartial("tpl/test");
+            //$html = "AAAA\nBBBBB";
 
             $pdf = new \TCPDF('P', 'mm', $page_size, true, 'UTF-8', false); 
             // 设置页眉和页脚字体 
@@ -341,6 +369,12 @@ class InputController extends Controller{
     public function actionSaveAs(){
 
         echo $this->renderPartial("save-as");
+    }
+
+    public function actionCaseNumber(){
+
+        $model_info = Conclusion::find()->select("CaseNumber, Case")->all();
+        echo $this->renderPartial("edit/case-number", ["model_info"=>$model_info]);
     }
         
 

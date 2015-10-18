@@ -159,13 +159,13 @@ AppAsset::register($this);
             <li class="side-dropdown">
                 <a class="a-up" href="#">基础数据</a>
                 <ul class="side-dropdown-menu">
-                    <li><a target="container" href="index.php?r=definiation/case">案由定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/assess">评估机构定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/identify">鉴定机构定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/auction">拍卖机构定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/project-cost">工程造价机构定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/bust">破产机构定义</a></li>
-                    <li><a target="container" href="index.php?r=definiation/print-template">打印模板设置</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/case">案由定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/definition&department=assess">评估机构定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/definition&department=identify">鉴定机构定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/definition&department=auction">拍卖机构定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/definition&department=project-cost">工程造价机构定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/definition&department=bust">破产机构定义</a></li>
+                    <li><a target="container" href="index.php?r=basic-data/document">打印模板设置</a></li>
                 </ul>
             </li>
 

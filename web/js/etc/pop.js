@@ -10,7 +10,9 @@
             _doc: $(document),
             _width: "auto",
             _height: "auto",
-            _size: "normal"
+            _size: "normal",
+            _top: "20px",
+            _left: "50px"
         };  
 
       // 根据所提供的扩展我们能的options
@@ -19,6 +21,10 @@
       var eles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
       var obj = $(eles).appendTo(opts._parent);
 
+      obj.css({
+        top: opts._top,
+        left: opts._left,
+      })
       //init popObj
       //init size()
       switch( opts._size ){
