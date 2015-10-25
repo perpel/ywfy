@@ -1,25 +1,20 @@
-<?php
-use app\models\Import;
-?>
-
 <script>
-
 
     var parent = $("#import").parent().parent(".pop");
     parent.children(".pop-title").append("当前位置：导入");
     
-    parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">');
-    parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">');
+    parent.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">   | ');
+    parent.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">  | ');
+    parent.children(".pop-footer").append('<input type="text" name="ACol" size="3">O<input type="text" name="BCol" size="3"><input type="button" name="DH" value="倒换">');
 
-
-    
-
+var import_module = $("#import_module").val();
 $("input[name='file']:file").change(function(){
 
     $("form").submit();
 
     $("iframe").load(function(){
-        var v = $("iframe").contents().find("body").html();alert(123);
+        var v = $("iframe").contents().find("body").html();
+        alert(v);
         if(v != "error"){
 
             var dataObj=eval("("+v+")");
@@ -41,47 +36,32 @@ $("input[name='file']:file").change(function(){
 });
 
 $(":button[name='import']").click(function(){
-
     var dia = confirm("确定导入?");
-
-    if(dia){
-
+    if( dia ){
+        var action = $("#section-bar").find(".fnt.ico-import").find("span").attr("data-action");
         var ths = new Array();
         $(".drag-table").children("thead").children("tr:first").find("th").each(function(i, v){
-          
-            ths[i] = $(this).attr("data-tpl");
-            //alert($(this).text());
-
+                    ths[i] = $(this).attr("data-tpl");
         });
-
+        //console.log( ths );
        var tr_data = $(".drag-table").children("tbody").children("tr");
 
        tr_data.each(function(){
 
             var tr_obj = $(this);
             var data_obj = new Object();
-            data_obj['ID'] = 54;
-            data_obj['DepartID'] = 2221;
-            data_obj['Type'] = 'test';
-            data_obj['Year'] = "2015-10-10";
 
             $(this).find("td").each(function(i, v){
-
-                if( ths[i] != 0 && ths[i] != undefined){
-
+                if( typeof(ths[i]) != "undefined"){
                     data_obj[ths[i]] = $(this).text();
+             }
+        });
 
-                }
-
-            });
-
-            console.log(data_obj);
-
-            $.post(
-                "index.php?r=input/import",
-                data_obj,
+           $.post(
+                "index.php?r=input/import&module=" + import_module + "&action=" + action,
+                {data_obj},
                 function(data){
-                    
+                   console.log(data); 
                     if(data == "defail"){
                         tr_obj.css("background-color", "red");
                     }
@@ -89,8 +69,6 @@ $(":button[name='import']").click(function(){
                         tr_obj.remove();
                     }
                 }
-
-
             );
 
             data_tr = null;
@@ -117,14 +95,14 @@ $(":button[name='import']").click(function(){
 
 <div id="import">
 
-
     <iframe name="import" style="display:none"></iframe>
     <form target="import" action="index.php?r=input/import-list" method="post" enctype="multipart/form-data">
         <input name="file" type="file">
-        <select name="template" id="import-template">
+        <!--<select name="template" id="import-template">
             <option value="1">默认模板</option>
         </select>
-        <input type="button" value=" 模板设置 " id="set-template">
+        <input type="button" value=" 模板设置 " id="set-template">-->
+        <input type="hidden" value="<?=$module?>" id="import_module">
         <input type="button" value="导入" name="import">
     </form>
 
@@ -132,13 +110,18 @@ $(":button[name='import']").click(function(){
     <table class="drag-table" cellspacing="0">
         <thead>
         <tr>
-        <th data-tpl="0" class="table-zero">dfas</th>
+        <th class="table-zero">&empty;</th>
         <?php
            
-            $ths = Import::tpl(Yii::$app->request->get('tpl'));
-           
+            $ths = $model->attributeLabels();
+            $i = 1;
             foreach ( $ths as $key => $value) {
-                echo '<th data-tpl="' . $key . '">' . $value . '</th>';
+                if( $key == "ID" || $key == "UCycle" ){
+                    echo '<th>' . "(" . $i . ")" . $value . '</th>';
+                }else{
+                    echo '<th data-tpl="' . $key . '">' . "(" . $i . ")" . $value . '</th>';
+                }
+                $i++;
             }
 
         ?>
@@ -147,6 +130,4 @@ $(":button[name='import']").click(function(){
     <tbody>
     </tbody>
 </table>
-    
-    
 </div>

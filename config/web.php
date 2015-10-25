@@ -3,19 +3,31 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
+    'modules' => [
+        'trial' => [
+            'class' => 'app\module\trial\Trial',
+        ],
+        'execution' => [
+            'class' => 'app\module\execution\Execution',
+        ], 
+        'data' => [
+            'class' => 'app\module\data\BasicData',
+        ],
+        'sys' => [
+            'class' => 'app\module\sys\User',
+        ],
+    ],
     'id' => 'basic',
-    'defaultRoute' => 'index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '1001',
+            'cookieValidationKey' => '123456',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        
         'user' => [
             //'identityClass' => 'app\models\User',
             'identityClass' => 'app\models\Personnel',

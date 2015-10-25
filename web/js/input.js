@@ -1,50 +1,62 @@
 $(function(){
 
-    var modular = $("input[name='ctrl']:hidden").val();
-
+    var module = $("#module").val();
     //add
     $("#section-bar").find(".fnt.ico-add").click(function(){
         var action = $(this).children("span").attr("data-action");
-        var tpl = $(this).children("span").attr("data-tpl");
-        var pop = $(this).pop();
-        $.get("./index.php?r=" + modular + "/" + action,function(data){$(".pop-content", pop).html(data);});
+        var pop = $(this).pop({_top: "200px", _left: "200px",_iframe: true});
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/add&action=" + action);
     });
 
-    //edit
+    //edit (1)
     $("#section-bar").find(".fnt.ico-edit").click(function(){
         var action = $(this).find("span").attr("data-action");
-        var id = $("#myTable").find("tr[class='active']").attr("data-id");
-        if(!id){
-            alert("Please choice");
+        var activeObj = $("#myTable").find("tr[class='active']");
+        if( activeObj.length == 0 ){
+            alert("请选择修改对象");
             return false;
         }
-        var pop = $(this).pop();
-        $.get("./index.php?r=" + modular + "/" + action + "&id=" + id,function(data){$(".pop-content", pop).html(data);});
+        var pop = $(this).pop({ _top: "200px", _left: "200px",_iframe: true});
+        var id = activeObj.attr("data-id");
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/edit&action=" + action + "&id=" + id);
     });
 
-    //print
-    $("#section-bar").find(".fnt.ico-print").click(function(){
-        var pop = $(this).pop({_size: "small"});
-        $.post("./index.php?r=input/print",{},function(data){$(".pop-content", pop).html(data);});
-    });
-
-
-     $("#myTable").on("dblclick", "tr", function(){
-        var edit_target = $("#section-bar").find(".fnt.ico-edit").find("span").attr("data-action");
+    //edit (2)
+     $("#myTable").on("dblclick", "tr:gt(0)", function(){
+        var action = $("#section-bar").find(".fnt.ico-edit").find("span").attr("data-action");
         var id = $(this).attr("data-id");
-        $(this).pop();
-        $.get(
-            "./index.php?r=input/" + edit_target + "&id=" + id,
-            function(data){
-                
-                $(".pop-content").html(data);
-               
-            }
-        );
-
+        var pop = $(this).pop({_top: "200px", _left: "200px",_iframe: true});
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/edit&action=" + action + "&id=" + id);
      });
 
-     $("#myTable").on("click", "tr", function(){
+     //delete
+    $("#section-bar").find(".fnt.ico-del").click(function(){
+        var action = $(this).find("span").attr("data-action");
+        var activeObj = $("#myTable").find("tr[class='active']");
+        if( activeObj.length == 0 ){
+            alert("请选择删除对象");
+            return false;
+        }
+        var id = activeObj.attr("data-id");
+        if(confirm("确定删除?")){
+            $.get(
+                "./index.php?r=" + module + "/input/del&id=" + id,
+                function(data){
+                     if(data=="success"){
+                            window.location.reload();
+                            //activeObj.remove();
+                    }
+                    if(data=="defail"){
+                            alert("删除失败!");
+                            activeObj.css("background-color", "lightred");
+                    }
+                }
+            );
+        }
+    });
+
+     //show 
+    $("#myTable").on("click", "tr:gt(0)", function(){
 
         $(this).siblings("tr").removeClass("active");
         $(this).siblings("tr").find("td").css("background-color", "white");
@@ -53,46 +65,62 @@ $(function(){
 
      });
 
+    //导入功能
+    $("#section-bar").find(".fnt.ico-import").click(function(){
 
-$("#section-bar").find(".fnt.ico-del").click(function(){
+        var action = $(this).children("span").attr("data-action");
+        var pop = $(this).pop();
+        $(".pop-content", pop).css("overflow", "scroll");
+        $.get("./index.php?r=input/import",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
 
-        var del_target = $(this).find("span").attr("data-action");
-        var objTr = $("#myTable").find("tr[class='active']");
-        var id = objTr.attr("data-id");
+    });
 
-    if(!id){
+    //另存为
+    $("#section-bar").find(".fnt.ico-save-as").click(function(){
+        var action = $(this).children("span").attr("data-action");
+        var pop = $(this).pop({_left:"500px", _top:"300px",_size:"customer", _width:"500px", _height:"250px"});
+        
+        $(".pop-footer", pop).hide();
+        $.get("./index.php?r=input/save-as",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+    });
 
-        alert("Please choice");
-        return false;
-    }
+    //
+    $("#section-bar").find("select").change(function(){
+        var action = $(this).attr("data-action");
+        var year = $(this).val();
+        //alert("index.php?r=" + module + "/input/" + action + "&year=" + year);
+        window.location.assign("index.php?r=" + module + "/input/" + action + "&year=" + year);
+    });
 
-    var dia = confirm("delete?");
-    if(dia){
+    //search
+    $("#section-bar").find(".fnt.ico-search").click(function(){
+        var action = $(this).children("span").attr("data-action");
+        var pop = $(this).pop({_left:"300px", _top:"200px",_size:"small"});    
+        $(".pop-footer", pop).hide();
+        $.get("./index.php?r=input/search",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+    });
 
-         $.get(
-            "./index.php?r=input/" + del_target + "&id=" + id,
-            function(data){
-                
-                if(data=="success"){
-                    alert("success");
-                    objTr.remove();
-                }
+    //****************************************************///
+    
 
-                if(data=="defail"){
-
-                    alert("delete defail!");
-                    objTr.css("background-color", "lightred");
-                }
-               
-            }
-        );
-
-    }
-
-});
+/*
+    //print
+    $("#section-bar").find(".fnt.ico-print").click(function(){
+        var pop = $(this).pop({_size: "small"});
+        $.post("./index.php?r=input/print",{},function(data){$(".pop-content", pop).html(data);});
+    });
 
 
+    
+
+     
 
 
 
+
+
+
+    
+
+*/
 });

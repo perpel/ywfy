@@ -18,25 +18,14 @@ class InputAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/style.css',
-        'js/etc/pop.css',
-        'js/etc/table.css',
+        'etc/pop/pop.css',
     ];
     public $js = [
-        'js/etc/pop.js',
-        'js/nav.js',
-        //'js/etc/jquery.dataTables.js',
-        'js/public.js',
-        'js/etc/table.js',
         'js/input.js',
-        'js/etc/My97DatePicker/WdatePicker.js',
+        'etc/pop/pop.js',
     ];
-
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\validators\ValidationAsset',
-        'yii\widgets\ActiveFormAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
-
 }

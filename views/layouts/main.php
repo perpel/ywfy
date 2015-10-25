@@ -23,6 +23,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
+
 <!--begin Nav-->
     <div class="nav">
         <ul class="nav-bar lock">
@@ -121,30 +122,39 @@ AppAsset::register($this);
         <span class="login-number">(<?= Yii::$app->user->identity->Number ?>)</span>
         <span class="login-name"><?= Yii::$app->user->identity->Name ?></span>
         <span class="welcom-msg">欢迎您登录本系统</span>
-        <span class="clock"><?= time();?></span>
+        <span class="clock"><?= date("Y-m-d");?></span>
     </div>
 </div>
 <!--end header-->
 
 
 <div class="content">
- 
  <!--begin side-->    
 <div class="side">
     <!--begin .side-bar -->
     <div class="side-bar">
         <ul>
             <li class="side-dropdown active">
-                <a class="a-up" href="#">数据录入</a>
+                <a class="a-up" href="#">审判</a>
                 <ul class="side-dropdown-menu">
-                    <li><a target="container" href="index.php?r=input/assess">评估录入</a></li>
-                    <li><a target="container" href="index.php?r=input/identify">鉴定录入</a></li>
-                    <li><a target="container" href="index.php?r=input/auction">拍卖录入</a></li>
-                    <li><a target="container" href="index.php?r=input/project-cost">工程造价</a></li>
-                    <li><a target="container" href="index.php?r=input/bust">破产录入</a></li>
+                    <li><a target="container" href="index.php?r=trial/input/assess">评估录入</a></li>
+                    <li><a target="container" href="index.php?r=trial/input/identify">鉴定录入</a></li>
+                    <li><a target="container" href="index.php?r=trial/input/auction">拍卖录入</a></li>
+                    <li><a target="container" href="index.php?r=trial/input/projectcost">工程造价</a></li>
+                    <li><a target="container" href="index.php?r=trial/input/bust">破产录入</a></li>
                 </ul>
             </li>
             <li class="side-dropdown">
+                <a class="a-up" href="#">执行</a>
+                <ul class="side-dropdown-menu">
+                    <li><a target="container" href="index.php?r=execution/input/assess">评估录入</a></li>
+                    <li><a target="container" href="index.php?r=execution/input/identify">鉴定录入</a></li>
+                    <li><a target="container" href="index.php?r=execution/input/auction">拍卖录入</a></li>
+                    <li><a target="container" href="index.php?r=execution/input/projectcost">工程造价</a></li>
+                    <li><a target="container" href="index.php?r=execution/input/bust">破产录入</a></li>
+                </ul>
+            </li>
+            <!-- <li class="side-dropdown">
                 <a class="a-up" href="#">查询考核</a>
                 <ul class="side-dropdown-menu">
                     <li><a target="container" href="index.php?r=examine/complex">综合查询</a></li>
@@ -155,40 +165,40 @@ AppAsset::register($this);
                     <li><a target="container" href="index.php?r=examine/project-cost">破产机构考核</a></li>
                 </ul>
             
-            </li>
+            </li> -->
             <li class="side-dropdown">
                 <a class="a-up" href="#">基础数据</a>
                 <ul class="side-dropdown-menu">
-                    <li><a target="container" href="index.php?r=basic-data/case">案由定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/definition&department=assess">评估机构定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/definition&department=identify">鉴定机构定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/definition&department=auction">拍卖机构定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/definition&department=project-cost">工程造价机构定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/definition&department=bust">破产机构定义</a></li>
-                    <li><a target="container" href="index.php?r=basic-data/document">打印模板设置</a></li>
+                    <li><a target="container" href="index.php?r=data/default/case">案由定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/definition&department=assess">评估机构定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/definition&department=identify">鉴定机构定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/definition&department=auction">拍卖机构定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/definition&department=project-cost">工程造价机构定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/definition&department=bust">破产机构定义</a></li>
+                    <li><a target="container" href="index.php?r=data/default/document">打印模板设置</a></li>
                 </ul>
             </li>
 
             <li class="side-dropdown">
                 <a class="a-up" href="#">系统管理</a>
                 <ul class="side-dropdown-menu">
-                    <li><a target="container" href="index.php?r=sys/user">用户管理</a></li>
-                    <li><a target="container" href="index.php?r=sys/premission">权限管理</a></li>
-                    <li><a target="container" href="index.php?r=sys/password">修改密码</a></li>
-                    <li><a target="container" href="index.php?r=sys/log">系统日志</a></li>
-                    <li><a target="container" href="index.php?r=sys/unit">单位信息</a></li>
-                    <li class="side-dropdown">
+                    <li><a target="container" href="index.php?r=sys/default/user">用户管理</a></li>
+                    <li><a target="container" href="index.php?r=sys/default/premission">权限管理</a></li>
+                    <li><a target="container" href="index.php?r=sys/default/password">修改密码</a></li>
+                    <li><a target="container" href="index.php?r=sys/default/log">系统日志</a></li>
+                    <li><a target="container" href="index.php?r=sys/default/unit">单位信息</a></li>
+                    <!-- <li class="side-dropdown">
                        <a href="#"><span>+</span> 数据管理</a>
                         <ul class="side-dropdown-menu">
                             <li><a target="container" href="index.php?r=sys/dbs/backup">数据备份</a></li>
                             <li><a target="container" href="index.php?r=sys/dbs/recovery">数据恢复</a></li>
                             <li><a target="container" href="index.php?r=sys/dbs/collection">数据采集</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
              </li>
 
-             <li class="side-dropdown">
+             <!-- <li class="side-dropdown">
                 <a class="a-up" href="#">报表中心</a>
                 <ul class="side-dropdown-menu">
                     <li><a target="container" href="index.php?r=report-form/show">报表预览</a></li>
@@ -196,16 +206,16 @@ AppAsset::register($this);
                     <li><a target="container" href="index.php?r=report-form/export-all">引出所有报表</a></li>
                     <li><a target="container" href="index.php?r=report-form/import-all">引入所有报表</a></li>
                 </ul>
-             </li>
+             </li> -->
 
-            <li class="side-dropdown">
+            <!-- <li class="side-dropdown">
                 <a class="a-up" href="#">帮助</a>
                 <ul class="side-dropdown-menu">
                     <li><a target="container" href="index.php?r=help/password">修改密码</a></li>
                     <li><a target="container" href="index.php?r=help/lock-sys">锁定系统</a></li>
                     <li><a target="container" href="index.php?r=help/about">关于</a></li>
                 </ul>
-             </li>
+             </li> -->
 
         </ul>
         
@@ -214,21 +224,23 @@ AppAsset::register($this);
 </div>
 <!--end side-->
  
- <!--begin section-->    
-     <div class="section">
-         
-         <iframe name="container" marginwidth=0 marginheight=0 >
-         <?= $content ?>
-         </iframe>
-        
-     </div>
+<!--begin section-->    
+<div class="section">
+    <?= $content ?>
+<div id="pop"></div>
+</div>
  <!--end section-->
-
-
  </div>
 
-<?php $this->endBody() ?>
- </body>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
+        <p class="pull-right"><?= Yii::powered() ?></p>
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
+</body>
 </html>
 <?php $this->endPage() ?>

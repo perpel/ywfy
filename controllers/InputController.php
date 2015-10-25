@@ -8,374 +8,106 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\Conclusion;
 use app\models\UploadForm;
 use yii\web\UploadedFile;
+use app\models\Conclusion;
+use app\models\Import;
+use app\models\OutputExcel;
+use app\module\data\models\BasicCase;
 
 class InputController extends Controller{
 
-    public $layout = "input";
     public $enableCsrfValidation = false;
-
-    public function behaviors(){
-
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['index', 'assess', 'identify', 'auction', 'project-cost', 'bust'],
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'actions' => ['index', 'assess', 'identify', 'auction', 'project-cost', 'bust'],
-                        'roles' => ['@'],
-                    ]
-                ],
-                'denyCallback' => function () {
-                        
-                        echo "<script>window.parent.location.assign('index.php?r=index/login');</script>";
-
-                }
-            ],
-        ];
-    }
-
-    public function actionIndex(){
-        
-        return $this->render("index");
-    }
-
-
-    //Assess add | edit | del |show
- 
-    public function actionAssess(){
-
-        $assess_info = Conclusion::find()->where(["Type"=>"评估"])->asArray()->all();
-        $years = Conclusion::years();
-        return $this->render("index", ["cu_info"=>$assess_info, "years"=>$years]);
-    }
-
-    public function actionAddAssess(){
-
-        $model = new Conclusion();
-        $request = Yii::$app->request;
-        if($request->isPost){
-
-            if( $model->load($request->post()) && $model->save() ){
-
-                return $this->redirect("index.php?r=input/assess");
-                exit;
-            }
-
-        }
-        $this->layout=false;
-        return $this->render("edit/assess", ["model"=>$model, "type"=>"评估", "title"=>"新增"]);
-    }
-
-    public function actionEditAssess(){
-
-        $request = Yii::$app->request;
-         $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
-       
-        if($request->isPost){
-            if( $model->load($request->post()) && $model->save() ){
-                return $this->redirect("index.php?r=input/assess");
-                exit;
-            } 
-        }
-
-        echo $this->renderPartial("edit/assess", ["model"=>$model, "type"=>"评估",  "title"=>$request->get("id") . "修改"]);
-
-    }
-
-    //identify
-    public function actionIdentify(){
-
-        $identify_info = Conclusion::find()->where(["Type"=>"鉴定"])->asArray()->all();
-        $years = Conclusion::years();
-        return $this->render("index", ["cu_info"=>$identify_info, "years"=>$years]);
-    }
-
-    public function actionAddIdentify(){
-
-        $model = new Conclusion();
-        $request = Yii::$app->request;
-        if($request->isPost){
-
-            if( $model->load($request->post()) && $model->save() ){
-
-                return $this->redirect("index.php?r=input/identify");
-                exit;
-            }
-
-        }
-       
-        echo  $this->renderPartial("edit/identify", ["model"=>$model, "type"=>"鉴定", "title"=>"新增"]);
-
-    }
-
-    public function actionEditIdentify(){
-
-        $request = Yii::$app->request;
-         $model = Conclusion::find()->where("id=:id", [":id"=>$request->get("id")])->one();
-       
-        if($request->isPost){
-            if( $model->load($request->post()) && $model->save() ){
-                return $this->redirect("index.php?r=input/identify");
-                exit;
-            } 
-        }
-
-        echo $this->renderPartial("edit/identify", ["model"=>$model, "type"=>"鉴定",  "title"=>$request->get("id") . "修改"]);
-
-    }
-
-
-    //auction
-    public function actionAuction(){
-
-
-
-        $auction_info = array();
-        return $this->render("index", ["auction_info"=>$auction_info]);
-    }
-
-    public function actionAddAuction(){
-
-        echo $this->renderPartial("edit/auction");
-    }
-
-    public function actionEditAuction(){
-
-        echo $this->renderPartial("edit/auction");
-    }
-
-
-    //project_cost
-    public function actionProjectCost(){
-
-        $project_cost_info = array();
-        return $this->render("index", ["project_cost_info"=>$project_cost_info]);
-    }
-
-    public function actionAddProjectCost(){
-
-        echo $this->renderPartial("edit/project-cost");
-    }
-
-    public function actionEditProjectCost(){
-
-        echo $this->renderPartial("edit/project-cost");
-    }
-
-        //bust
-    public function actionBust(){
-
-        $bust_info = array();
-        return $this->render("index", ["bust_info"=>$bust_info]);
-    }
-
-    public function actionAddBust(){
-
-        echo $this->renderPartial("edit/bust");
-    }
-
-    public function actionEditBust(){
-
-        echo $this->renderPartial("edit/bust");
-    }
-
-    //delete from id : assess, auction, bust, identify, project-cost
-    public function actionDel(){
-        $request = Yii::$app->request;
-       if($request->isGet){
-
-            $model = Conclusion::find()->where("ID=:id", [":id"=>$request->get("id")])->one();
-            if($model->delete()){
-                echo "success";
-            }else{
-                echo "defail";
-            }
-
-       }
-    }
-
-
-    //Import Excle
+     
+    //导入功能
     public function actionImport(){
-
-        if (Yii::$app->request->isPost) {
-
-            $model = new Conclusion();
-            $post_data = Yii::$app->request->post();
-            
-            foreach ( $post_data as $key => $value) {
-
-                $model->$key = $value;
+        $request = Yii::$app->request;
+        $className = "\\app\\module\\" .  $request->get("module") . "\\models\\" . ucfirst( $request->get("action") );
+        $class = new \ReflectionClass( $className ); 
+        $model  = $class->newInstanceArgs();
+        $script = "";
+        if( $request->isPost ){
+            $model->Type = $model->type;
+            $model->ModuleType = $model->module_type;
+            $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
+            $model->Year = date("Y");
+            foreach( $request->post("data_obj") as $_k=>$_v ){
+                $model->$_k = $_v;
             }
-
-            if( $model->validate() && $model->save() ){
+           //var_dump( $model );exit;
+            if( $model->save() ){
                     echo "success";
+                    exit();
             }else{
                     echo "defail";
+                    exit();
             }
-            exit;
         }
-        
-       echo $this->renderPartial("import");
-
+        $this->layout = "import";
+        echo $this->render("import", ["model"=>$model, "script"=>$script, "module"=>$request->get("module") ]);
     }
 
-    //importList**********
     public function actionImportList(){
-
         $model = new UploadForm();
-
-        if(Yii::$app->request->isPost){
-            
-            $model->file = UploadedFile::getInstanceByName('file');
-            if ($model->validate()) { 
-
-                $path = '../uploads/' . $model->file->baseName . '.' . $model->file->extension;
-                $model->file->saveAs($path);
-                
-                error_reporting(E_ALL);
-                date_default_timezone_set('Asia/shanghai');
-                $objPHPExcel = new \PHPExcel();
-                $objReader = \PHPExcel_IOFactory::createReaderForFile("../uploads/pg.xls");
-                $objPHPExcel = $objReader->load("../uploads/pg.xls");
-                $objPHPExcel->setActiveSheetIndex(0);
-                $objWorksheet = $objPHPExcel->getActiveSheet();
-                $arr = array();
-                $i = 0;
-                foreach($objWorksheet->getRowIterator() as $row){
-
-                    $cellIterator = $row->getCellIterator();
-                    $cellIterator->setIterateOnlyExistingCells(false);
-                    foreach($cellIterator as $cell)
-                    {
-
-                        $value = $cell->getValue();
-                        
-                        if( $cell->getDataType() == \PHPExcel_Cell_DataType::TYPE_NUMERIC )
-                        {  
-                            /*
-                            $cellstyleformat=$cell->getParent()->getStyle( $cell->getCoordinate() )->getNumberFormat();  
-                            $formatcode=$cellstyleformat->getFormatCode();  
-
-                            if (preg_match('/^(\[\$[A-Z]*-[0-9A-F]*\])*[hmsdy]/i', $formatcode)) {  
-
-                                $value=gmdate("Y-m-d", \PHPExcel_Shared_Date::ExcelToPHP($value));  
-                            }else{  
-
-                                $value = \PHPExcel_Style_NumberFormat::toFormattedString($value,$formatcode);  
-                            }  
-*/
-                            $value = date( "Y-m-d", \PHPExcel_Shared_Date::ExcelToPHP($value) );
-                        }  
-              
-                        $arr[$i][] = $value;
-                    }
-                    $i++;
+        if( Yii::$app->request->isPost ){
+           
+                $model->file = UploadedFile::getInstanceByName('file');
+                if( $model->validate() ){ 
+                        $name = Yii::$app->user->identity->Number;
+                        $path = Yii::$app->basePath . '/uploads/' . $name . '.' . $model->file->extension;
+                        if( $model->file->saveAs($path) ){
+                            $import = new Import();
+                            $import->path = $path;
+                            echo $import->jsonExcel();
+                            exit();
+                        }
                 }
-                
-                echo json_encode($arr);
-                //echo $model->file->baseName . '.' . $model->file->extension;
-                exit;
-            }else{
                 echo "error";
-                exit;
+                exit();
             }
-
-                
-            
-            
-        }
-        
-
+        $this->layout = false;
     }
 
-    //Print PDF Document to Windows
-    public function actionPrint(){
-
-        $model = new Conclusion();
-        //return $this->render("index");
-        $request = Yii::$app->request;
-        if($request->isGet){
-
-            $page_size = $request->get("page");
-            $title = $request->get("title", "");
-            $sub_title = $request->get("subtitle", "");
-            $html = $this->renderPartial("tpl/test");
-            //$html = "AAAA\nBBBBB";
-
-            $pdf = new \TCPDF('P', 'mm', $page_size, true, 'UTF-8', false); 
-            // 设置页眉和页脚字体 
-            $pdf->setHeaderFont(Array('stsongstdlight', '', '10')); 
-            $pdf->setFooterFont(Array('helvetica', '', '8')); 
-
-            // set default header data
-            $pdf->SetHeaderData("", "", $title, $sub_title);
-
-            // set default monospaced font
-            $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-            // set image scale factor
-            $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
-            // set some language-dependent strings (optional)
-            if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-                require_once(dirname(__FILE__).'/lang/eng.php');
-                $pdf->setLanguageArray($l);
-            }
-            // set font
-            $pdf->SetFont('stsongstdlight', '', 10);
-            // add a page
-            $pdf->AddPage($page_size);
-            // output the HTML content
-            $pdf->writeHTML($html, true, false, true, false, '');
-            // reset pointer to the last page
-            $pdf->lastPage();
-            //Close and output PDF document
-            $pdf->Output('index.php/example_061.pdf', 'I');
-
-        }else{
-
-          return $this->renderPartial("print", ["model"=>$model]);  
-        }
-        
-        
-    }
-
-    public function actionStartPrint(){
-
-        $request = Yii::$app->request;
-        if($request->isGet){
-
-            echo $this->renderPartial("tpl/start-print", ["id"=>$request->get("id"), "title"=>$request->get("id")]);
-        }
-
-        if($request->isPost){
-            return true;
-        }
-
-    }
-
-    //Defining Advanced Search
-    public function actionSearch(){
-
-        echo $this->renderPartial("search");
-        
-
-    }
-
+    //另存为
     public function actionSaveAs(){
 
-        echo $this->renderPartial("save-as");
+        $request = Yii::$app->request;
+        $className = "\\app\\module\\" .  $request->get("module") . "\\models\\" . ucfirst( $request->get("action") );
+        $class = new \ReflectionClass( $className ); 
+        $model  = $class->newInstanceArgs();
+        if( $request->isPost ){
+            $cache = Yii::$app->cache;
+            $cache_name = Yii::$app->user->identity->Number . "data";
+            $excelObj = new OutputExcel();
+            $excelObj->filename = $request->post("_filename");
+            $excelObj->title = $request->post("_title");
+            $excelObj->type = $request->post("_type");
+            $excelObj->header = $model->attributeLabels();
+            $excelObj->content = $cache->get( $cache_name );
+            $excelObj->output();
+            exit;
+        }
+        echo $this->renderPartial("save-as", ["type"=>$model->type, "action"=>$request->get("action"), "module"=>$request->get("module") ]);
     }
 
-    public function actionCaseNumber(){
-
-        $model_info = Conclusion::find()->select("CaseNumber, Case")->all();
-        echo $this->renderPartial("edit/case-number", ["model_info"=>$model_info]);
+    //search
+    public function actionSearch(){
+        $request = Yii::$app->request;
+        echo $this->renderPartial("search", ["module"=>$request->get("module"), "action"=>$request->get("action")]);
     }
-        
+
+
+    public function actionFlowNumber(){
+
+        $model_info = Conclusion::find()->select( "CaseNumber, Case")->asArray()->all();
+        return $this->renderPartial("flow-number", [ "model_info"=>$model_info] );
+    }
+
+    public function actionCase(){
+
+        $model_info = BasicCase::find()->select( "Name,Remark")->asArray()->all();
+        return $this->renderPartial("case", [ "model_info"=>$model_info] );
+
+    }
 
 }

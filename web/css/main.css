@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
 }
-body {
+body{
     overflow: hidden;
 }
 
@@ -48,22 +48,21 @@ li{
 
 .content{
 
+    background-color: lightblue;
+
 }
 
 .side{
-    width: auto;
     float: left;
 }
 
 .section{
-    height: auto;
     float: left;
-    background-color: antiquewhite;
-
+    background-color: lightgreen;
 }
 
-.section iframe{
+#artical{
     width: 100%;
-    height: 100%;
-
+    height: 95%;
+    overflow: scroll;
 }
