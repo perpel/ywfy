@@ -30,7 +30,7 @@ InputAsset::register($this);
         <li class="fnt ico-edit" data-pop="pop"><span data-action="<?= Yii::$app->controller->action->id;?>">编辑</a></li>
         <li class="fnt ico-del"><span data-action="del">删除</span></li>
         <li class="fnt ico-save-as"><span data-action="<?= Yii::$app->controller->action->id;?>">另存为</span></li>
-        <li class="fnt ico-print" data-pop="pop"><span data-action="print">打印</span></li>
+        <li class="fnt ico-print" data-pop="pop"><span data-action="<?= Yii::$app->controller->action->id;?>">打印</span></li>
         <li class="fnt ico-search" data-pop="pop"><span data-action="<?= Yii::$app->controller->action->id;?>">条件查询</span></li>
         <li class="fnt ico-exit"><span data-action="exit">exit</span></li>
     </ul>    

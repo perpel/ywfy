@@ -11,7 +11,7 @@ class Assess extends Conclusion
    public $type = "评估";
    public $module_type = "执行";
 
-    public function attributeLabels()
+   public function attributeLabels()
     {
        return [
                 'ID' => '序号',
@@ -49,6 +49,17 @@ class Assess extends Conclusion
                 'UndertakerTel' => '承办人电话',
                 'SuperviseTel' => '督办人电话',
                 'Remark' => '备注',               
+        ];
+    }
+
+    public static function status(){
+
+        return [
+            ""=>"选择进度",
+            "委托"=>"委托",
+            "暂缓"=>"暂缓",
+            "撤回"=>"撤回",
+            "完成"=>"完成",
         ];
     }
 

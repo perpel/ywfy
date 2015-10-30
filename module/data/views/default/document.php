@@ -34,7 +34,7 @@ echo "<th data-tpl='Name'>" . $ths['Name'] . "</th>";
 echo "<th data-btn='Assess'>" . $ths['Assess'] . "</th>";
 echo "<th data-btn='Identify'>" . $ths['Identify'] . "</th>";
 echo "<th data-btn='Auction'>" . $ths['Auction'] . "</th>";
-echo "<th data-btn='ProjectCost'>" . $ths['ProjectCost'] . "</th>";
+echo "<th data-btn='ProjectCost'>" . $ths['Projectcost'] . "</th>";
 echo "<th data-btn='Bust'>" . $ths['Bust'] . "</th>";
 
 ?>
@@ -66,7 +66,7 @@ echo "<th data-btn='Bust'>" . $ths['Bust'] . "</th>";
                 echo "<td data-key='Auction' data-btn='Auction'><input type='checkbox' value=0></td>";
             }
 
-            if($v["ProjectCost"]){
+            if($v["Projectcost"]){
                 echo "<td data-key='ProjectCost' data-btn='ProjectCost'><input type='checkbox' checked value=1></td>";
             }else{
                 echo "<td data-key='ProjectCost' data-btn='ProjectCost'><input type='checkbox' value=0></td>";

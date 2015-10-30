@@ -3,6 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use app\models\Conclusion;
+use app\module\data\models\Agency;
 ?>
 <?php
 $this->registerJs($script);
@@ -38,7 +39,9 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList(Conclusion::PrincipalDepartment()) ?></td>
+    <td><?= $form->field($model, 'IdentifiedType', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'IdentifiedType', ['template'=>'{input}{error}'])->dropDownList($model::IdentifyType())?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'UndertakerTel', ['template'=>'{label}'])?></td>
@@ -51,13 +54,13 @@ $this->registerJs($script);
   </tr>
 
   <tr>
-    <td><?= $form->field($model, 'SubjectMatter', ['template'=>'{label}']) ?></td>
-    <td colspan="7"><?= $form->field($model, 'SubjectMatter', ['template'=>'{input}{error}'])->textarea() ?></td>
+    <td><?= $form->field($model, 'IdentifiedCondition', ['template'=>'{label}']) ?></td>
+    <td colspan="7"><?= $form->field($model, 'IdentifiedCondition', ['template'=>'{input}{error}'])->textarea() ?></td>
   </tr>
 
   <tr>
     <td><?= $form->field($model, 'Agency', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}'])->dropDownList(Agency::dropList( $model->type )) ?></td>
     <td><?= $form->field($model, 'Assessor', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'AssessorTel', ['template'=>'{label}'])?></td>
@@ -66,7 +69,7 @@ $this->registerJs($script);
 
    <tr>
     <td><?= $form->field($model, 'ChoiceWay', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])->dropDownList(Conclusion::selectedMode()) ?></td>
     <td><?= $form->field($model, 'ChoicedDate', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'ChoicedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
@@ -100,26 +103,31 @@ $this->registerJs($script);
   </tr>
 
    <tr>
-    <td><?= $form->field($model, 'AuctionStatus', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'AuctionStatus', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Price', ['template'=>'{label}'])->label("评估价")?></td>
+     <td><?= $form->field($model, 'AuctionStatus', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'AuctionStatus', ['template'=>'{input}{error}'])->dropDownList($model::status()) ?></td>
+    <td><?= $form->field($model, 'Price', ['template'=>'{label}'])->label("鉴定价")?></td>
     <td><?= $form->field($model, 'Price', ['template'=>'{input}{error}'])?></td>
-    <td><label>评估报告</label></td>
+    <td><label>鉴定报告</label></td>
     <td><input type="file" /></td>
   </tr>
 
   <tr>
     <td><?= $form->field($model, 'NotifyPaymentDate', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'NotifyPaymentDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'Money', ['template'=>'{label}'])->label("评估费用")?></td>
+    <td><?= $form->field($model, 'Money', ['template'=>'{label}'])->label("鉴定费用")?></td>
     <td><?= $form->field($model, 'Money', ['template'=>'{input}{error}'])?></td>
     <td><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
 </tr>
 
 <tr>
-     <td><?= $form->field($model, 'FllowResult', ['template'=>'{label}'])?></td>
-    <td colspan="7"><?= $form->field($model, 'FllowResult', ['template'=>'{input}{error}'])?></td>
+     <td><?= $form->field($model, 'SourceIdentifiedDepartment', ['template'=>'{label}'])?></td>
+    <td colspan="7"><?= $form->field($model, 'SourceIdentifiedDepartment', ['template'=>'{input}{error}'])?></td>
+</tr>
+
+<tr>
+     <td><?= $form->field($model, 'SourceIdentifiedResult', ['template'=>'{label}'])?></td>
+    <td colspan="7"><?= $form->field($model, 'SourceIdentifiedResult', ['template'=>'{input}{error}'])?></td>
 </tr>
 
 <tr>

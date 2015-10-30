@@ -14,6 +14,9 @@ use app\models\Conclusion;
 use app\models\Import;
 use app\models\OutputExcel;
 use app\module\data\models\BasicCase;
+use app\module\data\models\Document;
+use app\models\DocumentTemplate;
+use app\models\PHPWord;
 
 class InputController extends Controller{
 
@@ -96,18 +99,82 @@ class InputController extends Controller{
         echo $this->renderPartial("search", ["module"=>$request->get("module"), "action"=>$request->get("action")]);
     }
 
+    public function actionPrint(){
+        $request = Yii::$app->request;
+        $action = ucfirst($request->get("action"));
+        $model_info = Document::find()->where("$action = 1")->asArray()->all();
+        echo $this->renderPartial("print", ["model_info"=>$model_info]);
+    }
+
+
+    public function actionPrintTemplate(){
+
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $printObj = DocumentTemplate::find()->where("DocumentID = $id")->asArray()->one();
+        $url = "";
+        $ext = "doc";
+        if($printObj){
+            $url =  $request->getHostInfo() . $request->getBaseUrl() . "/template/" . $printObj["URL"];
+            $ext = end(explode(".", $url));
+            
+            $phpword = new PHPWord();
+            $phpword->replace( Yii::$app->basePath . '/web/template/' . $printObj["URL"] );
+
+        }
+        echo $this->renderPartial("print-template", ["doc_id"=>$id, "url"=>$url, "ext"=>$ext]);
+    }
+
+    public function actionSavePrint(){
+
+        $request = Yii::$app->request;
+        
+        if( Yii::$app->request->isPost ){
+           $model = new UploadForm();
+            $model->file = UploadedFile::getInstanceByName('AipFile');
+            
+                if( $model->validate() ){ 
+                        $name = "document" . $request->post("template");
+                        $path = Yii::$app->basePath . '/web/template/' . $name . '.' . $model->file->extension;
+                        if( $model->file->saveAs($path) ){
+                            $docid = $request->post("template");
+                            $obj = DocumentTemplate::find()->where("DocumentID = $docid")->one();
+                            if($obj){
+                                $obj->URL = $name . '.' . $model->file->extension;
+                                $obj->save();
+
+                            }else{
+                                $m = new DocumentTemplate();
+                                $m->DocumentID = $request->post("template");
+                                $m->URL = $name . '.' . $model->file->extension;
+                                $m->save();
+                            }
+                            echo "success";
+                            exit();
+                        }
+                }else{
+                    echo "defail";
+                }
+            }
+    }
+
 
     public function actionFlowNumber(){
 
         $model_info = Conclusion::find()->select( "CaseNumber, Case")->asArray()->all();
-        return $this->renderPartial("flow-number", [ "model_info"=>$model_info] );
+        return $this->renderPartial("flow-number", [ "model_info"=>$model_info, "tid"=>Yii::$app->request->get("tid")] );
     }
 
     public function actionCase(){
 
-        $model_info = BasicCase::find()->select( "Name,Remark")->asArray()->all();
-        return $this->renderPartial("case", [ "model_info"=>$model_info] );
+        $model_info = BasicCase::find()->select( "Name")->asArray()->all();
+        return $this->renderPartial("case", [ "model_info"=>$model_info, "tid"=>Yii::$app->request->get("tid")] );
 
+    }
+
+    public function actionPrintDownload(){
+
+        return Yii::$app->response->sendFile( Yii::$app->basePath . '/web/soft/WebOffice.rar');
     }
 
 }

@@ -22,7 +22,7 @@ class Document extends \yii\db\ActiveRecord
         return [
             [['DepartmentNumber'], 'required'],
             [['Name'], 'string'],
-            [['DepartmentNumber', 'Assess', 'Identify', 'Auction', 'ProjectCost', 'Bust'], 'integer']
+            [['DepartmentNumber', 'Assess', 'Identify', 'Auction', 'Projectcost', 'Bust'], 'integer']
         ];
     }
 
@@ -38,7 +38,7 @@ class Document extends \yii\db\ActiveRecord
             'Assess' => '评估',
             'Identify' => '鉴定',
             'Auction' => '拍卖',
-            'ProjectCost' => '工程造价',
+            'Projectcost' => '工程造价',
             'Bust' => '破产',
         ];
     }
@@ -53,7 +53,7 @@ class Document extends \yii\db\ActiveRecord
             'Assess' => '评估',
             'Identify' => '鉴定',
             'Auction' => '拍卖',
-            'ProjectCost' => '工程造价',
+            'Projectcost' => '工程造价',
             'Bust' => '破产',
         ];
     }

@@ -3,6 +3,7 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use app\models\Conclusion;
+use app\module\data\models\Agency;
 ?>
 <?php
 $this->registerJs($script);
@@ -38,7 +39,7 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList(Conclusion::PrincipalDepartment())  ?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'UndertakerTel', ['template'=>'{label}'])?></td>
@@ -47,7 +48,9 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'TransferMaterial', ['template'=>'{label}']) ?></td>
-    <td colspan="7"><?= $form->field($model, 'TransferMaterial', ['template'=>'{input}{error}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'TransferMaterial', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'Assessor', ['template'=>'{label}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
   </tr>
 
   <tr>
@@ -57,19 +60,10 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'Agency', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}']) ?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{input}{error}']) ?></td>
-  </tr>
-
-   <tr>
-    <td><?= $form->field($model, 'ChoiceWay', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'ChoicedDate', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'ChoicedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-  </tr>
+    <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}'])->dropDownList(Agency::dropList( $model->type )) ?></td>
+     <td><?= $form->field($model, 'ChoiceWay', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])->dropDownList(Conclusion::selectedMode())?></td>
+     </tr>
 
 
   <tr>
@@ -84,38 +78,72 @@ $this->registerJs($script);
     <tr>
     <td><?= $form->field($model, 'SendDate', ['template'=>'{label}'])->label("委托日期")?></td>
     <td colspan="3"><?= $form->field($model, 'SendDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'BeginDate', ['template'=>'{label}'])->label("补充材料日期")?></td>
-    <td><?= $form->field($model, 'BeginDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'RetractDate', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'RetractDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'AuctionStatus', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'AuctionStatus', ['template'=>'{input}{error}'])->dropDownList($model::status())?></td>
+    
+     </tr>
+
+  <tr>
+    <td></td>
+    <td>第一次拍卖</td>
+    <td>第二次拍卖</td>
+    <td>第三次拍卖</td>
+    <td>变卖</td>
+     <td><?= $form->field($model, 'SuspendedDate', ['template'=>'{label}'])?></td>
+    <td  colspan="2"><?= $form->field($model, 'SuspendedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
 
   <tr>
-    <td><?= $form->field($model, 'SiteSurveyDate', ['template'=>'{label}'])->label("勘察日期")?></td>
-    <td colspan="3"><?= $form->field($model, 'SiteSurveyDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'GetbackDate', ['template'=>'{label}'])->label("结案日期")?></td>
-    <td><?= $form->field($model, 'GetbackDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><label>结案周期</label></td>
-    <td><input type="text" /></td>
+    <td>公告</td>
+    <td><?= $form->field($model, 'AnnouncementDate1', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'AnnouncementDate2', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'AnnouncementDate3', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'SaleDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'RetractDate', ['template'=>'{label}'])?></td>
+    <td colspan="2"><?= $form->field($model, 'RetractDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+  </tr>
+
+<tr>
+  <td>时间</td>
+  <td><?= $form->field($model, 'Time1', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+  <td><?= $form->field($model, 'Time2', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+  <td><?= $form->field($model, 'Time3', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+  <td></td>
+  <td><?= $form->field($model, 'Money', ['template'=>'{label}'])?></td>
+  <td colspan="2"><?= $form->field($model, 'Money', ['template'=>'{input}{error}'])?></td>
+</tr>
+
+
+
+<tr>
+  <td>状态</td>
+    <td><?= $form->field($model, 'Status1', ['template'=>'{input}{error}'])->dropDownList($model::status2())?></td>
+    <td><?= $form->field($model, 'Status2', ['template'=>'{input}{error}'])->dropDownList($model::status2())?></td>
+    <td><?= $form->field($model, 'Status3', ['template'=>'{input}{error}'])->dropDownList($model::status2())?></td>
+    <td><?= $form->field($model, 'SaleStatus', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'TotalDate', ['template'=>'{label}'])->label("到帐日期")?></td>
+    <td colspan="2"><?= $form->field($model, 'TotalDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
 
    <tr>
-    <td><?= $form->field($model, 'AuctionStatus', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'AuctionStatus', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Price', ['template'=>'{label}'])->label("评估价")?></td>
-    <td><?= $form->field($model, 'Price', ['template'=>'{input}{error}'])?></td>
-    <td><label>评估报告</label></td>
-    <td><input type="file" /></td>
+    <td>起拍价</td>
+    <td><?= $form->field($model, 'StartAuctionPrice1', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'StartAuctionPrice2', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'StartAuctionPrice3', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'SalePrice', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'Cycle', ['template'=>'{label}'])->label("拍卖周期")?></td>
+    <td colspan="2"><?= $form->field($model, 'Cycle', ['template'=>'{input}{error}'])?></td>
   </tr>
 
   <tr>
-    <td><?= $form->field($model, 'NotifyPaymentDate', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'NotifyPaymentDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'Money', ['template'=>'{label}'])->label("评估费用")?></td>
-    <td><?= $form->field($model, 'Money', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-</tr>
+    <td>价格</td>
+    <td><?= $form->field($model, 'Price1', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'Price2', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'Price3', ['template'=>'{input}{error}'])?></td>
+    <td></td>
+    <td></td>
+    <td colspan="2"><input type="file" /></td>
+  </tr>
 
 <tr>
      <td><?= $form->field($model, 'FllowResult', ['template'=>'{label}'])?></td>

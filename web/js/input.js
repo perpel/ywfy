@@ -100,27 +100,12 @@ $(function(){
         $.get("./index.php?r=input/search",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
     });
 
-    //****************************************************///
-    
-
-/*
     //print
     $("#section-bar").find(".fnt.ico-print").click(function(){
+        var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop({_size: "small"});
-        $.post("./index.php?r=input/print",{},function(data){$(".pop-content", pop).html(data);});
+        $(".pop-footer", pop).hide();
+        $.get("./index.php?r=input/print",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
     });
 
-
-    
-
-     
-
-
-
-
-
-
-    
-
-*/
 });

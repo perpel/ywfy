@@ -1,13 +1,16 @@
 $(function(){
 
-    $("#assess-casenumber").dblclick(function(){
+    $("#assess-casenumber,#identify-casenumber,#auction-casenumber,#projectcost-casenumber").dblclick(function(){
         var pop = $(this).pop({_size:"small"});
-        $.get("./index.php?r=input/flow-number",function(data){$(".pop-content", pop).html(data);});
+        var tid = $(this).attr("id");
+        pop.find(".pop-footer").remove();
+        $.get("./index.php?r=input/flow-number&tid=" + tid,function(data){$(".pop-content", pop).html(data);});
     });
 
-    $("#assess-case").dblclick(function(){
+    $("#assess-case,#identify-case,#auction-case,#projectcost-case").dblclick(function(){
         var pop = $(this).pop({_size:"small"});
-        $(".pop-content", pop).css("overflow", "scroll");
-        $.get("./index.php?r=input/case",function(data){$(".pop-content", pop).html(data);});
+        var tid = $(this).attr("id");
+        pop.find(".pop-footer").remove();
+        $.get("./index.php?r=input/case&tid=" + tid,function(data){$(".pop-content", pop).html(data);});
     });
 });

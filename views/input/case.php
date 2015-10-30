@@ -1,7 +1,7 @@
 <style>
 ul,li{ list-style:none;}
 .printbox{ width:100%; height:30px; line-height:30px; background:url(../../web/images/payment_bg.jpg) repeat-x;}
-.tablebook{ width:100%; max-height:350px; overflow-y:auto; overflow-x:hidden; margin-top:10px;}
+.tablebook{ width:100%; height:90%;overflow-y:auto; overflow-x:hidden; margin-top:10px;}
 .tablebook table{ width:100%; border:1px solid #cacaca; border-top:none;}
 .tablebook table th{ line-height:30px;  border:1px solid #cacaca; border-bottom:none; border-right:none; background:#f5f7fa; font-size:14px;}
 .tablebook table td{ line-height:25px;  border:1px solid #cacaca; border-bottom:none; border-right:none; text-align:center; font-size:12px;}
@@ -10,27 +10,27 @@ ul,li{ list-style:none;}
 
 <script>
   $(function(){
-
+var tid = $("#tid").val();
     $(".case-number tr:gt(0)").dblclick(function(){
         var v = $(this).find("td").eq(0).text();
-        $("#assess-case").val(v);
+        $("#" + tid).val(v);
         $(this).parents(".pop").remove();
     });
 
 
-        var tds = $(".case-number td:odd");
+        var trs = $(".case-number").find("tr:gt(0)");
 
         $(".print-search").keyup(function(){
 
             var srch = $(this).val();
             if( $.trim(srch) == "" ){
-              tds.parent("tr").show();
+              trs.show();
               return false;
             }
-            tds.parent("tr").show();
-            tds.each(function(){
+            trs.show();
+            trs.each(function(){
                 if( $(this).text().indexOf(srch) == -1){
-                    $(this).parent("tr").hide();
+                    $(this).hide();
                 }
             });
         });
@@ -56,7 +56,7 @@ ul,li{ list-style:none;}
   });
   
 </script>
-
+<input type="hidden" id="tid" value="<?=$tid?>">
 <div class="printbox">
     <ul class="fnt-ul">
       <li></li>
@@ -70,12 +70,11 @@ ul,li{ list-style:none;}
 <table cellspacing="0">
         <tr>
         <th>案由</th>
-        <th>Remark</th>
       </tr>
       <?php
         foreach($model_info as $v){
             echo "<tr>";
-            echo "<td>" . $v["Name"] . "</td><td>" . $v["Remark"] . "</td>";
+            echo "<td>" . $v["Name"] . "</td>";
             echo "</tr>";
         }
       ?>

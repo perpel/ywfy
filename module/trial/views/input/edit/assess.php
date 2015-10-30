@@ -39,7 +39,7 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList(Conclusion::PrincipalDepartment()) ?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'Chambers', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'UndertakerTel', ['template'=>'{label}'])?></td>
