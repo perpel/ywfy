@@ -17,6 +17,8 @@ use app\module\data\models\BasicCase;
 use app\module\data\models\Document;
 use app\models\DocumentTemplate;
 use app\models\PHPWord;
+use app\module\data\models\Agency;
+
 
 class InputController extends Controller{
 
@@ -34,7 +36,7 @@ class InputController extends Controller{
             $model->ModuleType = $model->module_type;
             $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
             $model->Year = date("Y");
-            foreach( $request->post("data_obj") as $_k=>$_v ){
+            foreach( json_decode($request->post("data_obj")) as $_k=>$_v ){
                 $model->$_k = $_v;
             }
            //var_dump( $model );exit;
@@ -118,11 +120,12 @@ class InputController extends Controller{
             $url =  $request->getHostInfo() . $request->getBaseUrl() . "/template/" . $printObj["URL"];
             $ext = end(explode(".", $url));
             
-            $phpword = new PHPWord();
-            $phpword->replace( Yii::$app->basePath . '/web/template/' . $printObj["URL"] );
+            //$phpword = new PHPWord();
+            //$phpword->replace( Yii::$app->basePath . '/web/template/' . $printObj["URL"] );
 
         }
-        echo $this->renderPartial("print-template", ["doc_id"=>$id, "url"=>$url, "ext"=>$ext]);
+        $this->layout = "weboffice";
+        return $this->render("print-template", ["doc_id"=>$id, "url"=>$url, "ext"=>$ext]);
     }
 
     public function actionSavePrint(){
@@ -172,9 +175,27 @@ class InputController extends Controller{
 
     }
 
+    public function actionAgency(){
+        $model_info = Agency::find()->where(["Type"=>Yii::$app->request->get("type")])->asArray()->all();
+        return $this->renderPartial("agency", [ "model_info"=>$model_info, "tid"=>Yii::$app->request->get("tid")] );
+    }
+
     public function actionPrintDownload(){
 
         return Yii::$app->response->sendFile( Yii::$app->basePath . '/web/soft/WebOffice.rar');
+    }
+
+    public function actionGetCaseNumber(){
+
+        $caseNumberPrefix = '浙义法委';
+        $request = Yii::$app->request;
+        if( $request->isGet ){
+                $year = date("Y");
+                $type = $request->get("type");
+                $count = Conclusion::find()->where(["Year"=>$year, "Type"=>$type])->count() + 1;
+                echo "(" . $year . ")" . $caseNumberPrefix . mb_substr($type, 0, 1, 'utf-8') . $count . "号";
+        }
+
     }
 
 }

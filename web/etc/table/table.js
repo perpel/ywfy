@@ -26,6 +26,20 @@ $(function(){
 
     };
 
+    var cleanColSeleted = function(){
+
+        var trs = $(".drag-table").children("tbody").find("tr");
+
+        $.each(trs, function(i, v){         
+            $(this).children().each(function(k, val){
+                if(k == posIndex && posIndex != 0){
+                    $(this).empty();
+                }   
+            });
+        });
+
+    };
+
     var deleteColSeleted = function(){
 
         var trs = $(".drag-table").children("tbody").find("tr");
@@ -65,8 +79,6 @@ $(function(){
     $("#pop").on("click", ":button[name='DH']",function(){
         var a = $(this).siblings(":text[name='ACol']").val();
         var b = $(this).siblings(":text[name='BCol']").val();
-        alert(a);
-        alert(b);
         if(!a){
             alert("倒换失败,A列不能为空/0");
             return false;
@@ -87,6 +99,10 @@ $(function(){
         removeSeleted();
         posIndex = $(this).index();
         setSelected();
+    });
+
+    $("#pop").on("click", ":button[name='cleanColSelected']",function(){
+        cleanColSeleted();
     });
 
     $("#pop").on("click", ":button[name='delColSelected']",function(){

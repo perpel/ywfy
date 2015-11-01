@@ -70,8 +70,13 @@ $(function(){
 
         var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop();
+        pop.children(".pop-title").append("当前位置：导入");
+        pop.children(".pop-footer").append('<input type="button" name="delColSelected" value="删除选定列">   | ');
+        pop.children(".pop-footer").append('<input type="button" name="delRowSelected" value="删除选定行">  | ');
+        pop.children(".pop-footer").append('<input type="text" name="ACol" size="3">O<input type="text" name="BCol" size="3"><input type="button" name="DH" value="倒换"> |');
+        pop.children(".pop-footer").append('<input type="button" name="cleanColSelected" value="清空选定列">   |');
         $(".pop-content", pop).css("overflow", "scroll");
-        $.get("./index.php?r=input/import",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+        $.get("./index.php?r=input/import", { "action":action, "module":module }, function(data){$(".pop-content", pop).html(data)});
 
     });
 
@@ -107,5 +112,6 @@ $(function(){
         $(".pop-footer", pop).hide();
         $.get("./index.php?r=input/print",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
     });
+
 
 });

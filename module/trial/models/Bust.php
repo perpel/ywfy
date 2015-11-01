@@ -15,9 +15,9 @@ class Bust extends Conclusion
     {
        return [
                 'ID' => '序号',
-                'UCycle' => '评估周期',
+                'UCycle' => '周期',
                 'AuctionStatus' => '进度',
-                'FlowNumber' => '委托案号',
+                'FlowNumber' => '清算案号',
                 'EntrustDeparment' => '委托部门',
                 'CaseNumber' => '原审案号',
                 'Case' => '案由',
@@ -25,30 +25,35 @@ class Bust extends Conclusion
                 'LitigantTwo' => '当事人2',
                 'SubjectMatter' => '标的物',
                 'ChoiceWay' => '选定方式',
-                'ChoicedDate' => '选定时间',
-                'Agency'=> '机构名称',
-                'TropschOffice' => '送委托办日期',//收案日期
-                'MaterialsCompletionDate' => '材料补全日期',//立案日期
+                'Agency'=> '清算机构',
                 'TransferMaterial' => '移交材料',
-                'SendDate' => '送卷日期',//委托日期
+                'TropschOffice' => '收案日期',//送委托办日期
+                'MaterialsCompletionDate' => '立案日期',//材料补全日期
+                'UCaseCycle'=>'立案周期',
+                'SendDate' => '委托日期',//送卷日期
                 'EntrustCycle' => '委托周期',
-                'SiteSurveyDate' => '现场勘察日期',
-                'RetractDate' => '撤回日期',
-                'SuspendedDate' => '暂缓日期',
-                'DeliveryCourtDate' => '送达业务庭日期',
-                'ChargesDate' => '缴费日期',
-                'GetbackDate' => '回卷日期',//结案日期
-                'Cycle' => '结案周期',
-                'Price' => '价格', //评估价
+                'BeginDate' => '开始日期',//补充材料日期
+                'GetbackDate' => '结案日期',//回卷日期
                 'FllowResult' => '跟踪评查情况',
-                'Chambers' => '业务庭承办人', 
                 'Supervise' => '督办人',
-                'Money' => '费用', //评估费用
-                'Assessor' => '评估师',
-                'AssessorTel' => '评估师电话',
-                'UndertakerTel' => '承办人电话',
                 'SuperviseTel' => '督办人电话',
-                'Remark' => '备注',               
+                'Chambers' => '业务庭承办人', 
+                'UndertakerTel' => '承办人电话',
+                'Money' => '清算费用', //评估费用
+                'Remark' => '备注', 
+        ];
+    }
+
+     public static function status(){
+
+        return [
+            ""=>"选择进度",
+            "收卷"=>"收卷",
+            "立案"=>"立案",
+            "委托"=>"委托",
+            "审计"=>"审计",
+            "完成"=>"完成",
+            "撤销"=>"撤销",
         ];
     }
 

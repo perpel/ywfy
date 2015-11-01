@@ -51,19 +51,39 @@ InputAsset::register($this);
         $i = 1;
         $arr = [];
         foreach ( $model_info as $_key=>$_value ) {
-             echo "<tr data-id=" . $_value["ID"] . ">";
+                 echo "<tr data-id=" . $_value["ID"] . ">";
+                 if(!$_value["MaterialsCompletionDate"]){
+                    $ucasecycle = 0;
+                 }else{
+
+                        if(!$_value["TropschOffice"] || $_value["TropschOffice"] > $_value["MaterialsCompletionDate"]){
+                            $ucasecycle = 0;
+                         }else{
+                            $ucasecycle = round((strtotime($_value["MaterialsCompletionDate"]) - strtotime($_value["TropschOffice"])) / 86400)+1;
+                         }
+
+                }
+
              foreach( $model->attributeLabels() as $_k=>$_v ){
                     echo "<td>";
-                    if( $_k == "ID" ){
-                        echo $i;
-                        $arr[$i][] = $i;
-                    }elseif( $_k == "UCycle" ){
-                        echo "0";
-                        $arr[$i][] = 0;
-                    }else{
-                        echo $_value[$_k];
-                        $arr[$i][] = $_value[$_k];
-                    }  
+                    switch($_k){
+                        case "ID":
+                            echo $i;
+                            $arr[$i][] = $i;
+                        break;
+                        case "UCycle":
+                            echo $_value["Cycle"];
+                            $arr[$i][] = $_value["Cycle"];
+                        break;
+                        case "UCaseCycle":
+                            echo $ucasecycle;
+                            $arr[$i][] = $ucasecycle;
+                        break;
+                        default:
+                            echo $_value[$_k];
+                            $arr[$i][] = $_value[$_k];
+                        break;
+                    }
                     echo "</td>";
             }
             echo "</tr>";

@@ -216,20 +216,24 @@ class InputController extends Controller{
         $class = new \ReflectionClass( $className ); 
         $model  = $class->newInstanceArgs();
         $operator = Yii::$app->user->identity->Name;
+        $footer = "<b>录入人：" . $operator . " | 录入时间：" . date("Y-m-d") . "</b>";
         $script = <<<JS
         $("#pop .pop-title", window.parent.document).html("<h3>【审判】{$model->type}录入-操作:$operator</h3>");
+        $("#pop .pop-footer", window.parent.document).html('$footer');
 JS;
         if($request->isPost){
 
             $model->Type = $model->type;
             $model->ModuleType = $model->module_type;
             $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
+            $model->InputMan = $operator;
+            $model->InputDate = date("Y-m-d");
             if( $model->load( $request->post() ) && $model->save() ){
                     $script = 'window.parent.location.reload()';
             }
         }
         $this->layout = "edit";
-        return $this->render("edit/" .  $request->get("action"), ["model"=>$model, "script"=>$script]);
+        return $this->render("edit/" .  $request->get("action"), ["model"=>$model, "script"=>$script, "utype"=>$model->type ]);
     }
 
     //edit
@@ -241,18 +245,23 @@ JS;
         $m= $class->newInstanceArgs();
         $model = $m->find()->where("id=:id", [":id"=>$request->get("id")])->one();
         $operator = Yii::$app->user->identity->Name;
+        $footer = "<b>录入人：" . $model->InputMan . " | 录入时间：" . $model->InputDate . "</b><br>";
+        $footer .= "<b>修改人：" . $operator . " | 修改时间：" . date("Y-m-d") . "</b>";
         $script = <<<JS
         $("#pop .pop-title", window.parent.document).html("<h3>【审判】{$model->type}修改-操作:$operator</h3>");
+        $("#pop .pop-footer", window.parent.document).html('$footer');
 JS;
         if($request->isPost){
             $model->Type = $model->type;
             $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
+            $model->EditMan = $operator;
+            $model->EditDate = date("Y-m-d");
             if( $model->load( $request->post() )  && $model->save()  ){
                     $script = 'window.parent.location.reload()';
             }
         }
         $this->layout = "edit";
-        return $this->render( "edit/" . $request->get("action"), ["model"=>$model, "script"=>$script] );
+        return $this->render( "edit/" . $request->get("action"), ["model"=>$model, "script"=>$script, "utype"=>$model->type ] );
 
     }
 
@@ -261,11 +270,13 @@ JS;
         $request = Yii::$app->request;
        if($request->isGet){
             $model = Conclusion::find()->where("ID=:id", [":id"=>$request->get("id")])->one();
-            if($model->delete()){
+            if( $model && $model->delete()){
                 echo "success";
             }else{
                 echo "defail";
             }
         }
     }
+
+    
 }

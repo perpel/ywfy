@@ -261,7 +261,7 @@ JS;
         $request = Yii::$app->request;
        if($request->isGet){
             $model = Conclusion::find()->where("ID=:id", [":id"=>$request->get("id")])->one();
-            if($model->delete()){
+            if( $model && $model->delete() ){
                 echo "success";
             }else{
                 echo "defail";

@@ -9,7 +9,8 @@ ul,li{ list-style:none;}
 .printbox{ width:100%; height:30px; line-height:30px; background:url(../../web/images/payment_bg.jpg) repeat-x;}
 .tablebook{ width:100%; max-height:350px; overflow-y:auto; overflow-x:hidden; margin-top:10px;}
 .tablebook table{ width:100%; border:1px solid #cacaca; border-top:none;}
-
+.tablebook table tr td{ padding: 5px;}
+.tablebook table input{ width: 90%;}
 </style>
 
 <script>
@@ -52,14 +53,49 @@ ul,li{ list-style:none;}
                 </select>
             </td>
             <td>流水号</td>
-            <td><input type="text" name="CaseNumber"></td>
+            <td><input type="text" name="FlowNumber"></td>
             <td>督办人</td>
             <td><input type="text" name="Supervise"></td>
             <td>业务庭承办人</td>
             <td><input type="text" name="Chambers"></td>
     </tr>
-            
-           
+
+    <tr>
+        <td>案号</td>
+        <td colspan="3">
+            <input type="text" name="CaseNumber">
+        </td>
+        <td>案由</td>
+        <td colspan="3">
+            <input type="text" name="Case">
+        </td>
+    </tr>
+
+    <tr>
+        <td>当事人1</td>
+        <td colspan="3">
+            <input type="text" name="LitigantOne">
+        </td>
+        <td>当事人2</td>
+        <td colspan="3">
+            <input type="text" name="LitigantTwo">
+        </td>
+    </tr>
+
+    <tr>
+        <td>移交材料</td>
+        <td colspan="7">
+            <input type="text" name="TransferMaterial">
+        </td>
+    </tr>
+
+    <tr>
+        <td>标的物</td>
+        <td colspan="7">
+            <input type="text" name="SubjectMatter">
+        </td>
+    </tr>
+ 
     </table>
     </form>
 </div>

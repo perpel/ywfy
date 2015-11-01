@@ -26,31 +26,32 @@ class Identify extends Conclusion
                 'TransferMaterial' => '移交材料',
                 'IdentifiedType' => '鉴定类型',
                 'IdentifiedCondition' => '鉴定要求',
-                'TropschOffice' => '送委托办日期',
-                'MaterialsCompletionDate' => '材料补全日期',
+                'TropschOffice' => '收案日期',//送委托办日期
+                'MaterialsCompletionDate' => '立案日期',//材料补全日期
+                'UCaseCycle'=>'立案周期',
                 'ChoiceWay' => '选定方式',
                 'ChoicedDate' => '选定时间',
                 'Agency'=> '鉴定机构',
                 'Money' => '鉴定费用', //鉴定费用
-                'SendDate' => '送卷日期',//委托日期
+                'SendDate' => '委托日期',//送卷日期
                 'EntrustCycle' => '委托周期',
-                'SiteSurveyDate' => '现场勘察日期',
-                'IdentifiedResult' => '鉴定结论',
-                'Cycle' => '周期',
-                'GetbackDate' => '回卷日期',//结案日期
-                'SendCycle' => '送卷周期',
+                'SiteSurveyDate' => '勘察日期',
+                'IdentifiedResult' => '鉴定意见',//******
+                'GetbackDate' => '结案日期',//回卷日期
+                'Cycle' => '结案周期',
                 'FllowResult' => '跟踪评查情况',
                 'Assessor' => '鉴定人',
                 'AssessorTel' => '鉴定人电话',
                 'Supervise' => '督办人',
-                'RetractDate' => '撤回日期',
                 'SuspendedDate' => '暂缓日期',
+                'RetractDate' => '撤回日期',
                 'SuperviseTel' => '督办人电话',
-                'Chambers' => '业务庭承办人', 
+                'Chambers' => '业务庭承办人',
                 'UndertakerTel' => '承办人电话',
                 'SourceIdentifiedDepartment' => '原鉴定机构',
                 'SourceIdentifiedResult' => '原鉴定结论',
-                'Remark' => '备注',                           
+                'Remark' => '备注',
+                                          
         ];
     }
 
