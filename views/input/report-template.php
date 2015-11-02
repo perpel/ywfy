@@ -3,7 +3,7 @@
   //WebOffice_Event_Flash("NotifyToolBarClick");
   //WebOffice1_NotifyToolBarClick(iIndex);
   if( iIndex == 32778){
-        SaveDoc("", ".doc", './index.php?r=input/save-print');
+        SaveDoc("", ".doc", './index.php?r=input/save-report&id=<?=$id?>');
   }
 //-->
 </script>
@@ -15,6 +15,6 @@
 </script>
 
 <form id="myform">
-    <input type="hidden" name="DocID" value="<?=$doc_id?>">
-    <input type="hidden" name="DocTitle" value="default">
+    <input type="hidden" name="DocID" value="<?=$uid?>">
+    <input type="hidden" name="DocTitle" value="<?=$name?>">
 </form>

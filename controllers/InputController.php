@@ -18,6 +18,7 @@ use app\module\data\models\Document;
 use app\models\DocumentTemplate;
 use app\models\PHPWord;
 use app\module\data\models\Agency;
+use app\models\Report;
 
 
 class InputController extends Controller{
@@ -134,13 +135,13 @@ class InputController extends Controller{
         
         if( Yii::$app->request->isPost ){
            $model = new UploadForm();
-            $model->file = UploadedFile::getInstanceByName('AipFile');
+            $model->file = UploadedFile::getInstanceByName('DocContent');
             
                 if( $model->validate() ){ 
-                        $name = "document" . $request->post("template");
+                        $name = "document" . $request->post("DocID");
                         $path = Yii::$app->basePath . '/web/template/' . $name . '.' . $model->file->extension;
                         if( $model->file->saveAs($path) ){
-                            $docid = $request->post("template");
+                            $docid = $request->post("DocID");
                             $obj = DocumentTemplate::find()->where("DocumentID = $docid")->one();
                             if($obj){
                                 $obj->URL = $name . '.' . $model->file->extension;
@@ -148,15 +149,15 @@ class InputController extends Controller{
 
                             }else{
                                 $m = new DocumentTemplate();
-                                $m->DocumentID = $request->post("template");
+                                $m->DocumentID = $request->post("DocID");
                                 $m->URL = $name . '.' . $model->file->extension;
                                 $m->save();
                             }
-                            echo "success";
+                            echo "succeed";
                             exit();
                         }
                 }else{
-                    echo "defail";
+                    echo "failed";
                 }
             }
     }
@@ -196,6 +197,64 @@ class InputController extends Controller{
                 echo "(" . $year . ")" . $caseNumberPrefix . mb_substr($type, 0, 1, 'utf-8') . $count . "号";
         }
 
+    }
+
+    public function actionReport(){
+
+        $model_info = Report::find()->where(["UID"=>Yii::$app->request->get("uid")])->asArray()->all();
+        return $this->renderPartial("report", ["model_info"=>$model_info, "tid"=>Yii::$app->request->get("tid"), "uid"=>Yii::$app->request->get("uid")] );
+    }
+
+    public function actionReportTemplate(){
+
+        $request = Yii::$app->request;
+        $id = $request->get('id');
+        $uid = $request->get("uid");
+        $name = $request->get("name");
+        $url = "";
+        $ext = "doc";
+        if($id != 0){
+            $reportObj = Report::find()->where("ID = $id")->asArray()->one();
+            $url =  dirname($request->getHostInfo() . $request->getBaseUrl())  . "/uploads/" . $request->get('uid') . "/" . $reportObj["URL"];
+            $ext = end(explode(".", $reportObj["URL"]));
+        }
+        $this->layout = "weboffice";
+        return $this->render("report-template", ["id"=>$id, "name"=>$name, "uid"=>$uid, "url"=>$url, "ext"=>$ext]);
+    }
+
+    public function actionSaveReport(){
+
+        $request = Yii::$app->request;
+        if( Yii::$app->request->isPost ){
+            $model = new UploadForm();
+            $model->file = UploadedFile::getInstanceByName('DocContent');   
+            if( $model->validate() ){
+                    $id = $request->get('id');
+                    if( $id == 0 ){
+                        $m = new Report();
+                        $m->UID = $request->post("DocID");
+                        $m->Name = $request->post("DocTitle");
+                        $m->save();
+                        $id = $m->ID;
+                    }
+                    $m = null;
+                    $obj = Report::find()->where("ID = $id")->one();
+                    $name = "report" . $id . '.'  . $model->file->extension;
+                    $obj->URL = $name;
+                    $path = Yii::getAlias('@app')  . "/uploads/" . $request->post('DocID');
+                    if( !file_exists($path) ){
+                        mkdir( $path, 0777, true);
+                        chmod( $path, 0777);
+                    }
+                    $path = $path . "/" . $name;
+                    if($model->file->saveAs($path)){
+                        $obj->save();
+                        echo "succeed";
+                    }else{
+                        echo "failed";
+                    }
+            }
+        }
     }
 
 }

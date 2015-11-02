@@ -107,7 +107,16 @@ $this->registerJs($script);
     <td><?= $form->field($model, 'Price', ['template'=>'{label}'])->label("评估价")?></td>
     <td><?= $form->field($model, 'Price', ['template'=>'{input}{error}'])?></td>
     <td><label>评估报告</label></td>
-    <td><input type="file" /></td>
+    <td>
+      <?php
+      if($model->ID){
+      ?>
+          <input data-id="<?=$model->ID?>" type="button" value="查看/添加" id="report" />
+      <?php 
+        }
+      ?>
+      
+    </td>
   </tr>
 
   <tr>

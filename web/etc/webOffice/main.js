@@ -630,7 +630,7 @@ function linkRed() {
 *                   上传文档
 *
 /****************************************************/
-function SaveDoc(id, docType, path) {
+function SaveDoc(id, docType, action) {
     try{
         var webObj=document.getElementById("WebOffice1");
         var returnValue;
@@ -652,8 +652,8 @@ function SaveDoc(id, docType, path) {
         webObj.HttpAddPostString("DocID", myform.DocID.value);
         webObj.HttpAddPostString("DocType",docType);
         webObj.HttpAddPostCurrFile("DocContent","");        // 上传文件
-        returnValue = webObj.HttpPost(path);  // 判断上传是否成功
-        if("succeed" == returnValue){
+        returnValue = webObj.HttpPost(action);  // 判断上传是否成功
+       if("succeed" == returnValue){
             alert("文件上传成功");    
         }else if("failed" == returnValue)
             alert("文件上传失败");

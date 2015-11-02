@@ -112,7 +112,13 @@ $(function(){
         return true;
     };
 
-    
+    $("#report").click(function(){
+        var pop = $(this).pop({_size:"small"});
+        var tid = $(this).attr("id");
+        var uid = $(this).attr("data-id");
+        pop.find(".pop-footer").remove();
+        $.get("./index.php?r=input/report", {"tid":tid, "uid":uid}, function(data){$(".pop-content", pop).html(data);});
+    });
  
  
 });
