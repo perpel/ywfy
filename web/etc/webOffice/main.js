@@ -630,7 +630,7 @@ function linkRed() {
 *                   上传文档
 *
 /****************************************************/
-function SaveDoc(id,docType) {
+function SaveDoc(id, docType, path) {
     try{
         var webObj=document.getElementById("WebOffice1");
         var returnValue;
@@ -652,7 +652,7 @@ function SaveDoc(id,docType) {
         webObj.HttpAddPostString("DocID", myform.DocID.value);
         webObj.HttpAddPostString("DocType",docType);
         webObj.HttpAddPostCurrFile("DocContent","");        // 上传文件
-        returnValue = webObj.HttpPost("/savedoc.jsp");  // 判断上传是否成功
+        returnValue = webObj.HttpPost(path);  // 判断上传是否成功
         if("succeed" == returnValue){
             alert("文件上传成功");    
         }else if("failed" == returnValue)
@@ -1164,6 +1164,7 @@ function SetCustomToolBtn(index,name){
 *
 /*****************************************************/
 function WebOffice1_NotifyToolBarClick(iIndex){
+    alert(123);
     if(iIndex>=32776){
             alert(iIndex+"新加按钮触发的事件可在这里写自己的功能");
     }
