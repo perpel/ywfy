@@ -4,17 +4,17 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'modules' => [
-        'trial' => [
-            'class' => 'app\module\trial\Trial',
+        'admin' => [
+            'class' => 'app\module\admin\Admin',
         ],
-        'execution' => [
-            'class' => 'app\module\execution\Execution',
-        ], 
-        'data' => [
-            'class' => 'app\module\data\BasicData',
+        'input' => [
+            'class' => 'app\module\input\Input',
+        ],
+        'basic' => [
+            'class' => 'app\module\basic\Basic',
         ],
         'sys' => [
-            'class' => 'app\module\sys\User',
+            'class' => 'app\module\sys\Sys',
         ],
     ],
     'id' => 'basic',

@@ -1,8 +1,7 @@
 $(function(){
 
-      var modular = $("input[name='ctrl']:hidden").val();
       var tar_add = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-action");
-    var  tar_update = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-update");
+        var  tar_update = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-update");
       var types = $("#cu_type").val();
 
     //add
@@ -39,7 +38,7 @@ $(function(){
         var key = $(this).parent("td").attr("data-key");
         var v = $(this).val();
         if(id == 0){
-            $.get("index.php?r=data/default/" + tar_add + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
+            $.get("index.php?r=basic/default/" + tar_add + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
                 if(data != "defail"){
                     inputObj.css("background-color", "lightgreen");
                     inputObj.parents("tr").children("td:first").text(data);
@@ -48,7 +47,7 @@ $(function(){
                 }
             });
         }else{
-            $.get("index.php?r=data/default/" + tar_update + "&id=" + id + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
+            $.get("index.php?r=basic/default/" + tar_update + "&id=" + id + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
 
                 if(data == "success"){
                     inputObj.css("background-color", "lightgreen");
@@ -72,7 +71,7 @@ $(function(){
         var v = $(this).val();
 
         if(id == 0){
-            $.get("index.php?r=data/default/" + tar_add + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
+            $.get("index.php?r=basic/default/" + tar_add + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
                 if(data != "defail"){
                     inputObj.css("background-color", "lightgreen");
                     inputObj.parents("tr").children("td:first").text(data);
@@ -81,7 +80,7 @@ $(function(){
                 }
             });
         }else{
-            $.get("index.php?r=data/default/" + tar_update + "&id=" + id + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
+            $.get("index.php?r=basic/default/" + tar_update + "&id=" + id + "&key=" + key + "&v=" + v + "&type=" + types, function(data){
                 if(data == "success"){
                     inputObj.css("background-color", "lightgreen");
                     itot(inputObj);
@@ -194,7 +193,7 @@ $("#section-bar").find(".fnt.ico-del").click(function(){
     if(dia){
 
          $.get(
-            "./index.php?r=data/default/" + del_target + "&id=" + id + "&action=" + action,
+            "./index.php?r=basic/default/" + del_target + "&id=" + id + "&action=" + action,
             function(data){
                 
                 if(data=="success"){

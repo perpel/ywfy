@@ -18,6 +18,6 @@ class JqueryAsset extends AssetBundle
     public $sourcePath = '@bower/jquery-1.9.1';
     public $js = [
         'jquery-1.9.1.js',
-	'jquery.cookie.js',
+        'jquery.cookie.js',
     ];
 }

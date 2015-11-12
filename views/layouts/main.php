@@ -16,7 +16,6 @@ AppAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -25,7 +24,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <!--begin Nav-->
-    <div class="nav">
+<!--   <div class="nav">
         <ul class="nav-bar lock">
             <li class="dropdown"  data-keycode="73">
                 <a class="dropdown-toggle" href="#">数据录入(I)</a>
@@ -112,7 +111,7 @@ AppAsset::register($this);
 
         </ul>
         
-</div>
+</div>-->
  <!-- end Nav-->   
 
 <!--begin header-->
@@ -137,25 +136,16 @@ AppAsset::register($this);
     <div class="side-bar">
         <ul>
             <li class="side-dropdown active">
-                <a class="a-up" href="#">审判</a>
+                <a class="a-up" href="#">数据录入</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=trial/input/assess">评估录入</a></li>
-                    <li><a href="index.php?r=trial/input/identify">鉴定录入</a></li>
-                    <li><a href="index.php?r=trial/input/auction">拍卖录入</a></li>
-                    <li><a href="index.php?r=trial/input/projectcost">工程造价</a></li>
-                    <li><a href="index.php?r=trial/input/bust">破产录入</a></li>
+                    <li><a href="index.php?r=input/input/index&action=assess">评估录入</a></li>
+                   <!-- <li><a href="index.php?r=input/input/index&action=identify">鉴定录入</a></li>
+                    <li><a href="index.php?r=input/input/index&action=auction">拍卖录入</a></li>
+                    <li><a href="index.php?r=input/input/index&action=project">工程造价</a></li>
+                    <li><a href="index.php?r=input/input/index&action=bust">破产录入</a></li>-->
                 </ul>
             </li>
-            <li class="side-dropdown">
-                <a class="a-up" href="#">执行</a>
-                <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=execution/input/assess">评估录入</a></li>
-                    <li><a href="index.php?r=execution/input/identify">鉴定录入</a></li>
-                    <li><a href="index.php?r=execution/input/auction">拍卖录入</a></li>
-                    <li><a href="index.php?r=execution/input/projectcost">工程造价</a></li>
-                    <li><a href="index.php?r=execution/input/bust">破产录入</a></li>
-                </ul>
-            </li>
+           
             <!-- <li class="side-dropdown">
                 <a class="a-up" href="#">查询考核</a>
                 <ul class="side-dropdown-menu">
@@ -171,24 +161,24 @@ AppAsset::register($this);
             <li class="side-dropdown">
                 <a class="a-up" href="#">基础数据</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=data/default/case">案由定义</a></li>
-                    <li><a href="index.php?r=data/default/definition&department=assess">评估机构定义</a></li>
-                    <li><a href="index.php?r=data/default/definition&department=identify">鉴定机构定义</a></li>
-                    <li><a href="index.php?r=data/default/definition&department=auction">拍卖机构定义</a></li>
-                    <li><a href="index.php?r=data/default/definition&department=project-cost">工程造价机构定义</a></li>
-                    <li><a href="index.php?r=data/default/definition&department=bust">破产机构定义</a></li>
-                    <li><a href="index.php?r=data/default/document">打印模板设置</a></li>
+                    <!--<li><a href="index.php?r=data/default/case">案由定义</a></li>-->
+                    <li><a href="index.php?r=basic/default/definition&department=assess">评估机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/definition&department=identify">鉴定机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/definition&department=auction">拍卖机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/definition&department=project-cost">工程造价机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/definition&department=bust">破产机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/document">打印模板设置</a></li>
                 </ul>
             </li>
 
             <li class="side-dropdown">
                 <a class="a-up" href="#">系统管理</a>
                 <ul class="side-dropdown-menu">
-                    <li><a href="index.php?r=sys/default/user">用户管理</a></li>
-                    <li><a href="index.php?r=sys/default/premission">权限管理</a></li>
+                   <!-- <li><a href="index.php?r=sys/default/user">用户管理</a></li>
+                    <li><a href="index.php?r=sys/default/premission">权限管理</a></li>-->
                     <li><a href="index.php?r=sys/default/password">修改密码</a></li>
-                    <li><a href="index.php?r=sys/default/log">系统日志</a></li>
-                    <li><a href="index.php?r=sys/default/unit">单位信息</a></li>
+                    <li><a href="index.php?r=sys/default/logs">系统日志</a></li>
+                    <!--<li><a href="index.php?r=sys/default/unit">单位信息</a></li>-->
                     <!-- <li class="side-dropdown">
                        <a href="#"><span>+</span> 数据管理</a>
                         <ul class="side-dropdown-menu">

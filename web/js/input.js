@@ -1,11 +1,11 @@
 $(function(){
 
-    var module = $("#module").val();
+    var module = "input";
     //add
     $("#section-bar").find(".fnt.ico-add").click(function(){
         var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop({_top: "200px", _left: "200px",_iframe: true});
-        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/add&action=" + action);
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/edit/add&action=" + action);
     });
 
     //edit (1)
@@ -18,7 +18,7 @@ $(function(){
         }
         var pop = $(this).pop({ _top: "200px", _left: "200px",_iframe: true});
         var id = activeObj.attr("data-id");
-        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/edit&action=" + action + "&id=" + id);
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/edit/edit&action=" + action + "&id=" + id);
     });
 
     //edit (2)
@@ -26,7 +26,7 @@ $(function(){
         var action = $("#section-bar").find(".fnt.ico-edit").find("span").attr("data-action");
         var id = $(this).attr("data-id");
         var pop = $(this).pop({_top: "200px", _left: "200px",_iframe: true});
-        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/input/edit&action=" + action + "&id=" + id);
+        $(".pop-content", pop).children("iframe").attr("src", "index.php?r=" + module + "/edit/edit&action=" + action + "&id=" + id);
      });
 
      //delete
@@ -40,7 +40,11 @@ $(function(){
         var id = activeObj.attr("data-id");
         if(confirm("确定删除?")){
             $.get(
-                "./index.php?r=" + module + "/input/del&id=" + id,
+                "./index.php?r=" + module + "/edit/del",
+                {
+                    "id": id,
+                    "action": action,
+                },
                 function(data){
                      if(data=="success"){
                             window.location.reload();
@@ -86,23 +90,22 @@ $(function(){
         var pop = $(this).pop({_left:"500px", _top:"300px",_size:"customer", _width:"500px", _height:"250px"});
         
         $(".pop-footer", pop).hide();
-        $.get("./index.php?r=input/save-as",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+        $.get("./index.php?r=input/edit/save-as",{ "action":action },function(data){$(".pop-content", pop).html(data);});
     });
 
     //
     $("#section-bar").find("select").change(function(){
         var action = $(this).attr("data-action");
         var year = $(this).val();
-        //alert("index.php?r=" + module + "/input/" + action + "&year=" + year);
-        window.location.assign("index.php?r=" + module + "/input/" + action + "&year=" + year);
+        window.location.assign("index.php?r=" + module + "/input/index&action=" + action + "&year=" + year);
     });
 
     //search
     $("#section-bar").find(".fnt.ico-search").click(function(){
         var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop({_left:"300px", _top:"200px",_size:"small"});    
-        $(".pop-footer", pop).hide();
-        $.get("./index.php?r=input/search",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+        $(".pop-content", pop).css("overflow", "scroll");
+        $.get("./index.php?r=input/input/search",{ "action":action },function(data){$(".pop-content", pop).html(data);});
     });
 
     //print
@@ -110,7 +113,7 @@ $(function(){
         var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop({_size: "small"});
         $(".pop-footer", pop).hide();
-        $.get("./index.php?r=input/print",{ "action":action, "module":module },function(data){$(".pop-content", pop).html(data);});
+        $.get("./index.php?r=input/print/print",{ "action":action},function(data){$(".pop-content", pop).html(data);});
     });
 
 
