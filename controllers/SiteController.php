@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\module\register\models\Department;
 
 class SiteController extends Controller
 {
@@ -55,9 +56,21 @@ class SiteController extends Controller
 
     public function actionLogin(){
 
+        $request = Yii::$app->request;
+        if( $request->isPost ){
+                if(!$this->sysValidate($request->post("LoginForm")["court"]) ){
+                    $model = new LoginForm();
+                    
+                    return $this->renderPartial('login',['model' => $model]);
+                }
+        }
+
         $model = new LoginForm();
+        //var_dump(Yii::$app->request->post());exit;
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-           
+            $session = Yii::$app->session;
+            $session->set('COURTNAME', Department::courtName($model->court));
+            $session->set('FLOWNUMBER', Department::flowNumber($model->court));
             return $this->goBack();
         }
         return $this->renderPartial('login',[
@@ -89,5 +102,27 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->renderPartial('about');
+    }
+
+    protected function sysValidate($number){
+
+            $depart = Department::find()->where(["Number"=>$number])->one();
+            $start = $depart->StartDate;
+            $end = $depart->EndDate;
+            $d1=strtotime($start);   
+            $d2=strtotime($end);   
+            $Days=round(($d2-$d1)/3600/24);
+            $code = md5(md5($end . $Days . "shangxiangwangluokeji"));
+            if($code == $depart->RegistrationCode){
+                if( $end <= date("Y-m-d") ){
+                    echo "<script>alert('法院注册到期！')</script>";
+                    return false;
+                }
+                return true;
+            }else{
+                echo "<script>alert('法院注册失败！')</script>";
+                return false;
+            }
+       
     }
 }

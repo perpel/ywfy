@@ -44,7 +44,7 @@ class Personnel extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfa
         return [
             [['Number'], 'required', 'message'=>'帐号不能为空'],
             [['DepartmentNumber'], 'required'],
-            [['Sex'], 'integer'],
+            [['Sex'], 'string', 'max'=>10],
             [['LastOnlineTime', 'CreateTime'], 'safe'],
             [['Number', 'Password', 'Name', 'DepartmentNumber', 'CellNumber', 'TelNumber', 'Remarks'], 'string', 'max' => 45],
             [['IDNumber'], 'string', 'max' => 18],

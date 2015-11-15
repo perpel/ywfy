@@ -68,15 +68,15 @@ class Project extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ID', 'DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case'], 'required'],
-            [['ID', 'GetbackCycle', 'Cycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
+            [['DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case'], 'required'],
+            [['GetbackCycle', 'Cycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
             [['DepartID', 'Fee'], 'number'],
-            [['ChoicedDate', 'CaseClosedDate', 'FirstDraftDate', 'SuspendedDate', 'EntrustDate', 'MaterialsCompletionDate', 'RetractDate', 'SiteSurveyDate', 'GetbackDate', 'DeliveryCourtDate'], 'safe'],
+            [['ChoicedDate', 'CaseClosedDate', 'PutOnRecordDate', 'SuspendedDate', 'EntrustDate', 'MaterialsCompletionDate', 'RetractDate', 'SiteSurveyDate', 'GetbackDate', 'DeliveryCourtDate'], 'safe'],
             [['Remark'], 'string'],
             [['Type'], 'string', 'max' => 10],
             [['Year'], 'string', 'max' => 12],
             [['CaseNumber', 'FlowNumber', 'Case', 'LitigantOne', 'LitigantTwo', 'TransferMaterial', 'Claim', 'Suggestion'], 'string', 'max' => 255],
-            [['Supervise', 'SuperviseTel', 'Undertaker', 'UndertakerTel', 'Identifior', 'IdentifiorTel', 'ChoiceWay', 'FllowResult'], 'string', 'max' => 50],
+            [['Supervise', 'SuperviseTel', 'Undertaker', 'UndertakerTel', 'Master', 'MasterTel', 'ChoiceWay', 'FllowResult'], 'string', 'max' => 50],
             [['EntrustDeparment'], 'string', 'max' => 128],
             [['Agency'], 'string', 'max' => 100],
             [['Progress'], 'string', 'max' => 36],
@@ -108,12 +108,12 @@ class Project extends \yii\db\ActiveRecord
             'TransferMaterial' => '移交材料',
             'Claim' => '鉴定要求',
             'Agency' => '鉴定机构',
-            'Identifior' => '鉴定人',
-            'IdentifiorTel' => '鉴定人电话',
+            'Master' => '鉴定人',
+            'MasterTel' => '鉴定人电话',
             'ChoiceWay' => '选定方式',
             'ChoicedDate' => '选定日期',
             'CaseClosedDate' => '收案日期',
-            'FirstDraftDate' => '初稿日期',
+            'PutOnRecordDate' => '初稿日期',
             'SuspendedDate' => '暂缓日期',
             'EntrustDate' => '委托日期',
             'MaterialsCompletionDate' => '材料补全日期',
@@ -151,7 +151,7 @@ class Project extends \yii\db\ActiveRecord
             'TransferMaterial' => '移交材料',                                      
             'Claim' => '鉴定要求',
             'CaseClosedDate' => '收案日期',
-            'FirstDraftDate' => '初稿日期',
+            'PutOnRecordDate' => '初稿日期',
             'ChoiceWay' => '选定方式',
             'ChoicedDate' => '选定日期',
             'Agency' => '鉴定机构',
@@ -176,5 +176,15 @@ class Project extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function progress(){
+
+        return [
+            ""=>"选择进度",
+            "委托"=>"委托",
+            "暂缓"=>"暂缓",
+            "撤回"=>"撤回",
+            "完成"=>"完成",
+        ];
+    }
 
 }

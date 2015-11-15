@@ -84,6 +84,7 @@ class DefaultController extends Controller{
             $key = $request->get("key");
             $model->Type = $request->get("type");
             $model->$key = $request->get("v");
+            $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
             if($model->save() ){
                 echo $model->ID;
             }else{
@@ -98,6 +99,7 @@ class DefaultController extends Controller{
         if($request->isGet){
             $model = Agency::find()->where(["id"=>$request->get("id")])->one();
             $model->Type = $request->get("type");
+            $model->DepartID = Yii::$app->user->identity->DepartmentNumber;
             $key = $request->get("key");
             $model->$key = $request->get("v");
             if($model->save() ){
@@ -148,7 +150,7 @@ class DefaultController extends Controller{
     }
 
      public function actionAgency(){
-        $model_info = Agency::find()->where(["Type"=>Yii::$app->request->get("type")])->asArray()->all();
+        $model_info = Agency::find()->where(["Type"=>Yii::$app->request->get("type"), "DepartID"=>Yii::$app->user->identity->DepartmentNumber])->asArray()->all();
         return $this->renderPartial("agency", [ "model_info"=>$model_info, "tid"=>Yii::$app->request->get("tid")] );
     }
 

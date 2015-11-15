@@ -2,6 +2,58 @@ $(function(){
 
     var departmentNumber = $("#departmentNumber").val();
 
+    var GetQueryString = function(name){
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+};
+
+var changeURLPar = function(destiny, par, par_value) 
+{ 
+        var pattern = par+'=([^&]*)'; 
+        var replaceText = par+'='+par_value; 
+        if (destiny.match(pattern)) 
+        { 
+                var tmp = '/\\'+par+'=[^&]*/'; 
+                tmp = destiny.replace(eval(tmp), replaceText); 
+                return (tmp); 
+        } 
+        else 
+        { 
+                if (destiny.match('[\?]')) 
+                { 
+                        return destiny+'&'+ replaceText; 
+                } else 
+                { 
+                        return destiny+'?'+replaceText; 
+                } 
+        } 
+        return destiny+'\n'+par+'\n'+par_value; 
+};
+
+
+    $("#departmentNumber").change(function(){
+
+        var DepartmentNumber = $(this).val();
+        var href = window.location.href;
+        if(GetQueryString("DepartmentNumber")){
+                href = changeURLPar(href, "DepartmentNumber", DepartmentNumber);
+        }else{
+                href = href + "&DepartmentNumber=" + DepartmentNumber;
+        }
+        window.location.assign(href);
+    });
+
+    $("#department-log").change(function(){
+        var Department = $(this).val();
+        var href = window.location.href;
+        if(GetQueryString("Department")){
+                href = changeURLPar(href, "Department", Department);
+        }else{
+                href = href + "&Department=" + Department;
+        }
+        window.location.assign(href);
+    });
 
     $("#section-bar").find(".fnt.ico-add").click(function(){
         var ths = $("#myTable").find("th");
@@ -26,7 +78,7 @@ $(function(){
         var key = $(this).parent("td").attr("data-key");
         var v = $(this).val();
         if(id == 0){
-            $.get("index.php?r=sys/default/add-user",{"key":key, "v":v, "depart_num":departmentNumber }, function(data){
+            $.get("index.php?r=admin/user/add-user",{"key":key, "v":v, "depart_num":departmentNumber }, function(data){
                 if(data != "defail"){
                     inputObj.css("background-color", "lightgreen");
                     inputObj.parents("tr").children("td:first").text(data);
@@ -35,7 +87,7 @@ $(function(){
                 }
             });
         }else{
-            $.get("index.php?r=sys/default/update-user", {"key":key, "v":v, "id":id }, function(data){
+            $.get("index.php?r=admin/user/update-user", {"key":key, "v":v, "id":id }, function(data){
                 if(data == "success"){
                     inputObj.css("background-color", "lightgreen");
                     itot(inputObj);
@@ -98,7 +150,7 @@ var itot = function(objInput){
     if(dia){
 
          $.get(
-            "./index.php?r=sys/default/del-user&id=" + id,
+            "./index.php?r=admin/user/del-user&id=" + id,
             function(data){
                 
                 if(data=="success"){

@@ -84,8 +84,8 @@ class Auction extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ID', 'DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case', 'SaleDate', 'SalePrice', 'SaleStatus'], 'required'],
-            [['ID', 'Cycle', 'GetbackCycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
+            [['DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case', 'SaleDate', 'SalePrice', 'SaleStatus'], 'required'],
+            [['Cycle', 'GetbackCycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
             [['DepartID', 'StartAuctionPrice1', 'Price1', 'StartAuctionPrice2', 'Price2', 'StartAuctionPrice3', 'Price3', 'AuctionPrice', 'Fee', 'SalePrice'], 'number'],
             [['SubjectMatter', 'Remark'], 'string'],
             [['CaseClosedDate', 'PutOnRecordDate', 'GetbackDate', 'EntrustDate', 'AnnouncementDate1', 'TimeDate1', 'AnnouncementDate2', 'TimeDate2', 'AnnouncementDate3', 'TimeDate3', 'AuctionDate', 'ArrivalDate', 'ArrivalCycle', 'SuspendedDate', 'RetractDate', 'ChargesDate', 'SaleDate'], 'safe'],
@@ -97,7 +97,7 @@ class Auction extends \yii\db\ActiveRecord
             [['Agency'], 'string', 'max' => 100],
             [['Progress'], 'string', 'max' => 36],
             [['Status1', 'Status2', 'Status3'], 'string', 'max' => 18],
-            [['Auctioneer'], 'string', 'max' => 20]
+            [['Master'], 'string', 'max' => 20]
         ];
     }
 
@@ -153,7 +153,7 @@ class Auction extends \yii\db\ActiveRecord
             'SuspendedDate' => '暂缓日期',
             'RetractDate' => '撤回日期',
             'Fee' => '拍卖费用',
-            'Auctioneer' => '拍卖师',
+            'Master' => '拍卖师',
             'ChargesDate' => '缴费日期',
             'Cycle' => '拍卖周期',
             'FllowResult' => '跟踪评查情况',
@@ -198,9 +198,9 @@ class Auction extends \yii\db\ActiveRecord
                     'TimeDate3' => '第三次拍卖日期',
                     'Price3' => '成交价（万元）',
                     'ArrivalDate' => '拍卖款到帐日期',
-                    'ArrivalCycle' => '到帐周期',     
+                   // 'ArrivalCycle' => '到帐周期',     
                     'Fee' => '拍卖费用',                    
-                    'Auctioneer' => '拍卖师',                                                      
+                    'Master' => '拍卖师',                                                      
                     'GetbackDate' => '结案日期',
                     'GetbackCycle' => '结案周期',
                     'SaleDate' => '变卖日期',
@@ -216,6 +216,30 @@ class Auction extends \yii\db\ActiveRecord
                     'Remark' => '备注',                                                                          
                 ];
 
+    }
+
+    public static function progress(){
+
+        return [
+            ""=>"选择进度",
+            "收卷"=>"收卷",
+            "立案"=>"立案",
+            "委托"=>"委托",
+            "拍卖1"=>"拍卖1",
+            "拍卖2"=>"拍卖2",
+            "拍卖3"=>"拍卖3",
+            "撤拍"=>"撤拍",
+        ];
+    }
+
+    public static function status(){
+
+        return [
+            ""=>"选择拍卖状态",
+            "成交"=>"成交",
+            "流拍"=>"流拍",
+            "撤拍"=>"撤拍",
+        ];
     }
 
     

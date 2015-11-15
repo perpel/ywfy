@@ -1,9 +1,7 @@
 <?php
-
-use yii\widgets\ActiveForm;
-use yii\helpers\Html;
-use app\models\Conclusion;
-use app\module\data\models\Agency;
+    use yii\widgets\ActiveForm;
+    use yii\helpers\Html;
+    use app\models\Common;
 ?>
 <?php
 $this->registerJs($script);
@@ -11,11 +9,15 @@ $this->registerJs($script);
 
 <?php $form = ActiveForm::begin(); ?>
 <table width="100%" border="0" class="tablelist" cellspacing="0">
+<table width="100%" border="0" class="tablelist" cellspacing="0">
 <input type="hidden" disabled id="utype" value="<?=$utype?>">
+<input type="hidden" disabled id="action" value="project">
 <?= $form->field($model, 'EntrustCycle', ['template'=>'{input}{error}'])->hiddenInput(["data-entrust-cycle"=>"entrust-cycle"]) ?>
-  <tr>
+<?= $form->field($model, 'GetbackCycle', ['template'=>'{input}{error}'])->hiddenInput(["data-getback-cycle"=>"getback-cycle"]) ?>
+<?= $form->field($model, 'PutOnRecordCycle', ['template'=>'{input}{error}'])->hiddenInput(["data-puton-cycle"=>"puton-cycle"]) ?>
+<tr>
     <td><?= $form->field($model, 'Year', ['template'=>'{label}'])->label("年度")  ?></td>
-    <td><?= $form->field($model, 'Year', ['template'=>'{input}{error}'])->dropDownList(Conclusion::years())?></td>
+    <td><?= $form->field($model, 'Year', ['template'=>'{input}{error}'])->dropDownList( Common::years( date("Y"), "1995") )?></td>
     <td><?= $form->field($model, 'FlowNumber', ['template'=>'{label}']) ?></td>
     <td><?= $form->field($model, 'FlowNumber', ['template'=>'{input}{error}'])->textInput(["readonly"=>"readonly","data-flow-number"=>"flow-number"]) ?></td>
     <td><?= $form->field($model, 'Supervise', ['template'=>'{label}']) ?></td>
@@ -40,9 +42,9 @@ $this->registerJs($script);
 
   <tr>
     <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList(Conclusion::PrincipalDepartment()) ?></td>
-    <td><?= $form->field($model, 'Chambers', ['template'=>'{label}'])->label("承办人")?></td>
-    <td><?= $form->field($model, 'Chambers', ['template'=>'{input}{error}']) ?></td>
+    <td colspan="3"><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList( Common::PrincipalDepartment() ) ?></td>
+    <td><?= $form->field($model, 'Undertaker', ['template'=>'{label}'])->label("承办人")?></td>
+    <td><?= $form->field($model, 'Undertaker', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'UndertakerTel', ['template'=>'{label}'])->label("承办人电话")?></td>
     <td><?= $form->field($model, 'UndertakerTel', ['template'=>'{input}{error}']) ?></td>
   </tr>
@@ -53,41 +55,41 @@ $this->registerJs($script);
   </tr>
 
   <tr>
-    <td><?= $form->field($model, 'IdentifiedCondition', ['template'=>'{label}']) ?></td>
-    <td colspan="7"><?= $form->field($model, 'IdentifiedCondition', ['template'=>'{input}{error}'])->textarea() ?></td>
+    <td><?= $form->field($model, 'Claim', ['template'=>'{label}']) ?></td>
+    <td colspan="7"><?= $form->field($model, 'Claim', ['template'=>'{input}{error}'])->textarea() ?></td>
   </tr>
 
   <tr>
     <td><?= $form->field($model, 'Agency', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{label}'])->label("鉴定人")?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{label}'])->label("鉴定人电话")?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'Master', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'Master', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'MasterTel', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'MasterTel', ['template'=>'{input}{error}']) ?></td>
   </tr>
 
    <tr>
     <td><?= $form->field($model, 'ChoiceWay', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])->dropDownList(Conclusion::selectedMode()) ?></td>
+    <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])->dropDownList( Common::selectedMode() ) ?></td>
     <td><?= $form->field($model, 'ChoicedDate', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'ChoicedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
 
 
   <tr>
-    <td><?= $form->field($model, 'TropschOffice', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'TropschOffice', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{label}'])->label("初稿日期")?></td>
-    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{input}{error}'])->textInput(["data-mater-complete"=>"mater-complete", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'CaseClosedDate', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'CaseClosedDate', ['template'=>'{input}{error}'])->textInput([ "data-case-closed"=>"case-closed", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'PutOnRecordDate', ['template'=>'{label}'])->label("初稿日期")?></td>
+    <td><?= $form->field($model, 'PutOnRecordDate', ['template'=>'{input}{error}'])->textInput(["data-mater-complete"=>"mater-complete", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
     <td><?= $form->field($model, 'SuspendedDate', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'SuspendedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
 
     <tr>
-    <td><?= $form->field($model, 'SendDate', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'SendDate', ['template'=>'{input}{error}'])->textInput(["data-send-date"=>"send-date", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'BeginDate', ['template'=>'{label}'])->label("补充材料日期")?></td>
-    <td><?= $form->field($model, 'BeginDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'EntrustDate', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'EntrustDate', ['template'=>'{input}{error}'])->textInput(["data-send-date"=>"send-date", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{label}'])->label("补充材料日期")?></td>
+    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
     <td><?= $form->field($model, 'RetractDate', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'RetractDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
@@ -102,8 +104,8 @@ $this->registerJs($script);
   </tr>
 
    <tr>
-    <td><?= $form->field($model, 'AuctionStatus', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'AuctionStatus', ['template'=>'{input}{error}'])->dropDownList($model::status(),["data-auction-status"=>"status"]) ?></td>
+    <td><?= $form->field($model, 'Progress', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'Progress', ['template'=>'{input}{error}'])->dropDownList( $model::progress(),["data-auction-status"=>"status"]) ?></td>
     <td><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{label}'])->label("送达业务庭日期")?></td>
     <td colspan="3"><?= $form->field($model, 'DeliveryCourtDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
   </tr>
@@ -111,15 +113,23 @@ $this->registerJs($script);
   <tr>
     <td><?= $form->field($model, 'FllowResult', ['template'=>'{label}'])?></td>
     <td colspan="5"><?= $form->field($model, 'FllowResult', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Money', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'Money', ['template'=>'{input}{error}'])?></td>
+    <td><?= $form->field($model, 'Fee', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'Fee', ['template'=>'{input}{error}'])?></td>
   </tr>
   
 <tr>
-    <td><?= $form->field($model, 'IdentifiedResult', ['template'=>'{label}'])?></td>
-    <td colspan="5"><?= $form->field($model, 'IdentifiedResult', ['template'=>'{input}{error}'])?></td>
-     <td><label>评估报告</label></td>
-    <td><input type="file" /></td>
+    <td><?= $form->field($model, 'Suggestion', ['template'=>'{label}'])?></td>
+    <td colspan="5"><?= $form->field($model, 'Suggestion', ['template'=>'{input}{error}'])?></td>
+     <td><label>报告</label></td>
+    <td>
+           <?php
+      if($model->ID){
+      ?>
+          <input data-id="<?=$model->ID?>" type="button" value="查看/添加" id="report" />
+      <?php 
+        }
+      ?>
+    </td>
 </tr>
 
 <tr>

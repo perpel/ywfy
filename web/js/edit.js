@@ -1,12 +1,14 @@
 $(function(){
 
     var flow = $(":text[data-flow-number='flow-number']");
-
-    $("#assess-casenumber,#identify-casenumber,#auction-casenumber,#projectcost-casenumber,#bust-casenumber").dblclick(function(){
-        var pop = $(this).pop({_size:"small"});
-        var tid = $(this).attr("id");
+    var dbl_action = $("#action").val();
+    $("#" + dbl_action + "-casenumber").dblclick(function(){
+        var pop = $(this).pop({_parent:$("#pop",  parent.document), _win: $(parent), _doc: $(parent.document),_size:"customer", _width:"500px", _height:"500px", _iframe:true});
+        var tid = dbl_action;
+        pop.css("z-index", "12");
         pop.find(".pop-footer").remove();
-        $.get("./index.php?r=input/flow-number&tid=" + tid,function(data){$(".pop-content", pop).html(data);});
+        $(".pop-content", pop).children("iframe").attr("src", "./index.php?r=sybase/default/index&tid=" + tid);
+        $(".pop-content", pop).css("height", "92%");
     });
 
     /*$("#assess-case,#identify-case,#auction-case,#projectcost-case,#bust-case").dblclick(function(){
@@ -159,7 +161,8 @@ $(function(){
         var action = $("#action").val();
         var uid = $(this).attr("data-id");
         pop.find(".pop-footer").remove();
-        $.get("./index.php?r=input/report/show", {"type":action, "uid":uid}, function(data){$(".pop-content", pop).html(data);});
+        var rand = Math.random()*1000 + 100;
+        $.get("./index.php?r=input/report/show&rand=" + rand, {"type":action, "uid":uid}, function(data){$(".pop-content", pop).html(data);});
     });
  
  

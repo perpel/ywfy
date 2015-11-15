@@ -37,7 +37,7 @@ class Agency extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Name'], 'required'],
+            [['DepartID', 'Name'], 'required'],
             [['Type'], 'string', 'max' => 16],
             [['Name', 'ServiceArea'], 'string', 'max' => 128],
             [['LicenseNumber', 'Contacts', 'ContactsPhone', 'LegalRepresentative', 'LegalRepresentativePhone', 'Tel', 'Fax'], 'string', 'max' => 20],

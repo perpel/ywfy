@@ -19,6 +19,7 @@ class EditAsset extends AssetBundle
     public $js = [
         'etc/My97DatePicker/WdatePicker.js',
         'js/edit.js',
+        'js/sybase.js',
         'etc/pop/pop.js',
     ];
     public $depends = [

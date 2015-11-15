@@ -71,15 +71,15 @@ class Identify extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ID', 'DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case'], 'required'],
-            [['ID', 'GetbackCycle', 'Cycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
+            [['DepartID', 'Year', 'CaseNumber', 'FlowNumber', 'Case'], 'required'],
+            [['GetbackCycle', 'Cycle', 'PutOnRecordCycle', 'EntrustCycle'], 'integer'],
             [['DepartID', 'Fee'], 'number'],
             [['SubjectMatter', 'IdentifiedResult', 'Remark'], 'string'],
             [['ChoicedDate', 'CaseClosedDate', 'PutOnRecordDate', 'SuspendedDate', 'EntrustDate', 'MaterialsCompletionDate', 'RetractDate', 'SiteSurveyDate', 'GetbackDate', 'DeliveryCourtDate'], 'safe'],
             [['Type'], 'string', 'max' => 10],
             [['Year', 'SuggestionAdmissible'], 'string', 'max' => 12],
             [['CaseNumber', 'FlowNumber', 'Case', 'LitigantOne', 'LitigantTwo', 'TransferMaterial', 'SourceIdentifiedDepartment', 'SourceIdentifiedResult'], 'string', 'max' => 255],
-            [['Supervise', 'SuperviseTel', 'Undertaker', 'UndertakerTel', 'Identifior', 'IdentifiorTel', 'ChoiceWay', 'IdentifiedType', 'FllowResult', 'Suggestion'], 'string', 'max' => 50],
+            [['Supervise', 'SuperviseTel', 'Undertaker', 'UndertakerTel', 'Master', 'MasterTel', 'ChoiceWay', 'IdentifiedType', 'FllowResult', 'Suggestion'], 'string', 'max' => 50],
             [['EntrustDeparment'], 'string', 'max' => 128],
             [['Agency'], 'string', 'max' => 100],
             [['Progress'], 'string', 'max' => 36]
@@ -109,8 +109,8 @@ class Identify extends \yii\db\ActiveRecord
             'TransferMaterial' => '移交材料',
             'SubjectMatter' => '标的物',
             'Agency' => '鉴定机构',
-            'Identifior' => '鉴定人',
-            'IdentifiorTel' => '鉴定人电话',
+            'Master' => '鉴定人',
+            'MasterTel' => '鉴定人电话',
             'ChoiceWay' => '选定方式',
             'ChoicedDate' => '选定日期',
             'IdentifiedType' => '鉴定类型',
@@ -173,8 +173,8 @@ class Identify extends \yii\db\ActiveRecord
             'Undertaker' => '承办人',
             'UndertakerTel' => '承办人电话',
             'SubjectMatter' => '标的物',
-            'Identifior' => '鉴定人',
-            'IdentifiorTel' => '鉴定人电话',
+            'Master' => '鉴定人',
+            'MasterTel' => '鉴定人电话',
             'SuspendedDate' => '暂缓日期',
             'DeliveryCourtDate' => '送达业务庭日期',
             'FllowResult' => '跟踪评查情况',
@@ -183,6 +183,29 @@ class Identify extends \yii\db\ActiveRecord
             'Remark' => '备注',
         ];
 
+    }
+
+    public static function IdentifyType(){
+        return [
+            ""=>"选择鉴定类型",
+            "物证"=>"物证",
+            "法医"=>"法医",
+            "产品质量"=>"产品质量",
+            "工程质量"=>"工程质量",
+            "会计审计"=>"会计审计",
+            "其他"=>"其他",         
+        ];
+    }
+
+    public static function progress(){
+
+        return [
+            ""=>"选择进度",
+            "委托"=>"委托",
+            "暂缓"=>"暂缓",
+            "撤回"=>"撤回",
+            "完成"=>"完成",
+        ];
     }
 
 }

@@ -1,4 +1,5 @@
 <?php
+use yii\widgets\LinkPager;
 use app\assets\InputAsset;
 InputAsset::register($this);
 ?>
@@ -69,4 +70,6 @@ InputAsset::register($this);
 
     ?>
     </table>
+     
 </div>
+<?= LinkPager::widget(['pagination' => $pages]); ?>

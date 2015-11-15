@@ -23,7 +23,6 @@ BasicDataAsset::register($this);
                 echo "<td>" . $v["InputDate"]. "</td>";
                 echo "<td>" . $v["CtrlType"]. "</td>";
                 echo "</tr>";
-
         }
 
     ?>

@@ -113,7 +113,8 @@ $(function(){
         var action = $(this).children("span").attr("data-action");
         var pop = $(this).pop({_size: "small"});
         $(".pop-footer", pop).hide();
-        $.get("./index.php?r=input/print/print",{ "action":action},function(data){$(".pop-content", pop).html(data);});
+        var rand = Math.random()*1000 + 100;
+        $.get("./index.php?r=input/print/print&rand=" + rand,{ "action":action},function(data){$(".pop-content", pop).html(data);});
     });
 
 

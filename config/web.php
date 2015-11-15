@@ -16,6 +16,12 @@ $config = [
         'sys' => [
             'class' => 'app\module\sys\Sys',
         ],
+        'register' => [
+            'class' => 'app\module\register\Register',
+        ],
+        'sybase' => [
+            'class' => 'app\module\sybase\Sybase',
+        ],
     ],
     'id' => 'basic',
     'basePath' => dirname(__DIR__),

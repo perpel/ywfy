@@ -11,6 +11,7 @@ use app\models\Personnel;
  */
 class LoginForm extends Model
 {
+    public $court;
     public $username;
     public $password;
     public $rememberMe = false;
@@ -24,12 +25,16 @@ class LoginForm extends Model
     public function rules()
     {
         return [
+
+            ['court', 'required', 'message' => '' ],
             // username and password are both required
-            [['username', 'password'], 'required'],
+            ['username', 'required', 'message' => '用户不能为空'],
+            ['password', 'required', 'message' => '密码不能为空'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            
         ];
     }
 
@@ -49,6 +54,13 @@ class LoginForm extends Model
         else  
             return false;  
     }  
+
+    public function attributeLabels()
+    {
+          return array(
+           'rememberMe'=>'记住我',
+          );
+    }
 
 
 //判断账号密码是否正确  
@@ -73,7 +85,7 @@ class LoginForm extends Model
     {  
         if ($this->_user === false)  
         {  
-            $this->_user = Personnel::find()->where(['Number'=>$this->username,'Password'=>$this->password])->one();  
+            $this->_user = Personnel::find()->where(['Number'=>$this->username,'Password'=>$this->password, "DepartmentNumber"=>$this->court])->one();  
         }  
         return $this->_user;  
     }  

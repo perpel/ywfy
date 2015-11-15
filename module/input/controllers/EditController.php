@@ -44,6 +44,7 @@ JS;
                     $logs->InputMan = $this->operator;
                     $logs->InputDate = date("Y-m-d G:i:s");
                     $logs->CtrlType = "添加";
+                    $logs->Department = $this->depart_id;
                     $logs->save();
                     $script = 'window.parent.location.reload()';
             }
@@ -78,6 +79,7 @@ JS;
                     $logs->InputMan = $this->operator;
                     $logs->InputDate = date("Y-m-d G:i:s");
                     $logs->CtrlType = "修改";
+                    $logs->Department = $this->depart_id;
                     $logs->save();
 
                     $script = 'window.parent.location.reload()';
@@ -98,6 +100,7 @@ JS;
                 $logs->FlowNumber = $model->FlowNumber;
                 $logs->InputMan = $this->operator;
                 $logs->InputDate = date("Y-m-d G:i:s");
+                $logs->Department = $this->depart_id;
                 $logs->CtrlType = "删除";
                 $logs->save();
                 echo "success";
@@ -110,7 +113,7 @@ JS;
 
     public function actionGetCaseNumber(){
 
-        $caseNumberPrefix = '浙义法委';
+        $caseNumberPrefix = Yii::$app->session->get("FLOWNUMBER");
         $request = Yii::$app->request;
         if( $request->isGet ){
                 $year = date("Y");

@@ -19,7 +19,7 @@ BasicDataAsset::register($this);
 </div>
 
 <input type="hidden" id="cu_type" value="<?=$departmentType?>">
-
+<div id="artical">     
 <table id="myTable" style="width:100%;">
 <tr>
 
@@ -40,7 +40,7 @@ BasicDataAsset::register($this);
 
 <?php
     $i = 1;
-    foreach(  Agency::find()->where(["Type"=>$departmentType])->asArray()->all() as $k=>$v ){
+    foreach(  Agency::find()->where(["Type"=>$departmentType, "DepartID"=>Yii::$app->user->identity->DepartmentNumber])->asArray()->all() as $k=>$v ){
             echo "<tr data-id='" . $v["ID"] . "'>";
             echo "<td>" . $i . "</td>";
             echo "<td>" . $v["Type"] . "机构</td>";
@@ -61,3 +61,4 @@ BasicDataAsset::register($this);
 ?>
 
 </table>
+</div>

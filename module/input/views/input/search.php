@@ -31,6 +31,7 @@
 ]
 ); ?>
 <table width="100%" border="0" class="tablelist" cellspacing="0">
+  
 <tr>
     <td><?= $form->field($model, 'Year', ['template'=>'{label}'])->label("年度")  ?></td>
     <td colspan="3"><?= $form->field($model, 'Year', ['template'=>'{input}{error}'])->dropDownList( Common::years( date("Y"), "1995") )?></td>
@@ -64,49 +65,25 @@
   </tr>
 
   <tr>
-    <td><?= $form->field($model, 'TransferMaterial', ['template'=>'{label}']) ?></td>
-    <td colspan="7"><?= $form->field($model, 'TransferMaterial', ['template'=>'{input}{error}']) ?></td>
-  </tr>
-
-  <tr>
-    <td><?= $form->field($model, 'SubjectMatter', ['template'=>'{label}']) ?></td>
-    <td colspan="7"><?= $form->field($model, 'SubjectMatter', ['template'=>'{input}{error}'])->textarea() ?></td>
-  </tr>
-
-  <tr>
     <td><?= $form->field($model, 'Agency', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{input}{error}']) ?></td>
+    <td></td>
+    <td colspan="3"></td>
   </tr>
 
    <tr>
     <td><?= $form->field($model, 'ChoiceWay', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'ChoiceWay', ['template'=>'{input}{error}'])->dropDownList( Common::selectedMode() ) ?></td>
-    <td><?= $form->field($model, 'ChoicedDate', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'ChoicedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-  </tr>
-
+    <td><?= $form->field($model, 'EntrustDate', ['template'=>'{label}'])?></td>
+    <td colspan="3"><?= $form->field($model, 'EntrustDate', ['template'=>'{input}{error}'])->textInput(["data-send-date"=>"send-date", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+    </tr>
 
   <tr>
     <td><?= $form->field($model, 'CaseClosedDate', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'CaseClosedDate', ['template'=>'{input}{error}'])->textInput([ "data-case-closed"=>"case-closed", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
     <td><?= $form->field($model, 'PutOnRecordDate', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'PutOnRecordDate', ['template'=>'{input}{error}'])->textInput([ "data-mater-complete"=>"mater-complete", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'SuspendedDate', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'SuspendedDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-  </tr>
-
-    <tr>
-    <td><?= $form->field($model, 'EntrustDate', ['template'=>'{label}'])?></td>
-    <td colspan="3"><?= $form->field($model, 'EntrustDate', ['template'=>'{input}{error}'])->textInput(["data-send-date"=>"send-date", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{label}'])->label("补充材料日期")?></td>
-    <td><?= $form->field($model, 'MaterialsCompletionDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-    <td><?= $form->field($model, 'RetractDate', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'RetractDate', ['template'=>'{input}{error}'])->textInput(["class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
-  </tr>
+    <td colspan="3"><?= $form->field($model, 'PutOnRecordDate', ['template'=>'{input}{error}'])->textInput([ "data-mater-complete"=>"mater-complete", "class"=>"Wdate", "onfocus"=>"WdatePicker()"])?></td>
+   </tr>
 
 </table>
 <?php ActiveForm::end(); ?> 

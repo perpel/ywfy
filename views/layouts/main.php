@@ -116,7 +116,7 @@ AppAsset::register($this);
 
 <!--begin header-->
 <div class="header bg-img">
-    <h1>义乌市人民法院委托案件电子管理系统</h1>
+    <h1><?= Yii::$app->session->get('COURTNAME');?>委托案件电子管理系统</h1>
     <div class="login-message">
         <span class="login-number">(<?= Yii::$app->user->identity->Number ?>)</span>
         <span class="login-name"><?= Yii::$app->user->identity->Name ?></span>
@@ -139,10 +139,10 @@ AppAsset::register($this);
                 <a class="a-up" href="#">数据录入</a>
                 <ul class="side-dropdown-menu">
                     <li><a href="index.php?r=input/input/index&action=assess">评估录入</a></li>
-                   <!-- <li><a href="index.php?r=input/input/index&action=identify">鉴定录入</a></li>
+                    <li><a href="index.php?r=input/input/index&action=identify">鉴定录入</a></li>
                     <li><a href="index.php?r=input/input/index&action=auction">拍卖录入</a></li>
                     <li><a href="index.php?r=input/input/index&action=project">工程造价</a></li>
-                    <li><a href="index.php?r=input/input/index&action=bust">破产录入</a></li>-->
+                    <li><a href="index.php?r=input/input/index&action=bust">破产录入</a></li>
                 </ul>
             </li>
            
@@ -166,7 +166,7 @@ AppAsset::register($this);
                     <li><a href="index.php?r=basic/default/definition&department=identify">鉴定机构定义</a></li>
                     <li><a href="index.php?r=basic/default/definition&department=auction">拍卖机构定义</a></li>
                     <li><a href="index.php?r=basic/default/definition&department=project-cost">工程造价机构定义</a></li>
-                    <li><a href="index.php?r=basic/default/definition&department=bust">破产机构定义</a></li>
+                    <li><a href="index.php?r=basic/default/definition&department=bust">管理人/清算组</a></li>
                     <li><a href="index.php?r=basic/default/document">打印模板设置</a></li>
                 </ul>
             </li>
@@ -176,9 +176,9 @@ AppAsset::register($this);
                 <ul class="side-dropdown-menu">
                    <!-- <li><a href="index.php?r=sys/default/user">用户管理</a></li>
                     <li><a href="index.php?r=sys/default/premission">权限管理</a></li>-->
-                    <li><a href="index.php?r=sys/default/password">修改密码</a></li>
-                    <li><a href="index.php?r=sys/default/logs">系统日志</a></li>
-                    <!--<li><a href="index.php?r=sys/default/unit">单位信息</a></li>-->
+                    <li><a href="#" id="__pwpop">修改密码</a></li>
+                    <!--<li><a href="index.php?r=sys/default/logs">系统日志</a></li>
+                    <li><a href="index.php?r=sys/default/unit">单位信息</a></li>-->
                     <!-- <li class="side-dropdown">
                        <a href="#"><span>+</span> 数据管理</a>
                         <ul class="side-dropdown-menu">
@@ -226,9 +226,8 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; 人民法院 <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>
 

@@ -1,6 +1,7 @@
 <?php
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
+use app\module\register\models\Department;
 use app\assets\LoginAsset;
 LoginAsset::register($this);
 ?>
@@ -24,7 +25,10 @@ LoginAsset::register($this);
             <div class="password">
                 <ul>
                     <li class="titlename">委托案件电子管理系统</li>   
-                    <li><label>法院名称</label><select><option>义乌市人民法院</option></select></li>
+                    <li>
+                            <?= $form->field($model, 'court', ['template'=>'{label}'])->label("法院:")?>
+                            <?= $form->field($model, 'court', ['template'=>'{input}{error}'])->dropDownList(Department::courtList()); ?>
+                    </li>
                     <li>
                         <?= $form->field($model, 'username', ['template'=>'{label}'])->label("帐号:")?>
                         <?= $form->field($model, 'username', ['template'=>'{input}{error}']) ?>
@@ -33,12 +37,9 @@ LoginAsset::register($this);
                         <?= $form->field($model, 'password', ['template'=>'{label}'])->label("密码:")?>
                         <?= $form->field($model, 'password', ['template'=>'{input}{error}'])->passwordInput()?>
                     </li>
-                   
-                    <li style="padding-left:255px; height:30px;">
+            
 
-              <?= $form->field($model, 'rememberMe')->checkbox(["class"=>"remenber"]) ?>
 
-                    </li>
                     <li>
                         <input type="submit"  value="登录" />
                         <input type="reset"  value="重置" />

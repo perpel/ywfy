@@ -62,10 +62,10 @@
   <tr>
     <td><?= $form->field($model, 'Agency', ['template'=>'{label}'])?></td>
     <td colspan="3"><?= $form->field($model, 'Agency', ['template'=>'{input}{error}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'Assessor', ['template'=>'{input}{error}']) ?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'AssessorTel', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'Master', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'Master', ['template'=>'{input}{error}']) ?></td>
+    <td><?= $form->field($model, 'MasterTel', ['template'=>'{label}'])?></td>
+    <td><?= $form->field($model, 'MasterTel', ['template'=>'{input}{error}']) ?></td>
   </tr>
 
    <tr>

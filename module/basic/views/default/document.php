@@ -21,7 +21,7 @@ BasicDataAsset::register($this);
 </div>
 <input type="hidden" id="cu_type" value="document">
 
-
+<div id="artical">     
 <table id="myTable" style="width:100%;">
 <tr>
 
@@ -84,3 +84,4 @@ echo "<th data-btn='Bust'>" . $ths['Bust'] . "</th>";
 ?>
 
 </table>
+</div>

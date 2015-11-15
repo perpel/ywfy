@@ -5,6 +5,7 @@ namespace app\module\input\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\Common;
+use yii\data\Pagination;
 
 class InputController extends Controller{
 
@@ -45,14 +46,17 @@ class InputController extends Controller{
 
     public function actionIndex(){
 
-        $model_info = $this->_model->find();
+        $model_info = $this->_model->find()->where(["DepartID"=>Yii::$app->user->identity->DepartmentNumber]);
         if( !empty($this->andwhere) ){
             foreach ($this->andwhere as $value) {
                 $model_info = $model_info->andWhere($value);
             }
         }
 
-        $model_info = $model_info->asArray()->all();
+        //$model_info = $model_info->asArray()->all();
+        $pages = new Pagination(['totalCount' =>$model_info->count(), 'pageSize' => '200']);
+        $model_info = $model_info->offset($pages->offset)->limit($pages->limit)->asArray()->all();
+       
         return $this->render('index', [
             "model"=>$this->_model,
             "model_info"=>$model_info, 
@@ -60,6 +64,7 @@ class InputController extends Controller{
             "years"=>$this->years,
             "action"=>$this->_action,
             "y"=>$this->_year,
+             'pages' => $pages,
         ]);
 
     }
