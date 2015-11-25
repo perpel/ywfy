@@ -6,6 +6,8 @@ use Yii;
 use yii\web\Controller;
 use app\module\input\models\Logs;
 use app\models\OutputExcel;
+use app\models\UploadForm;
+use yii\web\UploadedFile;
 
 class EditController extends Controller{
 
@@ -28,10 +30,13 @@ class EditController extends Controller{
     public function actionAdd(){
 
         $request = Yii::$app->request;
-        $footer = "<b>录入人：" . $this->operator . " | 录入时间：" . date("Y-m-d") . "</b>";
+        $date = date("Y-m-d");
         $script = <<<JS
-        $("#pop .pop-title", window.parent.document).html("<h3>{$this->_model->type}录入-操作:$this->operator</h3>");
-        $("#pop .pop-footer", window.parent.document).html('$footer');
+        $("#pop .pop-title", parent.document).html("{$this->_model->type}录入-操作:$this->operator");
+        $("#pop .pop-footer", parent.document).html('<b>录入人：</b>{$this->operator} |<b> 录入时间：</b>{$date} | <input type="submit" value="提交" id="edit_submit">');   
+        $("#edit_submit", parent.document).click(function(){
+                $("#edit_pop_iframe", parent.document).contents().find("form").submit();
+        });  
 JS;
         $model = $this->_model;
         if($request->isPost){
@@ -46,7 +51,7 @@ JS;
                     $logs->CtrlType = "添加";
                     $logs->Department = $this->depart_id;
                     $logs->save();
-                    $script = 'window.parent.location.reload()';
+                    $script = 'parent.location.reload()';
             }
         }
         $this->layout = "edit";
@@ -62,12 +67,13 @@ JS;
         $logObj = Logs::find()->where([ "FlowNumber" => $model->FlowNumber, "CtrlType"=>"添加" ])->orderBy('ID DESC')->one();
         $inputMan = $logObj->InputMan;
         $inputDate = $logObj->InputDate;
-
-        $footer = "<b>录入人：" . $inputMan . " | 录入时间：" . $inputDate . "</b><br>";
-        $footer .= "<b>修改人：" . $this->operator . " | 修改时间：" . date("Y-m-d") . "</b>";
+        $date = date("Y-m-d");
         $script = <<<JS
-        $("#pop .pop-title", window.parent.document).html("<h3>{$model->type}修改[$model->FlowNumber]</h3>");
-        $("#pop .pop-footer", window.parent.document).html('$footer');
+        $("#pop .pop-title", window.parent.document).html("{$model->type}修改：$model->FlowNumber");
+        $("#pop .pop-footer", parent.document).html('<b>录入人</b>：{$this->operator} |<b> 录入时间：</b>{$inputDate} |<b>修改人</b>：{$this->operator} |<b> 修改时间：</b>{$date} | <input type="submit" value="提交" id="edit_submit">');   
+        $("#edit_submit", parent.document).click(function(){
+                $("#edit_pop_iframe", parent.document).contents().find("form").submit();
+        });
 JS;
         if($request->isPost){
             $model->Type = $model->type;
@@ -146,6 +152,77 @@ JS;
             exit;
         }
         echo $this->renderPartial("save-as", ["type"=>$this->_model->type, "action"=>$request->get("action") ]);
+    }
+
+
+    public function actionImport(){
+
+            $model = new UploadForm();
+            $request = Yii::$app->request;
+            $arr = [];
+            if($request->isPost){
+                    $model->file = UploadedFile::getInstanceByName('file');
+                    if ($model->validate()) { 
+                            $path = dirname(Yii::getAlias('@app')) . '/uploads/' . $this->depart_id . 'import.' . $model->file->extension;
+                            $model->file->saveAs($path);
+                            error_reporting(E_ALL);
+                            date_default_timezone_set('Asia/shanghai');
+                            $objPHPExcel = new \PHPExcel();
+                            $objReader = \PHPExcel_IOFactory::createReaderForFile($path);
+                            $objPHPExcel = $objReader->load($path);
+                            $objPHPExcel->setActiveSheetIndex(0);
+                            $objWorksheet = $objPHPExcel->getActiveSheet();
+                            $i = 0;
+                            foreach($objWorksheet->getRowIterator() as $row){
+                                    $cellIterator = $row->getCellIterator();
+                                    $cellIterator->setIterateOnlyExistingCells(false);
+                                    foreach($cellIterator as $cell){
+                                        $value = $cell->getFormattedValue(); 
+                                        $arr[$i][] = $value;
+                                    }
+                                    $i++;
+                            }
+                    }
+        }
+
+        $script = <<<JS
+        $("#pop .pop-title", window.parent.document).html("{$this->_model->type}导入");
+        $("#footer").append('<input type="button" name="delColSelected" value="删除选定列">   | ');
+        $("#footer").append('<input type="button" name="delRowSelected" value="删除选定行">  | ');
+        $("#footer").append('<input type="button" name="cleanColSelected" value="清除选定列">  | ');
+        $("#footer").append('<input type="text" name="ACol" size="3">O<input type="text" name="BCol" size="3"><input type="button" name="DH" value="倒换"> |');
+        $("#footer").append('<input type="text" id="yy" size="4"><input type="button" name="setYear" value="设置年份"> |');
+JS;
+        $this->layout = "edit";
+        return $this->render("import", ["model"=>$this->_model, "script"=>$script, "excel"=>$arr, "action"=>$request->get("action") ]);
+    }
+
+
+    public function actionImportAdd(){
+
+        $request = Yii::$app->request;
+        $model = $this->_model;
+        if($request->isPost){
+            $model->Type = $model->type;
+            $model->DepartID = $this->depart_id;
+            foreach( $request->post("data") as $k=>$v){
+                    $model->$k = $v;
+            }
+            if( $model->save() ){
+                    //insert logs
+                    $logs = new Logs();
+                    $logs->FlowNumber = $model->FlowNumber;
+                    $logs->InputMan = $this->operator;
+                    $logs->InputDate = date("Y-m-d G:i:s");
+                    $logs->CtrlType = "添加";
+                    $logs->Department = $this->depart_id;
+                    $logs->save();
+                    echo "success";
+            }else{
+                echo "defail";
+            }
+        }
+
     }
 
 }

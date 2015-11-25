@@ -33,7 +33,7 @@ class Document extends \yii\db\ActiveRecord
     {
         return [
             [['DepartmentNumber'], 'required'],
-            [['DepartmentNumber', 'Assess', 'Identify', 'Auction', 'Projectcost', 'Bust'], 'integer'],
+            [['DepartmentNumber', 'Assess', 'Identify', 'Auction', 'Project', 'Bust'], 'integer'],
             [['Name'], 'string', 'max' => 255]
         ];
     }
@@ -50,7 +50,7 @@ class Document extends \yii\db\ActiveRecord
             'Assess' => 'Assess',
             'Identify' => 'Identify',
             'Auction' => 'Auction',
-            'Projectcost' => 'Projectcost',
+            'Project' => 'Project',
             'Bust' => 'Bust',
         ];
     }
@@ -64,7 +64,7 @@ public static function tableTh(){
             'Assess' => '评估',
             'Identify' => '鉴定',
             'Auction' => '拍卖',
-            'Projectcost' => '工程造价',
+            'Project' => '工程造价',
             'Bust' => '破产',
         ];
     }

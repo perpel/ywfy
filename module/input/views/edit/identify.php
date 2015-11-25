@@ -42,7 +42,7 @@ use app\models\Common;
 
   <tr>
     <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{label}'])?></td>
-    <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}'])->dropDownList(Common::PrincipalDepartment()) ?></td>
+    <td><?= $form->field($model, 'EntrustDeparment', ['template'=>'{input}{error}']) ?></td>
     <td><?= $form->field($model, 'IdentifiedType', ['template'=>'{label}'])?></td>
     <td><?= $form->field($model, 'IdentifiedType', ['template'=>'{input}{error}'])->dropDownList($model::IdentifyType()) ?></td>
     <td><?= $form->field($model, 'Undertaker', ['template'=>'{label}'])?></td>

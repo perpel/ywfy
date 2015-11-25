@@ -1,0 +1,753 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.14
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: 2015-11-15 22:51:15
+-- 服务器版本： 5.6.26
+-- PHP Version: 5.6.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `case`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_admin`
+--
+
+CREATE TABLE IF NOT EXISTS `case_admin` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Password` varchar(128) NOT NULL,
+  `DepartNum` varchar(128) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_admin`
+--
+
+INSERT INTO `case_admin` (`ID`, `Name`, `Password`, `DepartNum`) VALUES
+(1, 'admin', 'admin', 'super');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_agency`
+--
+
+CREATE TABLE IF NOT EXISTS `case_agency` (
+  `ID` int(10) unsigned NOT NULL COMMENT '序号',
+  `DepartID` varchar(255) NOT NULL,
+  `Type` varchar(16) DEFAULT NULL COMMENT '机构类型',
+  `Name` varchar(128) NOT NULL COMMENT '机构名称',
+  `LicenseNumber` varchar(20) DEFAULT NULL COMMENT '执业证号',
+  `Contacts` varchar(20) DEFAULT NULL COMMENT '联系人',
+  `ContactsPhone` varchar(20) DEFAULT NULL COMMENT '联系人电话',
+  `LegalRepresentative` varchar(20) DEFAULT NULL COMMENT '法定代表人',
+  `LegalRepresentativePhone` varchar(20) DEFAULT NULL COMMENT '法定代表人电话',
+  `Tel` varchar(20) DEFAULT NULL COMMENT '电话',
+  `Fax` varchar(20) DEFAULT NULL COMMENT '传真',
+  `Qualification` varchar(36) DEFAULT NULL COMMENT '资质',
+  `ServiceArea` varchar(128) DEFAULT NULL COMMENT '服务范围',
+  `Remark` varchar(255) DEFAULT NULL COMMENT '备注'
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_agency`
+--
+
+INSERT INTO `case_agency` (`ID`, `DepartID`, `Type`, `Name`, `LicenseNumber`, `Contacts`, `ContactsPhone`, `LegalRepresentative`, `LegalRepresentativePhone`, `Tel`, `Fax`, `Qualification`, `ServiceArea`, `Remark`) VALUES
+(24, '20032', '破产', 'AAA', 'k1338945', 'kongdehui', '18741543229', 'sadas', 'asdas', NULL, NULL, NULL, NULL, NULL),
+(25, '20033', '拍卖', '1231', '213', '213', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, '20032', '评估', 'asdf', 'asdf', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(27, '20033', '评估', 'ft', 't', 't', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_assess`
+--
+
+CREATE TABLE IF NOT EXISTS `case_assess` (
+  `ID` int(18) unsigned NOT NULL,
+  `DepartID` decimal(18,0) NOT NULL COMMENT '部门ID',
+  `Type` varchar(10) DEFAULT '评估' COMMENT '类型评估',
+  `Year` varchar(12) NOT NULL COMMENT '年度',
+  `CaseNumber` varchar(255) NOT NULL COMMENT '委托案号',
+  `Supervise` varchar(50) DEFAULT NULL COMMENT '督办人',
+  `SuperviseTel` varchar(50) DEFAULT NULL COMMENT '督办人电话',
+  `FlowNumber` varchar(255) NOT NULL COMMENT '案件流水号',
+  `Case` varchar(255) NOT NULL COMMENT '案由',
+  `LitigantOne` varchar(255) DEFAULT NULL COMMENT '当事人1',
+  `LitigantTwo` varchar(255) DEFAULT NULL COMMENT '当事人2',
+  `EntrustDeparment` varchar(128) DEFAULT NULL COMMENT '委托部门',
+  `Undertaker` varchar(50) DEFAULT NULL COMMENT '承办人',
+  `UndertakerTel` varchar(50) DEFAULT NULL COMMENT '承办人电话',
+  `TransferMaterial` varchar(255) DEFAULT NULL COMMENT '移交材料',
+  `SubjectMatter` text COMMENT '标的物',
+  `Agency` varchar(100) DEFAULT NULL COMMENT '评估机构',
+  `Master` varchar(50) DEFAULT NULL COMMENT '评估师',
+  `MasterTel` varchar(50) DEFAULT NULL COMMENT '评估师电话',
+  `ChoiceWay` varchar(50) DEFAULT NULL COMMENT '选定方式',
+  `ChoicedDate` date DEFAULT NULL COMMENT '选定日期',
+  `CaseClosedDate` date DEFAULT NULL COMMENT '收案日期',
+  `PutOnRecordDate` date DEFAULT NULL COMMENT '立案日期',
+  `SuspendedDate` date DEFAULT NULL COMMENT '暂缓日期',
+  `EntrustDate` date DEFAULT NULL COMMENT '委托日期',
+  `MaterialsCompletionDate` date DEFAULT NULL COMMENT '材料补全日期',
+  `RetractDate` date DEFAULT NULL COMMENT '撤回日期',
+  `SiteSurveyDate` date DEFAULT NULL COMMENT '现场勘察日期',
+  `GetbackDate` date DEFAULT NULL COMMENT '结案日期',
+  `GetbackCycle` int(11) DEFAULT NULL COMMENT '结案周期',
+  `Progress` varchar(36) DEFAULT NULL COMMENT '进度',
+  `Money` decimal(20,4) DEFAULT NULL COMMENT '评估价',
+  `ChargesDate` date DEFAULT NULL COMMENT '缴费日期',
+  `Fee` decimal(20,4) DEFAULT NULL COMMENT '评估费用',
+  `DeliveryCourtDate` date DEFAULT NULL COMMENT '送达业务庭日期',
+  `FllowResult` varchar(50) DEFAULT NULL COMMENT '跟踪评查情况',
+  `Remark` text COMMENT '备注',
+  `Cycle` int(11) DEFAULT NULL COMMENT '评估周期',
+  `PutOnRecordCycle` int(11) DEFAULT NULL COMMENT '立案周期',
+  `EntrustCycle` int(11) DEFAULT NULL COMMENT '委托周期'
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_assess`
+--
+
+INSERT INTO `case_assess` (`ID`, `DepartID`, `Type`, `Year`, `CaseNumber`, `Supervise`, `SuperviseTel`, `FlowNumber`, `Case`, `LitigantOne`, `LitigantTwo`, `EntrustDeparment`, `Undertaker`, `UndertakerTel`, `TransferMaterial`, `SubjectMatter`, `Agency`, `Master`, `MasterTel`, `ChoiceWay`, `ChoicedDate`, `CaseClosedDate`, `PutOnRecordDate`, `SuspendedDate`, `EntrustDate`, `MaterialsCompletionDate`, `RetractDate`, `SiteSurveyDate`, `GetbackDate`, `GetbackCycle`, `Progress`, `Money`, `ChargesDate`, `Fee`, `DeliveryCourtDate`, `FllowResult`, `Remark`, `Cycle`, `PutOnRecordCycle`, `EntrustCycle`) VALUES
+(9, '20032', '评估', '2015', 'AAAAAAAAAAAAAAA', '行', '123', '(2015)浙义法委评1号', '送达傅', '孔德辉', '321321', '黄欢', '231', '12312', '12312', '3123123', '诉阿,213,AAAA', '12321', '3213', '指定', '2015-11-17', '2015-11-18', '2015-11-20', '2015-11-10', '2015-11-10', '2015-11-19', '2015-11-17', '2015-11-19', '2015-11-11', 2, '完成', '12321.0000', '2015-11-25', '3213.0000', '2015-11-18', '12312', '32131', 2, 3, 0),
+(10, '20032', '评估', '2015', '456', 'asdfasd', 'fasdf', '(2015)浙义法委评2号', '46565sdaf', 'safasdf', 'fasdf', '佛堂庭', 'adsf', 'asdf', '123', '21321', '3213', '123', '213', '指定', '2015-11-10', '2015-11-18', '2015-12-01', '2015-11-23', '2015-11-10', '2015-11-10', '2015-11-09', '2015-11-24', '2015-11-11', 2, '完成', '123.0000', '2015-11-23', '213.0000', '2015-11-02', '213', '213', 2, 14, 0),
+(13, '20033', '评估', '2015', '全文俄前', '', '', '(2015)浙佛法委评1号', '2131 ', '阿斯顿傅', '萨芬的', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, '', '', NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_auction`
+--
+
+CREATE TABLE IF NOT EXISTS `case_auction` (
+  `ID` int(18) unsigned NOT NULL,
+  `DepartID` decimal(18,0) NOT NULL COMMENT '部门ID',
+  `Type` varchar(10) DEFAULT '评估' COMMENT '类型评估',
+  `Year` varchar(12) NOT NULL COMMENT '年度',
+  `CaseNumber` varchar(255) NOT NULL COMMENT '委托案号',
+  `Supervise` varchar(50) DEFAULT NULL COMMENT '督办人',
+  `SuperviseTel` varchar(50) DEFAULT NULL COMMENT '督办人电话',
+  `FlowNumber` varchar(255) NOT NULL COMMENT '案件流水号',
+  `Case` varchar(255) NOT NULL COMMENT '案由',
+  `LitigantOne` varchar(255) DEFAULT NULL COMMENT '当事人1',
+  `LitigantTwo` varchar(255) DEFAULT NULL COMMENT '当事人2',
+  `EntrustDeparment` varchar(128) DEFAULT NULL COMMENT '委托部门',
+  `Undertaker` varchar(50) DEFAULT NULL COMMENT '承办人',
+  `UndertakerTel` varchar(50) DEFAULT NULL COMMENT '承办人电话',
+  `TransferMaterial` varchar(255) DEFAULT NULL COMMENT '移交材料',
+  `SubjectMatter` text COMMENT '标的物',
+  `Agency` varchar(100) DEFAULT NULL COMMENT '拍卖机构',
+  `ChoiceWay` varchar(50) DEFAULT NULL COMMENT '选定方式',
+  `CaseClosedDate` date DEFAULT NULL COMMENT '收案日期',
+  `PutOnRecordDate` date DEFAULT NULL COMMENT '立案日期',
+  `GetbackDate` date DEFAULT NULL COMMENT '结案日期',
+  `EntrustDate` date DEFAULT NULL COMMENT '委托日期',
+  `Progress` varchar(36) DEFAULT NULL COMMENT '进度',
+  `AnnouncementDate1` date DEFAULT NULL COMMENT '第一次公告日期',
+  `TimeDate1` date DEFAULT NULL COMMENT '第一次拍卖日期',
+  `Status1` varchar(18) DEFAULT NULL COMMENT '第一次拍卖状态',
+  `StartAuctionPrice1` decimal(18,4) DEFAULT NULL COMMENT '第一次起拍价',
+  `Price1` decimal(18,4) DEFAULT NULL COMMENT '第一次拍卖价',
+  `AnnouncementDate2` date DEFAULT NULL COMMENT '第二次公告日期',
+  `TimeDate2` date DEFAULT NULL COMMENT '第二次拍卖日期',
+  `Status2` varchar(18) DEFAULT NULL COMMENT '第二次拍卖状态',
+  `StartAuctionPrice2` decimal(18,4) DEFAULT NULL COMMENT '第二次起拍价',
+  `Price2` decimal(18,4) DEFAULT NULL COMMENT '第二次拍卖价',
+  `AnnouncementDate3` date DEFAULT NULL COMMENT '第三次公告日期',
+  `TimeDate3` date DEFAULT NULL COMMENT '第三次拍卖日期',
+  `Status3` varchar(18) DEFAULT NULL COMMENT '第三次拍卖状态',
+  `StartAuctionPrice3` decimal(18,4) DEFAULT NULL COMMENT '第三次起拍价',
+  `Price3` decimal(18,4) DEFAULT NULL COMMENT '第三次拍卖价',
+  `AuctionStatus` varchar(10) DEFAULT NULL COMMENT '拍卖状态',
+  `AuctionPrice` decimal(20,4) DEFAULT NULL COMMENT '拍卖价格',
+  `AuctionDate` date DEFAULT NULL COMMENT '拍卖日期',
+  `ArrivalDate` date DEFAULT NULL COMMENT '拍卖款到帐日期',
+  `ArrivalCycle` date DEFAULT NULL COMMENT '到帐周期',
+  `SuspendedDate` date DEFAULT NULL COMMENT '暂缓日期',
+  `RetractDate` date DEFAULT NULL COMMENT '撤回日期',
+  `Fee` decimal(20,4) DEFAULT NULL COMMENT '拍卖费用',
+  `Master` varchar(20) DEFAULT NULL COMMENT '拍卖师',
+  `ChargesDate` date DEFAULT NULL COMMENT '缴费日期',
+  `Cycle` int(11) DEFAULT NULL COMMENT '拍卖周期',
+  `FllowResult` varchar(50) DEFAULT NULL COMMENT '跟踪评查情况',
+  `Remark` text COMMENT '备注',
+  `GetbackCycle` int(11) DEFAULT NULL COMMENT '结案周期',
+  `PutOnRecordCycle` int(11) DEFAULT NULL COMMENT '立案周期',
+  `EntrustCycle` int(11) DEFAULT NULL COMMENT '委托周期',
+  `SaleDate` date NOT NULL COMMENT '变卖日期',
+  `SalePrice` decimal(18,4) NOT NULL COMMENT '变卖价格',
+  `SaleStatus` varchar(10) NOT NULL COMMENT '变卖状态'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_auction`
+--
+
+INSERT INTO `case_auction` (`ID`, `DepartID`, `Type`, `Year`, `CaseNumber`, `Supervise`, `SuperviseTel`, `FlowNumber`, `Case`, `LitigantOne`, `LitigantTwo`, `EntrustDeparment`, `Undertaker`, `UndertakerTel`, `TransferMaterial`, `SubjectMatter`, `Agency`, `ChoiceWay`, `CaseClosedDate`, `PutOnRecordDate`, `GetbackDate`, `EntrustDate`, `Progress`, `AnnouncementDate1`, `TimeDate1`, `Status1`, `StartAuctionPrice1`, `Price1`, `AnnouncementDate2`, `TimeDate2`, `Status2`, `StartAuctionPrice2`, `Price2`, `AnnouncementDate3`, `TimeDate3`, `Status3`, `StartAuctionPrice3`, `Price3`, `AuctionStatus`, `AuctionPrice`, `AuctionDate`, `ArrivalDate`, `ArrivalCycle`, `SuspendedDate`, `RetractDate`, `Fee`, `Master`, `ChargesDate`, `Cycle`, `FllowResult`, `Remark`, `GetbackCycle`, `PutOnRecordCycle`, `EntrustCycle`, `SaleDate`, `SalePrice`, `SaleStatus`) VALUES
+(1, '20032', '拍卖', '2015', 'ads', '2', '234', '(2015)浙义法委拍1号', '324', '234', '234', '佛堂', '234', '234', '234', '234', '234', '招标', '2015-11-11', '2015-11-03', '2015-11-25', '2015-11-11', '委托', '2015-11-18', '2015-11-25', '流拍', '234.0000', '234.0000', '2015-11-03', '2015-11-11', '流拍', '234.0000', '234.0000', '2015-11-10', '2015-11-25', '流拍', '234.0000', '234.0000', NULL, NULL, NULL, '2015-11-09', NULL, '2015-11-09', '2015-11-19', '234.0000', '234', NULL, 15, '324', '234', 15, 0, 9, '2015-11-10', '234.0000', '234');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_bust`
+--
+
+CREATE TABLE IF NOT EXISTS `case_bust` (
+  `ID` int(18) unsigned NOT NULL,
+  `DepartID` decimal(18,0) NOT NULL COMMENT '部门ID',
+  `Type` varchar(10) DEFAULT '评估' COMMENT '类型评估',
+  `Year` varchar(12) NOT NULL COMMENT '年度',
+  `CaseNumber` varchar(255) NOT NULL COMMENT '委托案号',
+  `Supervise` varchar(50) DEFAULT NULL COMMENT '督办人',
+  `SuperviseTel` varchar(50) DEFAULT NULL COMMENT '督办人电话',
+  `FlowNumber` varchar(255) NOT NULL COMMENT '案件流水号',
+  `Case` varchar(255) NOT NULL COMMENT '案由',
+  `LitigantOne` varchar(255) DEFAULT NULL COMMENT '当事人1',
+  `LitigantTwo` varchar(255) DEFAULT NULL COMMENT '当事人2',
+  `EntrustDeparment` varchar(128) DEFAULT NULL COMMENT '委托部门',
+  `Undertaker` varchar(50) DEFAULT NULL COMMENT '承办人',
+  `UndertakerTel` varchar(50) DEFAULT NULL COMMENT '承办人电话',
+  `TransferMaterial` varchar(255) DEFAULT NULL COMMENT '移交材料',
+  `SubjectMatter` text COMMENT '标的物',
+  `Agency` varchar(255) DEFAULT NULL COMMENT '管理人/清算组',
+  `ChoiceWay` varchar(50) DEFAULT NULL COMMENT '选定方式',
+  `CaseClosedDate` date DEFAULT NULL COMMENT '收案日期',
+  `PutOnRecordDate` date DEFAULT NULL COMMENT '立案日期',
+  `PutOnRecordCycle` int(11) DEFAULT NULL COMMENT '立案周期',
+  `EntrustDate` date DEFAULT NULL COMMENT '委托日期',
+  `EntrustCycle` int(11) DEFAULT NULL COMMENT '委托周期',
+  `LiquidationDate` date DEFAULT NULL COMMENT '开始清算日期',
+  `GetbackDate` date DEFAULT NULL COMMENT '结案日期',
+  `Cycle` int(11) DEFAULT NULL COMMENT '破产周期',
+  `Progress` varchar(36) DEFAULT NULL COMMENT '进度',
+  `Fee` decimal(20,4) DEFAULT NULL COMMENT '清算费用',
+  `FllowResult` varchar(50) DEFAULT NULL COMMENT '跟踪评查情况',
+  `Remark` text COMMENT '备注/结论'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_bust`
+--
+
+INSERT INTO `case_bust` (`ID`, `DepartID`, `Type`, `Year`, `CaseNumber`, `Supervise`, `SuperviseTel`, `FlowNumber`, `Case`, `LitigantOne`, `LitigantTwo`, `EntrustDeparment`, `Undertaker`, `UndertakerTel`, `TransferMaterial`, `SubjectMatter`, `Agency`, `ChoiceWay`, `CaseClosedDate`, `PutOnRecordDate`, `PutOnRecordCycle`, `EntrustDate`, `EntrustCycle`, `LiquidationDate`, `GetbackDate`, `Cycle`, `Progress`, `Fee`, `FllowResult`, `Remark`) VALUES
+(1, '20032', '破产', '2015', 'adf', '123', '213', '(2015)浙义法委评3号', 'dsaf', '213', '123', '佛堂庭', '213', '123', '123', '123', '12321321,222', '指定', '2015-11-04', '2015-11-18', 15, '2015-11-11', 0, '2015-12-02', '2015-12-08', 28, '完成', '123.0000', '213', '213');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_department`
+--
+
+CREATE TABLE IF NOT EXISTS `case_department` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(128) NOT NULL,
+  `Number` varchar(255) NOT NULL,
+  `FlowNumber` varchar(64) NOT NULL,
+  `StartDate` date NOT NULL,
+  `EndDate` date NOT NULL,
+  `RegistrationCode` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_department`
+--
+
+INSERT INTO `case_department` (`ID`, `Name`, `Number`, `FlowNumber`, `StartDate`, `EndDate`, `RegistrationCode`) VALUES
+(14, '义乌人民法院', '20032', '浙义法委', '2015-11-15', '2015-11-23', '8099819f3263dac30d9763153f7dab43'),
+(16, '佛堂法院', '20033', '浙佛法委', '2015-11-15', '2015-11-23', '8099819f3263dac30d9763153f7dab43');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_document`
+--
+
+CREATE TABLE IF NOT EXISTS `case_document` (
+  `ID` int(11) NOT NULL,
+  `DepartmentNumber` int(11) NOT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  `Assess` tinyint(4) DEFAULT NULL,
+  `Identify` tinyint(4) DEFAULT NULL,
+  `Auction` tinyint(4) DEFAULT NULL,
+  `Projectcost` tinyint(4) DEFAULT NULL,
+  `Bust` tinyint(4) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_document`
+--
+
+INSERT INTO `case_document` (`ID`, `DepartmentNumber`, `Name`, `Assess`, `Identify`, `Auction`, `Projectcost`, `Bust`) VALUES
+(12, 20032, 'AAAA', 1, 1, 1, NULL, NULL),
+(13, 20032, 'CCC', 1, 1, NULL, NULL, NULL),
+(14, 20032, 'DDD', 0, 1, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_document_template`
+--
+
+CREATE TABLE IF NOT EXISTS `case_document_template` (
+  `ID` int(11) NOT NULL,
+  `DocumentID` int(11) NOT NULL,
+  `URL` varchar(255) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_document_template`
+--
+
+INSERT INTO `case_document_template` (`ID`, `DocumentID`, `URL`) VALUES
+(13, 12, '/uploads/print/template/13.doc'),
+(14, 13, '/uploads/print/template/14.doc'),
+(15, 15, '/uploads/print/template/15.doc');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_identify`
+--
+
+CREATE TABLE IF NOT EXISTS `case_identify` (
+  `ID` int(18) unsigned NOT NULL,
+  `DepartID` decimal(18,0) NOT NULL COMMENT '部门ID',
+  `Type` varchar(10) DEFAULT '评估' COMMENT '类型评估',
+  `Year` varchar(12) NOT NULL COMMENT '年度',
+  `CaseNumber` varchar(255) NOT NULL COMMENT '委托案号',
+  `Supervise` varchar(50) DEFAULT NULL COMMENT '督办人',
+  `SuperviseTel` varchar(50) DEFAULT NULL COMMENT '督办人电话',
+  `FlowNumber` varchar(255) NOT NULL COMMENT '案件流水号',
+  `Case` varchar(255) NOT NULL COMMENT '案由',
+  `LitigantOne` varchar(255) DEFAULT NULL COMMENT '当事人1',
+  `LitigantTwo` varchar(255) DEFAULT NULL COMMENT '当事人2',
+  `EntrustDeparment` varchar(128) DEFAULT NULL COMMENT '委托部门',
+  `Undertaker` varchar(50) DEFAULT NULL COMMENT '承办人',
+  `UndertakerTel` varchar(50) DEFAULT NULL COMMENT '承办人电话',
+  `TransferMaterial` varchar(255) DEFAULT NULL COMMENT '移交材料',
+  `SubjectMatter` text COMMENT '标的物',
+  `Agency` varchar(100) DEFAULT NULL COMMENT '鉴定机构',
+  `Master` varchar(50) DEFAULT NULL COMMENT '鉴定人',
+  `MasterTel` varchar(50) DEFAULT NULL COMMENT '鉴定人电话',
+  `ChoiceWay` varchar(50) DEFAULT NULL COMMENT '选定方式',
+  `ChoicedDate` date DEFAULT NULL COMMENT '选定日期',
+  `IdentifiedType` varchar(50) DEFAULT NULL COMMENT '鉴定类型',
+  `CaseClosedDate` date DEFAULT NULL COMMENT '收案日期',
+  `PutOnRecordDate` date DEFAULT NULL COMMENT '立案日期',
+  `SuspendedDate` date DEFAULT NULL COMMENT '暂缓日期',
+  `EntrustDate` date DEFAULT NULL COMMENT '委托日期',
+  `MaterialsCompletionDate` date DEFAULT NULL COMMENT '材料补全日期',
+  `RetractDate` date DEFAULT NULL COMMENT '撤回日期',
+  `SiteSurveyDate` date DEFAULT NULL COMMENT '现场勘察日期',
+  `GetbackDate` date DEFAULT NULL COMMENT '结案日期',
+  `Progress` varchar(36) DEFAULT NULL COMMENT '进度',
+  `DeliveryCourtDate` date DEFAULT NULL COMMENT '送达业务庭日期',
+  `GetbackCycle` int(11) DEFAULT NULL COMMENT '结案周期',
+  `FllowResult` varchar(50) DEFAULT NULL COMMENT '跟踪评查情况',
+  `Fee` decimal(20,4) DEFAULT NULL COMMENT '鉴定费用',
+  `Suggestion` varchar(50) DEFAULT NULL COMMENT '鉴定意见',
+  `SuggestionAdmissible` char(12) DEFAULT NULL COMMENT '鉴定意见是否采信',
+  `IdentifiedResult` text COMMENT '鉴定结论',
+  `Remark` text COMMENT '备注',
+  `Cycle` int(11) DEFAULT NULL COMMENT '鉴定周期',
+  `PutOnRecordCycle` int(11) DEFAULT NULL COMMENT '立案周期',
+  `EntrustCycle` int(11) DEFAULT NULL COMMENT '委托周期',
+  `SourceIdentifiedDepartment` varchar(255) DEFAULT NULL COMMENT '原鉴定单位',
+  `SourceIdentifiedResult` varchar(255) DEFAULT NULL COMMENT '原鉴定结果'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_identify`
+--
+
+INSERT INTO `case_identify` (`ID`, `DepartID`, `Type`, `Year`, `CaseNumber`, `Supervise`, `SuperviseTel`, `FlowNumber`, `Case`, `LitigantOne`, `LitigantTwo`, `EntrustDeparment`, `Undertaker`, `UndertakerTel`, `TransferMaterial`, `SubjectMatter`, `Agency`, `Master`, `MasterTel`, `ChoiceWay`, `ChoicedDate`, `IdentifiedType`, `CaseClosedDate`, `PutOnRecordDate`, `SuspendedDate`, `EntrustDate`, `MaterialsCompletionDate`, `RetractDate`, `SiteSurveyDate`, `GetbackDate`, `Progress`, `DeliveryCourtDate`, `GetbackCycle`, `FllowResult`, `Fee`, `Suggestion`, `SuggestionAdmissible`, `IdentifiedResult`, `Remark`, `Cycle`, `PutOnRecordCycle`, `EntrustCycle`, `SourceIdentifiedDepartment`, `SourceIdentifiedResult`) VALUES
+(2, '20032', '鉴定', '2015', 'wqeqw', 'wqe', 'wqe', '(2015)浙义法委鉴1号', 'wqeqw', 'ewqe', 'wqeqw', '佛堂', 'eqwe', 'qweqw', 'qweq', 'qweqw', 'qweqw', 'wqeq', 'wqe', '指定', '2015-11-02', '法医', '2015-11-18', '2015-11-24', '2015-11-09', '2015-11-10', '2015-11-10', '2015-12-02', '2015-11-19', '2015-11-24', '完成', '2015-11-09', 15, 'asdas', '123.0000', 'dsad', '0', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 'asdas', 15, 7, 0, 'sad', 'bbbbbbbbbbbbbbbbbbbbbbbbbb');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_logs`
+--
+
+CREATE TABLE IF NOT EXISTS `case_logs` (
+  `ID` int(10) unsigned NOT NULL,
+  `FlowNumber` varchar(255) NOT NULL,
+  `InputMan` varchar(36) NOT NULL,
+  `InputDate` datetime NOT NULL,
+  `CtrlType` varchar(36) NOT NULL,
+  `Department` varchar(255) NOT NULL DEFAULT '20032'
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_logs`
+--
+
+INSERT INTO `case_logs` (`ID`, `FlowNumber`, `InputMan`, `InputDate`, `CtrlType`, `Department`) VALUES
+(1, '(2015)浙义法委评6号', '员工', '2015-11-09 01:04:14', '添加', '20032'),
+(2, '(2015)浙义法委评6号', '员工', '2015-11-09 13:09:21', '删除', '20032'),
+(3, '(2015)浙义法委评5号', '员工', '2015-11-09 20:16:57', '删除', '20032'),
+(4, '(2015)浙义法委评4号', '员工', '2015-11-09 20:23:04', '删除', '20032'),
+(5, '(2015)浙义法委评3号', '员工', '2015-11-09 20:23:06', '删除', '20032'),
+(6, '(2015)浙义法委评2号', '员工', '2015-11-09 20:23:09', '删除', '20032'),
+(7, '(2015)浙义法委评1号', '员工', '2015-11-09 20:23:12', '删除', '20032'),
+(8, '(2015)浙义法委评1号', '员工', '2015-11-09 20:25:10', '添加', '20032'),
+(9, '(2015)浙义法委评1号', '员工', '2015-11-09 20:29:03', '修改', '20032'),
+(10, '(2015)浙义法委评1号', '员工', '2015-11-09 20:30:51', '删除', '20032'),
+(11, '(2015)浙义法委评1号', '员工', '2015-11-09 20:41:48', '添加', '20032'),
+(12, '(2015)浙义法委评2号', '员工', '2015-11-09 21:06:24', '添加', '20032'),
+(13, '(2015)浙义法委评1号', '员工', '2015-11-09 21:06:29', '删除', '20032'),
+(14, '(2015)浙义法委评1号', '员工', '2015-11-09 21:06:37', '添加', '20032'),
+(15, '(2015)浙义法委评2号', '员工', '2015-11-09 21:08:38', '修改', '20032'),
+(16, '(2015)浙义法委评2号', '员工', '2015-11-09 21:08:48', '修改', '20032'),
+(17, '(2015)浙义法委评2号', '员工', '2015-11-09 21:35:13', '修改', '20032'),
+(18, '(2015)浙义法委评2号', '员工', '2015-11-09 21:44:42', '修改', '20032'),
+(19, '(2015)浙义法委评2号', '员工', '2015-11-09 22:01:49', '修改', '20032'),
+(20, '(2015)浙义法委评2号', '员工', '2015-11-09 22:04:20', '修改', '20032'),
+(21, '(2015)浙义法委评2号', '员工', '2015-11-09 22:07:13', '修改', '20032'),
+(22, '(2015)浙义法委评2号', '员工', '2015-11-09 22:07:47', '修改', '20032'),
+(23, '(2015)浙义法委评2号', '员工', '2015-11-09 22:10:36', '修改', '20032'),
+(24, '(2015)浙义法委评2号', '员工', '2015-11-09 22:10:53', '修改', '20032'),
+(25, '(2015)浙义法委评1号', '员工', '2015-11-09 22:11:38', '删除', '20032'),
+(26, '(2015)浙义法委评2号', '员工', '2015-11-09 22:14:03', '修改', '20032'),
+(27, '(2015)浙义法委评1号', '员工', '2015-11-10 19:08:44', '添加', '20032'),
+(28, '(2015)浙义法委评1号', '员工', '2015-11-10 19:09:00', '修改', '20032'),
+(29, '(2015)浙义法委评2号', '员工', '2015-11-10 19:09:24', '删除', '20032'),
+(30, '(2015)浙义法委评1号', '员工', '2015-11-10 19:19:30', '修改', '20032'),
+(31, '(2015)浙义法委评1号', '员工', '2015-11-10 20:37:39', '修改', '20032'),
+(32, '(2015)浙义法委评1号', '员工', '2015-11-11 18:46:04', '修改', '20032'),
+(33, '(2015)浙义法委评1号', '员工', '2015-11-12 17:35:47', '修改', '20032'),
+(34, '(2015)浙义法委评1号', '员工', '2015-11-12 17:41:05', '修改', '20032'),
+(35, '(2015)浙义法委评1号', '员工', '2015-11-12 17:41:12', '修改', '20032'),
+(36, '(2015)浙义法委评1号', '员工', '2015-11-12 21:41:50', '修改', '20032'),
+(37, '(2015)浙义法委评1号', '员工', '2015-11-12 21:57:38', '修改', '20032'),
+(38, '(2015)浙义法委评2号', '员工', '2015-11-13 20:21:43', '添加', '20032'),
+(39, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:23:51', '添加', '20032'),
+(40, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:24:57', '修改', '20032'),
+(41, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:25:42', '修改', '20032'),
+(42, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:25:57', '删除', '20032'),
+(43, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:31:29', '添加', '20032'),
+(44, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:32:08', '修改', '20032'),
+(45, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:32:47', '修改', '20032'),
+(46, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:34:09', '修改', '20032'),
+(47, '(2015)浙义法委评1号', '员工', '2015-11-13 20:34:35', '修改', '20032'),
+(48, '(2015)浙义法委鉴1号', '员工', '2015-11-13 20:37:45', '修改', '20032'),
+(49, '(2015)浙义法委拍1号', '员工', '2015-11-13 22:13:06', '添加', '20032'),
+(50, '(2015)浙义法委拍1号', '员工', '2015-11-13 22:13:58', '修改', '20032'),
+(51, '(2015)浙义法委拍1号', '员工', '2015-11-13 22:13:58', '修改', '20032'),
+(52, '(2015)浙义法委拍1号', '员工', '2015-11-13 22:31:52', '修改', '20032'),
+(53, '(2015)浙义法委工1号', '员工', '2015-11-13 23:04:49', '添加', '20032'),
+(54, '(2015)浙义法委工1号', '员工', '2015-11-13 23:06:28', '修改', '20032'),
+(55, '(2015)浙义法委工1号', '员工', '2015-11-13 23:06:43', '修改', '20032'),
+(56, '(2015)浙义法委评3号', '员工', '2015-11-13 23:35:05', '添加', '20032'),
+(57, '(2015)浙义法委评3号', '员工', '2015-11-13 23:35:14', '修改', '20032'),
+(58, '(2015)浙义法委评3号', '员工', '2015-11-13 23:36:21', '修改', '20032'),
+(59, '(2015)浙义法委评2号', '员工', '2015-11-14 15:55:33', '修改', '20032'),
+(60, '(2015)浙义法委评2号', '员工', '2015-11-14 15:55:41', '修改', '20032'),
+(61, '(2015)浙义法委评3号', '员工', '2015-11-14 16:21:53', '修改', '20032'),
+(62, '(2015)浙义法委鉴1号', '员工', '2015-11-15 10:47:45', '修改', '20032'),
+(63, '(2015)浙义法委评3号', 'ft', '2015-11-15 19:34:50', '添加', '20032'),
+(64, '(2015)浙义法委评3号', 'ft', '2015-11-15 19:36:39', '删除', '20033'),
+(65, '(2015)浙义法委评3号', 'ft', '2015-11-15 19:38:34', '添加', '20033'),
+(66, '(2015)浙义法委评3号', 'ft', '2015-11-15 19:38:56', '删除', '20033'),
+(67, '(2015)浙佛法委评1号', 'ft', '2015-11-15 20:10:50', '添加', '20033'),
+(68, '(2015)浙义法委评3号', '员工', '2015-11-15 21:05:36', '添加', '20032'),
+(69, '(2015)浙义法委评3号', '员工', '2015-11-15 21:05:43', '删除', '20032');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_personnel`
+--
+
+CREATE TABLE IF NOT EXISTS `case_personnel` (
+  `ID` int(10) unsigned NOT NULL COMMENT '主键ID',
+  `Number` varchar(45) NOT NULL COMMENT '用户帐号',
+  `Password` varchar(45) DEFAULT '000000' COMMENT '用户密码',
+  `LastOnlineTime` datetime DEFAULT NULL COMMENT '最后登录时间',
+  `Name` varchar(45) DEFAULT '员工' COMMENT '用户姓名',
+  `IDNumber` varchar(18) DEFAULT NULL,
+  `Sex` varchar(10) DEFAULT '男',
+  `Position` varchar(10) DEFAULT NULL,
+  `DepartmentNumber` varchar(45) NOT NULL COMMENT '部门编号',
+  `Address` varchar(255) DEFAULT NULL COMMENT '住址',
+  `CellNumber` varchar(45) DEFAULT NULL COMMENT '手机号码',
+  `TelNumber` varchar(45) DEFAULT NULL COMMENT '电话号码',
+  `Education` varchar(10) DEFAULT NULL COMMENT '教育学历',
+  `Remarks` varchar(45) DEFAULT NULL COMMENT '备注',
+  `TranVersion` varchar(255) DEFAULT NULL COMMENT '版本号',
+  `AccessToken` varchar(200) DEFAULT NULL,
+  `AuthKey` varchar(200) DEFAULT NULL,
+  `CreateTime` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_personnel`
+--
+
+INSERT INTO `case_personnel` (`ID`, `Number`, `Password`, `LastOnlineTime`, `Name`, `IDNumber`, `Sex`, `Position`, `DepartmentNumber`, `Address`, `CellNumber`, `TelNumber`, `Education`, `Remarks`, `TranVersion`, `AccessToken`, `AuthKey`, `CreateTime`) VALUES
+(11, 'test', 'test', NULL, '员工', NULL, '男', NULL, '20032', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 'perpel', '123', NULL, '员工', NULL, '女', NULL, '20032', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'ft', 'ft', NULL, 'ft', NULL, '男', NULL, '20033', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_project`
+--
+
+CREATE TABLE IF NOT EXISTS `case_project` (
+  `ID` int(18) unsigned NOT NULL,
+  `DepartID` decimal(18,0) NOT NULL COMMENT '部门ID',
+  `Type` varchar(10) DEFAULT '评估' COMMENT '类型评估',
+  `Year` varchar(12) NOT NULL COMMENT '年度',
+  `CaseNumber` varchar(255) NOT NULL COMMENT '委托案号',
+  `Supervise` varchar(50) DEFAULT NULL COMMENT '督办人',
+  `SuperviseTel` varchar(50) DEFAULT NULL COMMENT '督办人电话',
+  `FlowNumber` varchar(255) NOT NULL COMMENT '案件流水号',
+  `Case` varchar(255) NOT NULL COMMENT '案由',
+  `LitigantOne` varchar(255) DEFAULT NULL COMMENT '当事人1',
+  `LitigantTwo` varchar(255) DEFAULT NULL COMMENT '当事人2',
+  `EntrustDeparment` varchar(128) DEFAULT NULL COMMENT '委托部门',
+  `Undertaker` varchar(50) DEFAULT NULL COMMENT '承办人',
+  `UndertakerTel` varchar(50) DEFAULT NULL COMMENT '承办人电话',
+  `TransferMaterial` varchar(255) DEFAULT NULL COMMENT '移交材料',
+  `Claim` varchar(255) DEFAULT NULL COMMENT '鉴定要求',
+  `Agency` varchar(100) DEFAULT NULL COMMENT '鉴定机构',
+  `Master` varchar(50) DEFAULT NULL COMMENT '鉴定人',
+  `MasterTel` varchar(50) DEFAULT NULL COMMENT '鉴定人电话',
+  `ChoiceWay` varchar(50) DEFAULT NULL COMMENT '选定方式',
+  `ChoicedDate` date DEFAULT NULL COMMENT '选定日期',
+  `CaseClosedDate` date DEFAULT NULL COMMENT '收案日期',
+  `PutOnRecordDate` date DEFAULT NULL COMMENT '初稿日期',
+  `SuspendedDate` date DEFAULT NULL COMMENT '暂缓日期',
+  `EntrustDate` date DEFAULT NULL COMMENT '委托日期',
+  `MaterialsCompletionDate` date DEFAULT NULL COMMENT '材料补全日期',
+  `RetractDate` date DEFAULT NULL COMMENT '撤回日期',
+  `SiteSurveyDate` date DEFAULT NULL COMMENT '现场勘察日期',
+  `GetbackDate` date DEFAULT NULL COMMENT '结案日期',
+  `Progress` varchar(36) DEFAULT NULL COMMENT '进度',
+  `DeliveryCourtDate` date DEFAULT NULL COMMENT '送达业务庭日期',
+  `GetbackCycle` int(11) DEFAULT NULL COMMENT '结案周期',
+  `FllowResult` varchar(50) DEFAULT NULL COMMENT '跟踪评查情况',
+  `Fee` decimal(20,4) DEFAULT NULL COMMENT '鉴定费用',
+  `Suggestion` varchar(255) DEFAULT NULL COMMENT '鉴定意见',
+  `SourceIdentifiedDepartment` varchar(1000) DEFAULT NULL COMMENT '原鉴定机构',
+  `SourceIdentifiedResult` varchar(200) DEFAULT NULL COMMENT '原鉴定结论',
+  `Remark` text COMMENT '备注',
+  `Cycle` int(11) DEFAULT NULL COMMENT '鉴定周期',
+  `PutOnRecordCycle` int(11) DEFAULT NULL COMMENT '立案周期',
+  `EntrustCycle` int(11) DEFAULT NULL COMMENT '委托周期'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_project`
+--
+
+INSERT INTO `case_project` (`ID`, `DepartID`, `Type`, `Year`, `CaseNumber`, `Supervise`, `SuperviseTel`, `FlowNumber`, `Case`, `LitigantOne`, `LitigantTwo`, `EntrustDeparment`, `Undertaker`, `UndertakerTel`, `TransferMaterial`, `Claim`, `Agency`, `Master`, `MasterTel`, `ChoiceWay`, `ChoicedDate`, `CaseClosedDate`, `PutOnRecordDate`, `SuspendedDate`, `EntrustDate`, `MaterialsCompletionDate`, `RetractDate`, `SiteSurveyDate`, `GetbackDate`, `Progress`, `DeliveryCourtDate`, `GetbackCycle`, `FllowResult`, `Fee`, `Suggestion`, `SourceIdentifiedDepartment`, `SourceIdentifiedResult`, `Remark`, `Cycle`, `PutOnRecordCycle`, `EntrustCycle`) VALUES
+(1, '20032', '工程造价', '2015', '12', '1221', '12122112', '(2015)浙义法委工1号', '2121', '1212', 'wqw', '佛堂', 'qwqw', 'wqwq', 'wq', 'w', 'w', '12', '12', '随机', '2015-03-17', '2015-11-26', '2015-11-18', '2015-11-16', '2015-11-04', '2015-11-10', '2015-11-10', '2015-11-11', '2015-11-11', '完成', '2015-11-17', 8, '1221', '21.0000', '2121', '2112', '1212', '12122', 8, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `case_report`
+--
+
+CREATE TABLE IF NOT EXISTS `case_report` (
+  `ID` int(11) NOT NULL,
+  `UID` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `URL` varchar(255) DEFAULT NULL,
+  `Type` varchar(36) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `case_report`
+--
+
+INSERT INTO `case_report` (`ID`, `UID`, `Name`, `URL`, `Type`) VALUES
+(26, 9, 'aas.doc', '/uploads/report/assess/9', 'assess'),
+(27, 9, '????.doc', '/uploads/report/assess/9', 'assess'),
+(28, 9, '????.doc', '/uploads/report/assess/9', 'assess'),
+(29, 9, '1234.doc', '/uploads/report/assess/9', 'assess'),
+(30, 9, 'adsf.doc', '/uploads/report/assess/9', 'assess'),
+(31, 2, 'asd.doc', '/uploads/report/identify/2', 'identify'),
+(32, 2, 'asd.doc', '/uploads/report/identify/2', 'identify'),
+(33, 10, 'aaaaaaaa.doc', '/uploads/report/assess/10', 'assess'),
+(34, 2, '1234.doc', '/uploads/report/identify/2', 'identify');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `case_admin`
+--
+ALTER TABLE `case_admin`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Name` (`Name`);
+
+--
+-- Indexes for table `case_agency`
+--
+ALTER TABLE `case_agency`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Name` (`Name`);
+
+--
+-- Indexes for table `case_assess`
+--
+ALTER TABLE `case_assess`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
+
+--
+-- Indexes for table `case_auction`
+--
+ALTER TABLE `case_auction`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
+
+--
+-- Indexes for table `case_bust`
+--
+ALTER TABLE `case_bust`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
+
+--
+-- Indexes for table `case_department`
+--
+ALTER TABLE `case_department`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `Name_2` (`Name`),
+  ADD UNIQUE KEY `Number` (`Number`),
+  ADD KEY `Name` (`Name`,`Number`);
+
+--
+-- Indexes for table `case_document`
+--
+ALTER TABLE `case_document`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `case_document_template`
+--
+ALTER TABLE `case_document_template`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `case_identify`
+--
+ALTER TABLE `case_identify`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
+
+--
+-- Indexes for table `case_logs`
+--
+ALTER TABLE `case_logs`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `case_personnel`
+--
+ALTER TABLE `case_personnel`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ida_user_UNIQUE` (`ID`),
+  ADD UNIQUE KEY `Number_UNIQUE` (`Number`),
+  ADD UNIQUE KEY `TranVersion_UNIQUE` (`TranVersion`);
+
+--
+-- Indexes for table `case_project`
+--
+ALTER TABLE `case_project`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `ID_UNIQUE` (`ID`);
+
+--
+-- Indexes for table `case_report`
+--
+ALTER TABLE `case_report`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `case_admin`
+--
+ALTER TABLE `case_admin`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `case_agency`
+--
+ALTER TABLE `case_agency`
+  MODIFY `ID` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '序号',AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `case_assess`
+--
+ALTER TABLE `case_assess`
+  MODIFY `ID` int(18) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `case_auction`
+--
+ALTER TABLE `case_auction`
+  MODIFY `ID` int(18) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `case_bust`
+--
+ALTER TABLE `case_bust`
+  MODIFY `ID` int(18) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `case_department`
+--
+ALTER TABLE `case_department`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+--
+-- AUTO_INCREMENT for table `case_document`
+--
+ALTER TABLE `case_document`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `case_document_template`
+--
+ALTER TABLE `case_document_template`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `case_identify`
+--
+ALTER TABLE `case_identify`
+  MODIFY `ID` int(18) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `case_logs`
+--
+ALTER TABLE `case_logs`
+  MODIFY `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
+--
+-- AUTO_INCREMENT for table `case_personnel`
+--
+ALTER TABLE `case_personnel`
+  MODIFY `ID` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键ID',AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `case_project`
+--
+ALTER TABLE `case_project`
+  MODIFY `ID` int(18) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `case_report`
+--
+ALTER TABLE `case_report`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=35;

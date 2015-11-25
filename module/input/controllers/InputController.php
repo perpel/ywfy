@@ -77,7 +77,7 @@ class InputController extends Controller{
     protected function toolBar(){
 
         return [
-            //"import"=>"导入",
+            "import"=>"导入",
             "add"=>"增加",
             "edit"=>"编辑",
             "del"=>"删除",

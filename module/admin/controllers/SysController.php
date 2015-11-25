@@ -22,15 +22,11 @@ class SysController extends Controller
     public function actionLogs(){
 
         $request = Yii::$app->request;
-        
+
         if( $request->get("Department") ){
-
                 $dept = $request->get("Department");
-
         }else{
-
                $dept = key(Department::courtList()); 
-
         }
 
         $model_info = Logs::find()->where(["Department"=>$dept]);

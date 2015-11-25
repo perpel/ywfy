@@ -27,7 +27,7 @@ function AddMyMenuItems(){
 <script language="JScript" for="TANGER_OCX" event="OnCustomMenuCmd(menuIndex,menuCaption,menuID)">
 
     if( menuID == 1 ){
-        var a = TANGER_OCX_OBJ.SaveToURL ("./index.php?r=input/report/edit&uid=<?=$uid?>&type=<?=$type?>&name=<?=$name?>&id=<?=$id?>", "DocContent", "", "test.doc",0);
+        var a = TANGER_OCX_OBJ.SaveToURL ("./index.php?r=input/report/edit&uid=<?=$uid?>&type=<?=$type?>&name=<?=$name?>&id=<?=$id?>", "DocContent", "", "test.doc", 0);
         alert(a);
     }
 </script>

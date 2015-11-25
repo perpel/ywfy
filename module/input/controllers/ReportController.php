@@ -29,7 +29,7 @@ class ReportController extends Controller{
         $id = $request->get("id");
         $uid = $request->get("uid");
         $type = $request->get("type");
-        $name = $request->get("name");
+        $name = urlencode($request->get("name"));
         if( $id == 0 ){
             $action = "add";
             return $this->renderPartial( $action, ["uid"=>$uid, "type"=>$type, "name"=>$name ]);
@@ -52,7 +52,9 @@ class ReportController extends Controller{
            if( $model_upload->validate() ){
                 $model = new Report();
                 $model->UID = $request->get("uid");
-                $model->Name = $request->get("name") . "." . $model_upload->file->extension;
+                $name = urldecode($request->get("name"));
+                $name = iconv( "gb2312", "utf-8", $name);
+                $model->Name = $name . "." . $model_upload->file->extension;
                 $model->Type = $request->get("type");
                 if( $model->save() ){
 

@@ -13,7 +13,8 @@
             _size: "normal",
             _top: "100px",
             _left: "100px",
-            _iframe: false
+            _iframe: false,
+            _iframe_id: "",
         };  
 
       // 根据所提供的扩展我们能的options
@@ -21,7 +22,7 @@
 
       var eles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'></div><div class='pop-footer'></div></div>";
       
-      var iframeEles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'><iframe></iframe></div><div class='pop-footer'></div></div>";
+      var iframeEles = "<div class='pop'><div class='pop-close'></div><div class='pop-title'></div><div class='pop-content'><iframe id='" + opts._iframe_id + "'></iframe></div><div class='pop-footer'></div></div>";
 
       if( opts._iframe ){
             var obj = $(iframeEles).appendTo(opts._parent);
@@ -55,10 +56,12 @@
       
       obj.width(opts._width);
       obj.height(opts._height);
-      obj.children(".pop-content").height( opts._height * 0.8);
+      obj.children(".pop-footer").height(25);
+      obj.children(".pop-content").height( opts._height - 30 - obj.children(".pop-footer").height());
 
       //close
       obj.children(".pop-close").click(function(){
+          window.edit_pop = undefined;
           obj.remove();
       });
 

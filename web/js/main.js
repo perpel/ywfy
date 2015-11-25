@@ -8,6 +8,9 @@ $(function(){
        $(".section").height(winHeight - 120);
     });
 
+    /**
+    * section-bar
+    */
     $("body").on("mouseenter", ".fnt", function(){
         $(this).addClass("active");
         $(this).css("cursor", "hand");
@@ -29,6 +32,10 @@ $(function(){
         $(this).siblings("tr").removeClass("selected");
         $(this).addClass("selected");
     });
+    //end section-bar
+
+    //pop window
+    window.edit_pop = undefined;
 
     var pop_index = 9;
 

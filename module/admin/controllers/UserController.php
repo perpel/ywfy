@@ -23,13 +23,9 @@ class UserController extends Controller
         $request = Yii::$app->request;
         
         if( $request->get("DepartmentNumber") ){
-
                 $dept = $request->get("DepartmentNumber");
-
         }else{
-
-               $dept = key(Department::courtList()); 
-
+               $dept = key(Department::courtList());
         }
         $users = Personnel::find()->where(["DepartmentNumber"=>$dept])->asArray()->all();
         $this->layout = "admin";

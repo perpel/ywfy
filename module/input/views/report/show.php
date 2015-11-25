@@ -33,7 +33,7 @@ ul,li{ list-style:none;}
             alert("名称不能为空");
             return false;
         }
-
+        name = encodeURI($.trim(name));
         var rand = Math.random()*1000+1;
         window.open ('./index.php?r=input/report/template&id=0&uid=' + uid + "&name=" + name + "&type=" + type + "&rand=" + rand, "");
     });

@@ -76,7 +76,7 @@ $(function(){
 
     }
 
-    $("#pop").on("click", ":button[name='DH']",function(){
+    $("#footer").on("click", ":button[name='DH']",function(){
         var a = $(this).siblings(":text[name='ACol']").val();
         var b = $(this).siblings(":text[name='BCol']").val();
         if(!a){
@@ -94,27 +94,27 @@ $(function(){
     });
 
 
-    $("#pop").on("click", "th",function(){
+    $(".drag-table").on("click", "th",function(){
 
         removeSeleted();
         posIndex = $(this).index();
         setSelected();
     });
 
-    $("#pop").on("click", ":button[name='cleanColSelected']",function(){
+    $("#footer").on("click", ":button[name='cleanColSelected']",function(){
         cleanColSeleted();
     });
 
-    $("#pop").on("click", ":button[name='delColSelected']",function(){
+    $("#footer").on("click", ":button[name='delColSelected']",function(){
         deleteColSeleted();
         posIndex = 0;
     });
 
-    $("#pop").on("click", ":button[name='delRowSelected']",function(){
+    $("#footer").on("click", ":button[name='delRowSelected']",function(){
         deleteRowSeleted();
     });
 
-    $("#pop").on("change", ":checkbox[name='rowSelect']", function(){
+    $("#footer").on("change", ":checkbox[name='rowSelect']", function(){
 
         $(this).parent("td").siblings("td").css("background-color", "lightyellow");
        
@@ -124,6 +124,82 @@ $(function(){
         }
         
     });
+
+    var setYearCols = function(){
+
+        var year = $("#footer").find("#yy").val();
+        if(!year){
+            return false;
+        }
+         var trs = $(".drag-table").children("tbody").find("tr");
+        $.each(trs, function(i, v){         
+            $(this).find("td").eq(1).text(year);
+        });
+    };
+
+    $("#footer").on("click", ":button[name='setYear']",function(){
+        setYearCols();
+    });
+
+
+
+    //******************************************//
+    //******************************************//
+    //******************************************//
+    //******************************************//
+    //******************************************//
+
+$("input[name='file']:file").change(function(){
+    $("#import").find("form").submit();
+});
+
+$(":button[name='import']").click(function(){
+
+    var dia = confirm("确定导入?");
+
+    if(dia){
+
+        var ths = new Array();
+        $(".drag-table").children("thead").children("tr:first").find("th").each(function(i, v){
+                    ths[i] = $(this).attr("data-tpl");
+        });
+        //console.log(ths);
+       var tr_data = $(".drag-table").children("tbody").children("tr");
+
+       tr_data.each(function(){
+
+            var tr_obj = $(this);
+            var data_obj = new Object();
+
+            $(this).find("td").each(function(i, v){
+                if(typeof(ths[i]) != "undefined"){
+                    data_obj[ths[i]] = $(this).text();
+                }
+            });
+
+            $.post(
+                "index.php?r=input/edit/import-add&action=" + $("#action").val(),
+                {"data": data_obj},
+                function(data){
+                   //console.log(data); 
+                    if(data == "defail"){
+                        tr_obj.css("background-color", "red");
+                    }
+                    if(data == "success"){
+                        tr_obj.remove();
+                    }
+                }
+
+
+            );
+
+            data_tr = null;
+
+       });
+        
+    }
+
+});
 
 
 

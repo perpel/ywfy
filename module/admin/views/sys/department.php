@@ -17,10 +17,11 @@
             
            
     <tr>  
-    <th>序号</th> 
+        <th>序号</th> 
         <th>法院名称</th>
         <th>法院编号</th>
         <th>注册时间</th>
+        <th>有效期</th>
         <th>注册码</th>
     </tr>
 
@@ -29,9 +30,16 @@
         foreach($model_info as $v){
                 echo "<tr>";
                 echo "<td>" . $i . "</td>";
-                echo "<td>" . $v["Name"] . "</td>";
+                if($v["EndDate"] < date("Y-m-d")){
+                        echo "<td style='background-color:#FFAEB9;'>" . $v["Name"]. "</td>";
+                }else{
+                        echo "<td>" . $v["Name"] . "</td>";
+                }
+                
                 echo "<td>" . $v["Number"]. "</td>";
                 echo "<td>" . $v["StartDate"]. "</td>";
+                
+                echo "<td>" . $v["EndDate"]. "</td>";
                 echo "<td>" . $v["RegistrationCode"]. "</td>";
                 echo "</tr>";
                 $i++;

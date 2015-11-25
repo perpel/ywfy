@@ -1,7 +1,7 @@
 $(function(){
 
       var tar_add = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-action");
-        var  tar_update = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-update");
+      var  tar_update = $("#section-bar").find(".fnt.ico-add").children("span").attr("data-update");
       var types = $("#cu_type").val();
 
     //add

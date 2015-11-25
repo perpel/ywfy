@@ -1,0 +1,318 @@
+<?php
+
+namespace app\module\sybase\controllers;
+
+use Yii;
+use yii\web\Controller;
+use app\module\sybase\models\Sybase;
+
+class DefaultController extends Controller
+{
+
+	public $enableCsrfValidation = false;
+    public $sel;
+    public $content;
+    public $type = "审判";
+	public $thewhere = [
+        
+            "审判"=>[
+                
+                "原审案号"=>["AH"],
+                "案由"=>["AYMS"],
+                //"当事人"=>["DSR"],
+                //"督办人"=>["LARQ"],
+                //"承办人"=>["AYMS"],
+
+            ],
+            "执行"=>[
+                
+                "原审案号"=>["AH"],
+                "案由"=>["SJAY"],
+                //"当事人"=>[],
+                //"督办人"=>[],
+                //"承办人"=>[],
+            
+            ],
+            
+        ];
+
+    public function actions(){
+
+        $request = Yii::$app->request;
+        if($request->isPost){
+            $this->sel = $request->post("flow_number_src");
+			$val = preg_replace("/\s(?=\s)/","\\1",$request->post("flow_search_val"));
+            $this->content = str_replace(" ", "%", $val);
+            $this->type = $request->post("flow_number_type");
+        }
+
+    }
+
+
+    public function actionIndex()
+    {
+        $request = Yii::$app->request;
+        $tid = $request->get("tid");
+		$model_info = [];
+        if($request->isPost){
+			//$pagenum = 10;
+			$where = $this->getCondition($this->type, $this->sel);
+			switch($this->type){
+				case "执行":
+					//$count = $this->countExcute($where);
+					//var_dump($count);exit;
+					$model_info = $this->searchExcute($where);
+					break;
+					
+				case "审判":
+					//$count = $this->countTrial($where);
+					//$count = $count[0][0];
+					//$page = $count / $pagenum;
+					$model_info = $this->searchTrial($where);
+					break;
+			}
+	
+		}
+		
+        return $this->renderPartial('index', ["tid"=>$tid, "model_info"=>$model_info]);
+    }
+
+	protected function getCondition($type, $sel){
+	
+		$where = [];
+		foreach($this->thewhere[$type][$sel] as $con){
+            $where[] = "$con LIKE '%$this->content%'";
+        }
+		$where = implode(" OR ", $where);
+		return $where;
+	
+	}
+
+	protected function countTrial($where){
+		
+		$sybase = new Sybase();
+        $sybase->open("msrv", "sa", "", "ecourt_2009", "cp936");
+		$sql = "SELECT COUNT(*) FROM EAJ WHERE $where";
+		$sybase->query($sql);
+		return $sybase->asArray();
+	}
+
+	protected function countExcute($where){
+		
+		$sybase = new Sybase();
+        $sybase->open("msrv", "sa", "", "ecourt_2009", "cp936");
+		$sql = "SELECT COUNT(*) AH,SJAY FROM AJJB WHERE $where";
+		return $sybase->query($sql);
+
+	}
+
+	protected function getTrial($result){
+	
+		$arr = [];
+		$i = 0;
+		foreach($result as $v){
+			$arr[$i]["AH"] = $v[0];
+			$arr[$i]["AYMS"] = $v[1];
+			$dsr = $this->setDsr($v[2]);
+			$arr[$i]["DSR1"] = $dsr[1];
+			$arr[$i]["DSR2"] = $dsr[2];
+			$arr[$i]["CBR"] = $this->searchCBR($v[3]);
+			$arr[$i]["WTBM"] = $this->searchWTBM($v[4]);
+			$i++;
+		}
+		return $arr;
+	}
+
+	protected function getExcute($result){
+	
+		$arr = [];
+		$i = 0;
+		foreach($result as $v){
+			$arr[$i]["AH"] = $v[0];
+			$arr[$i]["AYMS"] = $v[1];
+			$arr[$i]["DSR1"] = $v[2];
+			$arr[$i]["DSR2"] = $v[3];
+			$arr[$i]["CBR"] = $this->searchECBR($v[4]);
+			$arr[$i]["WTBM"] = $this->searchEWTBM($v[5]);
+			$i++;
+		}
+		return $arr;
+	}
+
+	protected function searchECBR($id){
+		
+		$sybase = new Sybase();
+		$id = iconv("utf-8", "cp936", $id);
+        $sybase->open("ZJZXGL", "sa", "ywpassed0579", "JHYW_ZXGL", "cp936");
+        $sql = "SELECT XM FROM RS.RS_ZB_ZYRSJBXX WHERE ZYBM = '$id'";
+        $sybase->query($sql);
+        $result = $sybase->fetch_row();
+		return iconv("cp936", "utf-8", $result[0]);
+	
+	
+	}
+
+	protected function searchEWTBM($id){
+		
+		$sybase = new Sybase();
+		$id = iconv("utf-8", "cp936", $id);
+        $sybase->open("ZJZXGL", "sa", "ywpassed0579", "JHYW_ZXGL", "cp936");
+        $sql = "SELECT MC FROM RS.RS_DM_BMSZB WHERE BM = '$id'";
+        $sybase->query($sql);
+        $result = $sybase->fetch_row();
+		return iconv("cp936", "utf-8", $result[0]);
+	
+	
+	}
+
+
+	protected function setDsr($dsrStr){
+		$dsr = [];
+		$arr = explode(";", $dsrStr);
+		$dsr[1] = "";
+		$dsr[2] = "";
+		$i = 0;
+		foreach($arr as $v){
+			if($i == 0){
+				$a = explode(":", $v);
+				$dsr[1] = $a[1];
+				$i++;
+				continue;
+			}
+			$a = explode(":", $v);
+			$dsr[2] .= " " . $a[1];
+			$i++;
+		}
+
+		return $dsr;
+	}
+
+	public function actionTest(){
+		
+		var_dump($this->searchCBR("330713zhangkai"));
+	
+	}
+
+	protected function searchWTBM($id){
+		$sybase = new Sybase();
+		$id = iconv("utf-8", "cp936", $id);
+        $sybase->open("msrv", "sa", "", "frame", "cp936");
+        $sql = "SELECT BMMC FROM T_DEPART WHERE BMDM = '$id'";
+        $sybase->query($sql);
+        $result = $sybase->fetch_row();
+		return iconv("cp936", "utf-8", $result[0]);
+	}
+
+	protected function searchCBR($id){
+		$sybase = new Sybase();
+		$id = iconv("utf-8", "cp936", $id);
+        $sybase->open("msrv", "sa", "", "frame", "cp936");
+        $sql = "SELECT YHXM FROM T_USER WHERE YHDM = '$id'";
+        $sybase->query($sql);
+        $result = $sybase->fetch_row();
+		return iconv("cp936", "utf-8", $result[0]);
+	}
+
+	protected function searchTrial($where){
+        $sybase = new Sybase();
+        $sybase->open("msrv", "sa", "", "ecourt_2009", "cp936");
+		//$sql = "SELECT TOP ($pagenum*($page-1)) FROM EAJ WHERE $where";
+		//$sybase->query($sql);
+        $sql = "SET RowCount 1000 SELECT AH,AYMS,DSR,CBR,CBBM1 FROM EAJ WHERE $where";
+        $sybase->query($sql);
+        $result = $sybase->asArray();
+		$result = $this->getTrial($result);
+        $sybase->close();
+		return $result;
+        exit;
+    }
+
+	protected function searchExcute($where){
+        $sybase = new Sybase();
+        $sybase->open("ZJZXGL", "sa", "ywpassed0579", "JHYW_ZXGL", "cp936");
+        $sql = "SET RowCount 1000 SELECT AH,SJAY,SQR,BZXR,CBRDM,CBBM FROM ZXNEW.AJJB WHERE $where";
+        $sybase->query($sql);
+        $result = $sybase->asArray();
+		$result = $this->getExcute($result);
+        $sybase->close();
+		return $result;
+        exit;
+    }
+
+
+/*
+
+    public function actionFlowNumber(){
+        
+        $request = Yii::$app->request;
+        $tid = $request->get("tid", "");
+        if($request->isPost){
+            
+            $condition = $this->getCondition($request->post("type"), $request->post("sed"));
+            $val = preg_replace("/\s(?=\s)/","\\1",$request->post("val"));
+            $val = str_replace(" ","%",$val);
+            $where = [];
+            foreach($condition as $con){
+                $where[] = "$con LIKE '%$val%'";
+            }
+            $where = implode(" OR ", $where);
+            switch($request->post("type")){
+                case "执行":
+                    $this->searchExcute($where);
+                    break;
+                    
+                case "审判":
+                    $this->searchTrial($where);
+                    break;
+            }
+        }
+        return $this->renderPartial("flow-number", ["tid"=>$tid]);
+    }
+
+    public function actionTest(){
+        $where = "1=1";
+        $sybase = new Sybase();
+        $sybase->open("ZJZXGL", "sa", "ywpassed0579", "JHYW_ZXGL", "cp936");
+        $sql = "SET RowCount 500 SELECT * FROM TEST";
+        $sybase->query($sql);
+        $sybase->echoJsonStr();
+        $sybase->close();
+        exit;
+    }
+
+    
+
+    
+    
+    protected function getCondition($type, $sed){
+        
+        $where = [
+        
+            "审判"=>[
+                
+                "原审案号"=>["AH"],
+                "案由"=>["AYMS"],
+                //"当事人"=>["DSR"],
+                //"督办人"=>["LARQ"],
+                //"承办人"=>["AYMS"],
+
+            ],
+            "执行"=>[
+                
+                "原审案号"=>["AH"],
+                "案由"=>["SJAY"],
+                //"当事人"=>[],
+                //"督办人"=>[],
+                //"承办人"=>[],
+            
+            ],
+            
+        ];
+        
+        return $where[$type][$sed];
+            
+            
+    }
+
+*/
+}

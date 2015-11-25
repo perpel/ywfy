@@ -1,5 +1,4 @@
 $(function(){
-
     var lockedNav = true;
 
     $(".nav").click(function(){

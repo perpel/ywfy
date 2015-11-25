@@ -137,7 +137,7 @@ class DefaultController extends Controller
 
     public function actionTest(){
 
-        $str = $this->authcode("insert:8:date('Y-m-d G:i:s')", 'ENCODE', "shangxiangwangluokeji", 0);
+        $str = $this->authcode("update:365:date('Y-m-d G:i:s')", 'ENCODE', "shangxiangwangluokeji", 0);
        // $end = date();
        //$str = md5(md5("2015-11-22" . "shangxiangwangluokeji"));
         echo $str;

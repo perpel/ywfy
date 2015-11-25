@@ -24,6 +24,7 @@ $config = [
         ],
     ],
     'id' => 'basic',
+    'language' => 'zh-CN',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'components' => [
